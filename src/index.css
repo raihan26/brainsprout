@@ -27,6 +27,17 @@
   }
 }
 
+@layer utilities {
+  .animate-float-up {
+    animation: float-up var(--duration, 8s) linear infinite;
+    animation-delay: var(--delay, 0s);
+  }
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 3s ease infinite;
+  }
+}
+
 @layer components {
   .kid-card {
     @apply rounded-3xl bg-white shadow-kid p-4 sm:p-6 border-4 border-white;

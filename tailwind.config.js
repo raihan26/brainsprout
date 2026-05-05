@@ -50,6 +50,25 @@ export default {
           '0%,100%': { transform: 'translateY(0) rotate(-1deg)' },
           '50%': { transform: 'translateY(-3px) rotate(1deg)' },
         },
+        'float-up': {
+          '0%': { transform: 'translateY(0) rotate(0deg)', opacity: '0' },
+          '10%': { opacity: '0.7' },
+          '90%': { opacity: '0.7' },
+          '100%': { transform: 'translateY(-110vh) rotate(360deg)', opacity: '0' },
+        },
+        'bounce-slow': {
+          '0%,100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        'confetti-pop': {
+          '0%': { transform: 'scale(0) rotate(0deg)', opacity: '1' },
+          '50%': { transform: 'scale(1.5) rotate(180deg)', opacity: '1' },
+          '100%': { transform: 'scale(0) rotate(360deg)', opacity: '0' },
+        },
+        'gradient-x': {
+          '0%,100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
       },
       animation: {
         pop: 'pop 0.4s ease-out',
@@ -59,6 +78,10 @@ export default {
         shake: 'shake 0.4s ease-in-out',
         drive: 'drive 14s linear infinite',
         bounceTruck: 'bounceTruck 0.4s ease-in-out infinite',
+        'float-up': 'float-up var(--duration, 8s) linear infinite',
+        'bounce-slow': 'bounce-slow 2s ease-in-out infinite',
+        'confetti-pop': 'confetti-pop 0.8s ease-out forwards',
+        'gradient-x': 'gradient-x 3s ease infinite',
       },
     },
   },
