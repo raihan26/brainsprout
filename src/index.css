@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    background:
+      radial-gradient(at 10% 0%, #FFE9B0 0, transparent 40%),
+      radial-gradient(at 100% 0%, #BDE0FE 0, transparent 40%),
+      radial-gradient(at 50% 100%, #CDF0EA 0, transparent 50%),
+      #FFF7E6;
+    background-attachment: fixed;
+    color: #1f2937;
+    -webkit-tap-highlight-color: transparent;
+  }
+  button {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  :focus-visible {
+    outline: 4px solid #4CC9F0;
+    outline-offset: 3px;
+    border-radius: 12px;
+  }
+}
+
+@layer components {
+  .kid-card {
+    @apply rounded-3xl bg-white shadow-kid p-4 sm:p-6 border-4 border-white;
+  }
+  .kid-btn {
+    @apply rounded-2xl px-5 py-4 text-2xl font-bold shadow-kid transition active:translate-y-1 active:shadow-kidPress disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+  .kid-btn-primary {
+    @apply kid-btn bg-sun text-gray-900 hover:brightness-105;
+  }
+  .kid-btn-blue {
+    @apply kid-btn bg-sky text-white hover:brightness-105;
+  }
+  .kid-btn-green {
+    @apply kid-btn bg-grass text-white hover:brightness-105;
+  }
+  .kid-btn-pink {
+    @apply kid-btn bg-berry text-white hover:brightness-105;
+  }
+  .kid-btn-purple {
+    @apply kid-btn bg-plum text-white hover:brightness-105;
+  }
+  .kid-btn-light {
+    @apply kid-btn bg-white text-gray-900 hover:bg-gray-50;
+  }
+}
