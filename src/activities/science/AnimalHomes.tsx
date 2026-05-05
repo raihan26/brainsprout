@@ -1,4 +1,5 @@
 import QuestionRunner from '../../components/QuestionRunner';
+import { useGrade } from '../../hooks/useGrade';
 import SectionLayout from '../../components/SectionLayout';
 import type { Question } from '../../types';
 
@@ -12,10 +13,10 @@ const QS: Question[] = [
   { id: 'h7', prompt: 'Where does a cow live?', emoji: '🐮', choices: ['Barn', 'Cave', 'Hive'], answer: 'Barn' },
   { id: 'h8', prompt: 'Where does a rabbit live?', emoji: '🐰', choices: ['Burrow', 'Hive', 'Nest'], answer: 'Burrow' },
 ];
-
 export default function AnimalHomes() {
+  const grade = useGrade();
   return (
-    <SectionLayout title="Animal Homes" emoji="🏠" backTo="/science" speakText="Match each animal to its home.">
+    <SectionLayout title="Animal Homes" emoji="🏠" backTo={`/${grade}/science`} speakText="Match each animal to its home.">
       <QuestionRunner activityId="science.homes" homePath="/science" questions={QS} numQuestions={6} />
     </SectionLayout>
   );

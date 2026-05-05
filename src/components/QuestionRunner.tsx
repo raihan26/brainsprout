@@ -5,6 +5,7 @@ import Celebration from './Celebration';
 import ProgressStars from './ProgressStars';
 import SpeakButton from './SpeakButton';
 import { useProgress } from '../hooks/useProgress';
+import { useGrade } from '../hooks/useGrade';
 import { useSpeech } from '../hooks/useSpeech';
 import { calcStars } from '../utils/storage';
 import { playCorrect, playWrong } from '../utils/sound';
@@ -29,8 +30,11 @@ export default function QuestionRunner({
   numQuestions,
 }: Props) {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
+
+  const gradeHomePath = `/${grade}${homePath}`;
 
   const buildSet = () => {
     const shuffled = shuffle(questions);
@@ -152,7 +156,7 @@ export default function QuestionRunner({
         show={done}
         stars={stars}
         onPlayAgain={handlePlayAgain}
-        onHome={() => nav(homePath)}
+        onHome={() => nav(gradeHomePath)}
       />
     </div>
   );

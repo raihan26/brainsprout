@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import SectionLayout from '../../components/SectionLayout';
 import Celebration from '../../components/Celebration';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { playCorrect, playTap } from '../../utils/sound';
 
@@ -10,7 +11,8 @@ const NUMBERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 export default function NumberTracing() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
 
   const [num, setNum] = useState('1');
@@ -101,7 +103,7 @@ export default function NumberTracing() {
   };
 
   return (
-    <SectionLayout title="Number Tracing" emoji="✏️" backTo="/math" speakText={`Trace the number ${num} with your finger or mouse.`}>
+    <SectionLayout title="Number Tracing" emoji="✏️" backTo={`/${grade}/math`} speakText={`Trace the number ${num} with your finger or mouse.`}>
       <div className="kid-card">
         <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
           <div className="text-2xl font-extrabold">Trace this number</div>
@@ -138,7 +140,7 @@ export default function NumberTracing() {
         <p className="text-center text-gray-700 mt-2">Traced {traced} of 5</p>
       </div>
 
-      <Celebration show={done} stars={3} onPlayAgain={() => { setTraced(0); setNum('1'); setDone(false); }} onHome={() => nav('/math')} />
+      <Celebration show={done} stars={3} onPlayAgain={() => { setTraced(0); setNum('1'); setDone(false); }} onHome={() => nav(`/${grade}/math`)} />
     </SectionLayout>
   );
 }

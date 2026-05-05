@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import SectionLayout from '../../components/SectionLayout';
 import Celebration from '../../components/Celebration';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { calcStars } from '../../utils/storage';
 import { playCorrect, playWrong } from '../../utils/sound';
@@ -29,7 +30,8 @@ const ITEMS: Item[] = [
 
 export default function HealthyFood() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
 
   const [pool, setPool] = useState<Item[]>(() => shuffle([...sample(ITEMS.filter((i) => i.healthy), 4), ...sample(ITEMS.filter((i) => !i.healthy), 4)]));
@@ -65,7 +67,7 @@ export default function HealthyFood() {
   };
 
   return (
-    <SectionLayout title="Healthy Food" emoji="🥕" backTo="/life-skills" speakText="Tap the healthy foods.">
+    <SectionLayout title="Healthy Food" emoji="🥕" backTo={`/${grade}/life-skills`} speakText="Tap the healthy foods.">
       <div className="kid-card text-center">
         <div className="text-2xl font-extrabold mb-1">Tap all the healthy foods!</div>
         <div className="text-gray-700">Found {picked.size} of {pool.filter((x) => x.healthy).length}</div>
@@ -86,7 +88,7 @@ export default function HealthyFood() {
           );
         })}
       </div>
-      <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav('/life-skills')} />
+      <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav(`/${grade}/life-skills`)} />
     </SectionLayout>
   );
 }

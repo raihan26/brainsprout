@@ -1,4 +1,5 @@
 import QuestionRunner from '../../components/QuestionRunner';
+import { useGrade } from '../../hooks/useGrade';
 import SectionLayout from '../../components/SectionLayout';
 import type { Question } from '../../types';
 
@@ -12,10 +13,10 @@ const QS: Question[] = [
   { id: 'r7', prompt: 'Which word rhymes with BAT?', emoji: '🦇', choices: ['Mat', 'Pig', 'Bus'], answer: 'Mat' },
   { id: 'r8', prompt: 'Which word rhymes with PIG?', emoji: '🐷', choices: ['Wig', 'Cat', 'Sun'], answer: 'Wig' },
 ];
-
 export default function Rhyming() {
+  const grade = useGrade();
   return (
-    <SectionLayout title="Rhyming Game" emoji="🎵" backTo="/reading" speakText="Which word rhymes?">
+    <SectionLayout title="Rhyming Game" emoji="🎵" backTo={`/${grade}/reading`} speakText="Which word rhymes?">
       <QuestionRunner activityId="reading.rhyming" homePath="/reading" questions={QS} speakChoices numQuestions={6} />
     </SectionLayout>
   );

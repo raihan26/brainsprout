@@ -6,6 +6,7 @@ import Celebration from '../../components/Celebration';
 import ProgressStars from '../../components/ProgressStars';
 import TruckSvg, { type TruckId, TRUCK_NAMES } from '../../components/TruckSvg';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { calcStars } from '../../utils/storage';
 import { playCorrect, playWrong } from '../../utils/sound';
@@ -29,7 +30,8 @@ const build = (level: number): Q => {
 
 export default function CountTrucks() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
   const TOTAL = 8;
 
@@ -61,7 +63,7 @@ export default function CountTrucks() {
   const reset = () => { setI(0); setQ(build(0)); setPicked(null); setCorrect(0); setDone(false); };
 
   return (
-    <SectionLayout title="Count the Trucks" emoji="🚚" backTo="/trucks" speakText={`How many ${TRUCK_NAMES[q.truck]}s do you see?`}>
+    <SectionLayout title="Count the Trucks" emoji="🚚" backTo={`/${grade}/trucks`} speakText={`How many ${TRUCK_NAMES[q.truck]}s do you see?`}>
       <div className="flex items-center justify-between mb-3">
         <div className="text-lg font-bold text-gray-700">Question {i + 1} of {TOTAL}</div>
         <ProgressStars value={Math.min(3, Math.round((correct / TOTAL) * 3))} size="sm" />
@@ -88,7 +90,7 @@ export default function CountTrucks() {
           );
         })}
       </div>
-      <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav('/trucks')} />
+      <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav(`/${grade}/trucks`)} />
     </SectionLayout>
   );
 }

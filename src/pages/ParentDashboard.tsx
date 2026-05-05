@@ -2,7 +2,9 @@ import { useState } from 'react';
 import SectionLayout from '../components/SectionLayout';
 import ProgressStars from '../components/ProgressStars';
 import { useProgress } from '../hooks/useProgress';
-import { ACTIVITIES, SECTIONS, activityById } from '../data/activities';
+import { activitiesByGrade, sectionsByGrade, activityById } from '../data/activities';
+import { GRADES } from '../data/grades';
+import type { GradeId } from '../types';
 
 function fmtDate(ts: number): string {
   if (!ts) return '—';
@@ -11,15 +13,17 @@ function fmtDate(ts: number): string {
 }
 
 export default function ParentDashboard() {
-  const { state, reset } = useProgress();
+  const [selectedGrade, setSelectedGrade] = useState<GradeId>('k');
+  const { state, reset } = useProgress(selectedGrade);
   const [confirm, setConfirm] = useState(false);
 
+  const activities = activitiesByGrade(selectedGrade);
+  const sections = sectionsByGrade(selectedGrade);
   const completed = Object.values(state.activities).filter((e) => e.plays > 0).length;
   const lastActivity = state.lastActivityId ? activityById(state.lastActivityId) : null;
 
-  // Best section by total stars
-  const sectionTotals = SECTIONS.map((s) => {
-    const ids = ACTIVITIES.filter((a) => a.section === s.id).map((a) => a.id);
+  const sectionTotals = sections.map((s) => {
+    const ids = activities.filter((a) => a.section === s.id).map((a) => a.id);
     const stars = ids.reduce((sum, id) => sum + (state.activities[id]?.stars ?? 0), 0);
     const max = ids.length * 3;
     return { section: s, stars, max, ratio: max > 0 ? stars / max : 0 };
@@ -28,8 +32,21 @@ export default function ParentDashboard() {
 
   return (
     <SectionLayout title="Parent Dashboard" emoji="👪" backTo="/" speakText="Parent dashboard.">
+      {/* Grade selector */}
+      <div className="flex gap-2 justify-center mb-5 flex-wrap">
+        {GRADES.map((g) => (
+          <button
+            key={g.id}
+            onClick={() => { setSelectedGrade(g.id); setConfirm(false); }}
+            className={`kid-btn text-lg px-5 py-3 ${selectedGrade === g.id ? 'bg-sky text-white' : 'bg-white text-gray-900'}`}
+          >
+            {g.emoji} {g.title}
+          </button>
+        ))}
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <Stat label="Activities Completed" value={`${completed} / ${ACTIVITIES.length}`} emoji="🎯" />
+        <Stat label="Activities Completed" value={`${completed} / ${activities.length}`} emoji="🎯" />
         <Stat label="Total Stars" value={state.totalStars} emoji="⭐" />
         <Stat label="Best Section" value={best?.stars ? best.section.title : 'No data yet'} emoji={best?.section.emoji ?? '🏆'} />
       </div>
@@ -72,7 +89,7 @@ export default function ParentDashboard() {
       <div className="kid-card mt-5">
         <h2 className="text-2xl font-extrabold mb-3">All activities</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {ACTIVITIES.map((a) => {
+          {activities.map((a) => {
             const e = state.activities[a.id];
             return (
               <div key={a.id} className="flex items-center justify-between p-2 rounded-xl bg-cream">
@@ -97,7 +114,7 @@ export default function ParentDashboard() {
           </button>
         ) : (
           <div>
-            <p className="text-lg mb-3">Are you sure? This will clear all stars and progress.</p>
+            <p className="text-lg mb-3">Are you sure? This will clear all stars and progress for {GRADES.find(g => g.id === selectedGrade)?.title}.</p>
             <div className="flex gap-3 justify-center">
               <button className="kid-btn-light" onClick={() => setConfirm(false)}>Cancel</button>
               <button

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import SectionLayout from '../../components/SectionLayout';
 import Celebration from '../../components/Celebration';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { playCorrect, playTap, playWrong } from '../../utils/sound';
 import { shuffle } from '../../utils/shuffle';
@@ -22,7 +23,8 @@ const buildSet = (mode: Mode): number[] => {
 
 export default function NumberOrder() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
 
   const [mode, setMode] = useState<Mode>('easy');
@@ -81,7 +83,7 @@ export default function NumberOrder() {
   };
 
   return (
-    <SectionLayout title="Number Order" emoji="🔢" backTo="/math" speakText={`Put the numbers in order from ${target[0]} to ${target[target.length - 1]}.`}>
+    <SectionLayout title="Number Order" emoji="🔢" backTo={`/${grade}/math`} speakText={`Put the numbers in order from ${target[0]} to ${target[target.length - 1]}.`}>
       <div className="kid-card">
         <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
           <div className="text-xl font-extrabold">Round {completed + 1} of 3</div>
@@ -114,7 +116,7 @@ export default function NumberOrder() {
         </div>
       </div>
 
-      <Celebration show={done} stars={3} onPlayAgain={reset} onHome={() => nav('/math')} />
+      <Celebration show={done} stars={3} onPlayAgain={reset} onHome={() => nav(`/${grade}/math`)} />
     </SectionLayout>
   );
 }

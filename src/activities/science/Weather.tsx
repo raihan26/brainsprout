@@ -1,4 +1,5 @@
 import QuestionRunner from '../../components/QuestionRunner';
+import { useGrade } from '../../hooks/useGrade';
 import SectionLayout from '../../components/SectionLayout';
 import type { Question } from '../../types';
 
@@ -10,10 +11,10 @@ const QS: Question[] = [
   { id: 'w5', prompt: 'It is cold outside. What do you wear?', emoji: '🥶', choices: ['🧥 Coat', '🩳 Shorts', '👙 Swimsuit'], answer: '🧥 Coat' },
   { id: 'w6', prompt: 'A rainbow comes after the…', emoji: '🌈', choices: ['🌧️ Rain', '☀️ Sun all day', '❄️ Snow'], answer: '🌧️ Rain' },
 ];
-
 export default function Weather() {
+  const grade = useGrade();
   return (
-    <SectionLayout title="Weather Game" emoji="☀️" backTo="/science" speakText="Pick the right item for the weather.">
+    <SectionLayout title="Weather Game" emoji="☀️" backTo={`/${grade}/science`} speakText="Pick the right item for the weather.">
       <QuestionRunner activityId="science.weather" homePath="/science" questions={QS} numQuestions={6} />
     </SectionLayout>
   );

@@ -4,6 +4,7 @@ import SectionLayout from '../../components/SectionLayout';
 import Celebration from '../../components/Celebration';
 import TruckSvg, { type TruckId } from '../../components/TruckSvg';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { playCorrect, playEngine, playWin } from '../../utils/sound';
 
@@ -14,7 +15,8 @@ const FINISH = 100;
 
 export default function TruckRace() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
 
   const [me, setMe] = useState(0);
@@ -60,7 +62,7 @@ export default function TruckRace() {
   const reset = () => { setMe(0); setRival(0); setDone(false); setWinner(null); setRunning(false); };
 
   return (
-    <SectionLayout title="Truck Race!" emoji="🏁" backTo="/trucks" speakText="Tap fast to win the race!">
+    <SectionLayout title="Truck Race!" emoji="🏁" backTo={`/${grade}/trucks`} speakText="Tap fast to win the race!">
       <div className="kid-card">
         <div className="text-center text-xl font-extrabold mb-2">
           {!running && !winner && 'Press START, then tap as fast as you can!'}
@@ -102,14 +104,14 @@ export default function TruckRace() {
         stars={3}
         message="You're the fastest! 🏆"
         onPlayAgain={reset}
-        onHome={() => nav('/trucks')}
+        onHome={() => nav(`/${grade}/trucks`)}
       />
       <Celebration
         show={done && winner === 'rival'}
         stars={1}
         message="Great racing! Try again!"
         onPlayAgain={reset}
-        onHome={() => nav('/trucks')}
+        onHome={() => nav(`/${grade}/trucks`)}
       />
     </SectionLayout>
   );

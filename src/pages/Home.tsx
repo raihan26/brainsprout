@@ -1,20 +1,28 @@
 import { Link } from 'react-router-dom';
-import { SECTIONS } from '../data/activities';
+import { sectionsByGrade } from '../data/activities';
+import { gradeById } from '../data/grades';
+import { useGrade } from '../hooks/useGrade';
 import VoiceToggle from '../components/VoiceToggle';
 import { useProgress } from '../hooks/useProgress';
 import ProgressStars from '../components/ProgressStars';
 import TruckBanner from '../components/TruckBanner';
 
 export default function Home() {
-  const { state } = useProgress();
+  const grade = useGrade();
+  const gradeMeta = gradeById(grade);
+  const sections = sectionsByGrade(grade);
+  const { state } = useProgress(grade);
+
   return (
     <div className="min-h-screen px-3 sm:px-6 py-4 max-w-5xl mx-auto">
       <header className="flex items-center justify-between flex-wrap gap-3">
         <div className="flex items-center gap-2">
-          <span className="text-4xl animate-floaty" aria-hidden="true">🎈</span>
+          <Link to="/" className="text-4xl animate-floaty no-underline" aria-label="Change grade">
+            {gradeMeta.emoji}
+          </Link>
           <div>
-            <div className="text-3xl sm:text-4xl font-extrabold">Kinder Learn</div>
-            <div className="text-sm text-gray-700">Fun learning for little explorers</div>
+            <div className="text-3xl sm:text-4xl font-extrabold">BrainSprout</div>
+            <div className="text-sm text-gray-700">{gradeMeta.title} — {gradeMeta.description}</div>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -30,13 +38,13 @@ export default function Home() {
       </header>
 
       <main className="mt-6">
-        <TruckBanner />
+        {grade === 'k' && <TruckBanner />}
         <h2 className="sr-only">Choose a learning world</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {SECTIONS.map((s) => (
+          {sections.map((s) => (
             <Link
               key={s.id}
-              to={`/${s.id}`}
+              to={`/${grade}/${s.id}`}
               className={`kid-card group bg-gradient-to-br ${gradient(s.color)} no-underline text-gray-900 hover:-translate-y-1 transition`}
             >
               <div className="text-7xl text-center group-hover:animate-wiggle" aria-hidden="true">
@@ -81,6 +89,5 @@ function countSectionStars(
 }
 
 function sectionPrefix(id: string): string {
-  // life-skills uses 'life.' prefix in activity ids
   return id === 'life-skills' ? 'life.' : `${id}.`;
 }

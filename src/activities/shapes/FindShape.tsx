@@ -4,6 +4,7 @@ import SectionLayout from '../../components/SectionLayout';
 import Celebration from '../../components/Celebration';
 import ShapeSvg from '../../components/ShapeSvg';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { calcStars } from '../../utils/storage';
 import { playCorrect, playWrong, playWin } from '../../utils/sound';
@@ -29,7 +30,8 @@ const buildBoard = (target: string): Cell[] => {
 
 export default function FindShape() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
   const TOTAL_ROUNDS = 3;
 
@@ -79,7 +81,7 @@ export default function FindShape() {
   };
 
   return (
-    <SectionLayout title="Find the Shape" emoji="🔵" backTo="/shapes" speakText={`Find all the ${target}s.`}>
+    <SectionLayout title="Find the Shape" emoji="🔵" backTo={`/${grade}/shapes`} speakText={`Find all the ${target}s.`}>
       <div className="kid-card text-center">
         <div className="text-2xl font-extrabold capitalize">Find all the {target}s — Round {round + 1} of {TOTAL_ROUNDS}</div>
       </div>
@@ -99,7 +101,7 @@ export default function FindShape() {
           );
         })}
       </div>
-      <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav('/shapes')} />
+      <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav(`/${grade}/shapes`)} />
     </SectionLayout>
   );
 }

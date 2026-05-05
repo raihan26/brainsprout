@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import SectionLayout from '../../components/SectionLayout';
 import Celebration from '../../components/Celebration';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { playCorrect, playWrong } from '../../utils/sound';
 import { shuffle } from '../../utils/shuffle';
@@ -17,7 +18,8 @@ const STEPS = [
 
 export default function PlantGrowth() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
 
   const [step, setStep] = useState(0);
@@ -58,7 +60,7 @@ export default function PlantGrowth() {
   const reset = () => { setStep(0); setPool(shuffle(STEPS)); setCompleted(0); setDone(false); };
 
   return (
-    <SectionLayout title="Plant Growth" emoji="🌱" backTo="/science" speakText="Tap the steps in order to grow the plant.">
+    <SectionLayout title="Plant Growth" emoji="🌱" backTo={`/${grade}/science`} speakText="Tap the steps in order to grow the plant.">
       <div className="kid-card">
         <div className="grid grid-cols-5 gap-2 mb-4">
           {STEPS.map((s, i) => (
@@ -88,7 +90,7 @@ export default function PlantGrowth() {
         <p className="text-center text-gray-700 mt-3">Round {completed + 1} of 2</p>
       </div>
 
-      <Celebration show={done} stars={3} onPlayAgain={reset} onHome={() => nav('/science')} />
+      <Celebration show={done} stars={3} onPlayAgain={reset} onHome={() => nav(`/${grade}/science`)} />
     </SectionLayout>
   );
 }

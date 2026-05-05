@@ -5,6 +5,7 @@ import AnswerButton from '../../components/AnswerButton';
 import Celebration from '../../components/Celebration';
 import ProgressStars from '../../components/ProgressStars';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { calcStars } from '../../utils/storage';
 import { playCorrect, playWrong } from '../../utils/sound';
@@ -29,7 +30,8 @@ const buildQuestion = (level: number): Q => {
 
 export default function Counting() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
   const TOTAL_Q = TOTAL;
 
@@ -82,7 +84,7 @@ export default function Counting() {
     <SectionLayout
       title="Counting Game"
       emoji="🍎"
-      backTo="/math"
+      backTo={`/${grade}/math`}
       speakText="How many do you see? Tap the right number."
     >
       <div className="flex items-center justify-between mb-3">
@@ -140,7 +142,7 @@ export default function Counting() {
         show={done}
         stars={stars}
         onPlayAgain={reset}
-        onHome={() => nav('/math')}
+        onHome={() => nav(`/${grade}/math`)}
       />
     </SectionLayout>
   );

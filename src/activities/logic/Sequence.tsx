@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import SectionLayout from '../../components/SectionLayout';
 import Celebration from '../../components/Celebration';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { playCorrect, playWrong } from '../../utils/sound';
 import { shuffle, pick } from '../../utils/shuffle';
@@ -51,7 +52,8 @@ const STORIES: Story[] = [
 
 export default function Sequence() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
 
   const [story, setStory] = useState<Story>(() => pick(STORIES));
@@ -96,7 +98,7 @@ export default function Sequence() {
   };
 
   return (
-    <SectionLayout title="Puzzle Sequence" emoji="🧠" backTo="/logic" speakText={`${story.name}. Tap steps in order.`}>
+    <SectionLayout title="Puzzle Sequence" emoji="🧠" backTo={`/${grade}/logic`} speakText={`${story.name}. Tap steps in order.`}>
       <div className="kid-card">
         <div className="text-2xl font-extrabold text-center mb-3">{story.name}</div>
         <div className="grid grid-cols-4 gap-2 mb-4">
@@ -121,7 +123,7 @@ export default function Sequence() {
         </div>
         <div className="text-center text-gray-700 mt-3">Round {completed + 1} of 2</div>
       </div>
-      <Celebration show={done} stars={3} onPlayAgain={reset} onHome={() => nav('/logic')} />
+      <Celebration show={done} stars={3} onPlayAgain={reset} onHome={() => nav(`/${grade}/logic`)} />
     </SectionLayout>
   );
 }

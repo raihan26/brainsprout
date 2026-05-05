@@ -5,6 +5,7 @@ import AnswerButton from '../../components/AnswerButton';
 import Celebration from '../../components/Celebration';
 import ProgressStars from '../../components/ProgressStars';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { calcStars } from '../../utils/storage';
 import { playCorrect, playWrong } from '../../utils/sound';
@@ -25,7 +26,8 @@ const ITEMS: Item[] = [
 
 export default function SinkOrFloat() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
 
   const [order] = useState(() => shuffle(ITEMS).slice(0, 6));
@@ -64,7 +66,7 @@ export default function SinkOrFloat() {
   const showFloat = picked ? item.floats : false;
 
   return (
-    <SectionLayout title="Sink or Float" emoji="🛟" backTo="/science" speakText={`Will the ${item.name} sink or float?`}>
+    <SectionLayout title="Sink or Float" emoji="🛟" backTo={`/${grade}/science`} speakText={`Will the ${item.name} sink or float?`}>
       <div className="flex items-center justify-between mb-3">
         <div className="text-lg font-bold text-gray-700">Item {i + 1} of {order.length}</div>
         <ProgressStars value={Math.min(3, Math.round((correct / order.length) * 3))} size="sm" />
@@ -107,7 +109,7 @@ export default function SinkOrFloat() {
         </AnswerButton>
       </div>
 
-      <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav('/science')} />
+      <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav(`/${grade}/science`)} />
     </SectionLayout>
   );
 }

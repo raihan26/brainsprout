@@ -1,3 +1,15 @@
+export type GradeId = 'k' | '1' | '2' | '3';
+
+export type GradeMeta = {
+  id: GradeId;
+  label: string;
+  title: string;
+  emoji: string;
+  color: string;
+  bgGradient: string;
+  description: string;
+};
+
 export type SectionId =
   | 'math'
   | 'science'
@@ -18,6 +30,7 @@ export type Question = {
 
 export type ActivityMeta = {
   id: string;
+  grade: GradeId;
   section: SectionId;
   title: string;
   emoji: string;

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import SectionLayout from '../../components/SectionLayout';
 import Celebration from '../../components/Celebration';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { playCorrect, playEngine, playWrong } from '../../utils/sound';
 
@@ -90,7 +91,8 @@ const STEPS: Step[] = [
 
 export default function BuildCybertruck() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
 
   const [step, setStep] = useState(0);
@@ -127,13 +129,13 @@ export default function BuildCybertruck() {
 
   if (step >= STEPS.length) {
     return (
-      <SectionLayout title="Build a Cybertruck" emoji="🔧" backTo="/trucks">
+      <SectionLayout title="Build a Cybertruck" emoji="🔧" backTo={`/${grade}/trucks`}>
         <div className="kid-card text-center">
           <div className="text-3xl font-extrabold mb-3">Your Cybertruck!</div>
           <FinishedTruck good={picks} />
           <div className="text-lg text-gray-700 mt-3">{correctCount} of {STEPS.length} parts perfect!</div>
         </div>
-        <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav('/trucks')} />
+        <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav(`/${grade}/trucks`)} />
       </SectionLayout>
     );
   }
@@ -141,7 +143,7 @@ export default function BuildCybertruck() {
   const cur = STEPS[step];
 
   return (
-    <SectionLayout title="Build a Cybertruck" emoji="🔧" backTo="/trucks" speakText={cur.prompt}>
+    <SectionLayout title="Build a Cybertruck" emoji="🔧" backTo={`/${grade}/trucks`} speakText={cur.prompt}>
       <div className="kid-card text-center">
         <div className="text-2xl sm:text-3xl font-extrabold">{cur.prompt}</div>
         <div className="text-base text-gray-700 mt-1">Step {step + 1} of {STEPS.length}</div>

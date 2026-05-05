@@ -41,7 +41,7 @@ describe('recordCompletion', () => {
     s = recordCompletion(s, 'math.counting', 1, 5); // 0 stars
     expect(s.activities['math.counting'].stars).toBe(3);
     expect(s.activities['math.counting'].plays).toBe(2);
-    expect(s.totalStars).toBe(3); // shouldn't double count
+    expect(s.totalStars).toBe(3);
   });
 
   it('accumulates totalStars across activities', () => {
@@ -55,19 +55,25 @@ describe('recordCompletion', () => {
 describe('storage round-trip', () => {
   it('saves and loads progress via localStorage', () => {
     const s = recordCompletion(emptyState(), 'math.counting', 5, 5);
-    saveProgress(s);
-    const loaded = loadProgress();
+    saveProgress('k', s);
+    const loaded = loadProgress('k');
     expect(loaded.totalStars).toBe(3);
     expect(loaded.activities['math.counting']?.stars).toBe(3);
   });
 
   it('returns empty state when nothing saved', () => {
-    clearProgress();
-    expect(loadProgress()).toEqual(emptyState());
+    clearProgress('k');
+    expect(loadProgress('k')).toEqual(emptyState());
   });
 
   it('falls back to empty state on corrupt data', () => {
-    window.localStorage.setItem('kinder-learn:progress:v1', '{not json');
-    expect(loadProgress()).toEqual(emptyState());
+    window.localStorage.setItem('brainsprout:progress:k:v1', '{not json');
+    expect(loadProgress('k')).toEqual(emptyState());
+  });
+
+  it('isolates progress by grade', () => {
+    const s = recordCompletion(emptyState(), 'math.counting', 5, 5);
+    saveProgress('k', s);
+    expect(loadProgress('1')).toEqual(emptyState());
   });
 });

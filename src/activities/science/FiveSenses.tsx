@@ -1,4 +1,5 @@
 import QuestionRunner from '../../components/QuestionRunner';
+import { useGrade } from '../../hooks/useGrade';
 import SectionLayout from '../../components/SectionLayout';
 import type { Question } from '../../types';
 
@@ -12,10 +13,10 @@ const QS: Question[] = [
   { id: 's7', prompt: 'Which sense do we use for a yummy cookie?', emoji: '🍪', choices: ['👅 Taste', '👀 Sight', '✋ Touch'], answer: '👅 Taste' },
   { id: 's8', prompt: 'Which sense do we use for a soft blanket?', emoji: '🧸', choices: ['✋ Touch', '👃 Smell', '👂 Hearing'], answer: '✋ Touch' },
 ];
-
 export default function FiveSenses() {
+  const grade = useGrade();
   return (
-    <SectionLayout title="Five Senses" emoji="👀" backTo="/science" speakText="Which sense do we use?">
+    <SectionLayout title="Five Senses" emoji="👀" backTo={`/${grade}/science`} speakText="Which sense do we use?">
       <QuestionRunner activityId="science.senses" homePath="/science" questions={QS} numQuestions={6} />
     </SectionLayout>
   );

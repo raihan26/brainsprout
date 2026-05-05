@@ -1,6 +1,6 @@
-import type { ProgressEntry, ProgressState } from '../types';
+import type { GradeId, ProgressEntry, ProgressState } from '../types';
 
-const KEY = 'kinder-learn:progress:v1';
+const storageKey = (grade: GradeId) => `brainsprout:progress:${grade}:v1`;
 
 export const emptyState = (): ProgressState => ({
   activities: {},
@@ -8,10 +8,10 @@ export const emptyState = (): ProgressState => ({
   lastActivityId: null,
 });
 
-export function loadProgress(): ProgressState {
+export function loadProgress(grade: GradeId): ProgressState {
   if (typeof window === 'undefined') return emptyState();
   try {
-    const raw = window.localStorage.getItem(KEY);
+    const raw = window.localStorage.getItem(storageKey(grade));
     if (!raw) return emptyState();
     const parsed = JSON.parse(raw) as ProgressState;
     if (!parsed || typeof parsed !== 'object' || !parsed.activities) return emptyState();
@@ -21,23 +21,22 @@ export function loadProgress(): ProgressState {
   }
 }
 
-export function saveProgress(state: ProgressState): void {
+export function saveProgress(grade: GradeId, state: ProgressState): void {
   try {
-    window.localStorage.setItem(KEY, JSON.stringify(state));
+    window.localStorage.setItem(storageKey(grade), JSON.stringify(state));
   } catch {
     // ignore quota errors
   }
 }
 
-export function clearProgress(): void {
+export function clearProgress(grade: GradeId): void {
   try {
-    window.localStorage.removeItem(KEY);
+    window.localStorage.removeItem(storageKey(grade));
   } catch {
     // ignore
   }
 }
 
-/** Stars are based on accuracy: 5/5 → 3, 4/5 → 2, 3/5 → 1, less → 0. Generalized to ratio. */
 export function calcStars(correct: number, total: number): number {
   if (total <= 0) return 0;
   const ratio = correct / total;

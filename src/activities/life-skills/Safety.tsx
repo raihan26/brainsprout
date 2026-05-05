@@ -1,4 +1,5 @@
 import QuestionRunner from '../../components/QuestionRunner';
+import { useGrade } from '../../hooks/useGrade';
 import SectionLayout from '../../components/SectionLayout';
 import type { Question } from '../../types';
 
@@ -12,10 +13,10 @@ const QS: Question[] = [
   { id: 's7', prompt: 'At the pool, we…', emoji: '🏊', choices: ['👨‍👩‍👧 Stay with an adult', '🤿 Swim alone', '🎈 Float on a balloon'], answer: '👨‍👩‍👧 Stay with an adult' },
   { id: 's8', prompt: 'A hot drink — what do we do?', emoji: '☕', choices: ['🚫 Do not touch', '🤲 Carry it', '🥤 Drink fast'], answer: '🚫 Do not touch' },
 ];
-
 export default function Safety() {
+  const grade = useGrade();
   return (
-    <SectionLayout title="Safety Basics" emoji="🦺" backTo="/life-skills" speakText="Stay safe! Pick the safe choice.">
+    <SectionLayout title="Safety Basics" emoji="🦺" backTo={`/${grade}/life-skills`} speakText="Stay safe! Pick the safe choice.">
       <QuestionRunner activityId="life.safety" homePath="/life-skills" questions={QS} numQuestions={6} />
     </SectionLayout>
   );

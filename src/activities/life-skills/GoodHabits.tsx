@@ -1,4 +1,5 @@
 import QuestionRunner from '../../components/QuestionRunner';
+import { useGrade } from '../../hooks/useGrade';
 import SectionLayout from '../../components/SectionLayout';
 import type { Question } from '../../types';
 
@@ -12,10 +13,10 @@ const QS: Question[] = [
   { id: 'g7', prompt: 'In the morning, we…', emoji: '☀️', choices: ['🪥 Brush teeth', '🌙 Go to sleep', '🎮 Play games'], answer: '🪥 Brush teeth' },
   { id: 'g8', prompt: 'When someone helps us, we say…', emoji: '🤝', choices: ['💖 Thank you', '👋 Goodbye', '😡 Go away'], answer: '💖 Thank you' },
 ];
-
 export default function GoodHabits() {
+  const grade = useGrade();
   return (
-    <SectionLayout title="Good Habits" emoji="🪥" backTo="/life-skills" speakText="Pick the right habit.">
+    <SectionLayout title="Good Habits" emoji="🪥" backTo={`/${grade}/life-skills`} speakText="Pick the right habit.">
       <QuestionRunner activityId="life.habits" homePath="/life-skills" questions={QS} numQuestions={6} />
     </SectionLayout>
   );

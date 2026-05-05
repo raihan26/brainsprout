@@ -1,4 +1,5 @@
 import QuestionRunner from '../../components/QuestionRunner';
+import { useGrade } from '../../hooks/useGrade';
 import SectionLayout from '../../components/SectionLayout';
 import type { Question } from '../../types';
 
@@ -12,10 +13,10 @@ const QS: Question[] = [
   { id: 'e7', prompt: 'How does this face feel?', emoji: '🥰', choices: ['Loving', 'Mad', 'Sad'], answer: 'Loving' },
   { id: 'e8', prompt: 'How does this face feel?', emoji: '😮', choices: ['Surprised', 'Sleepy', 'Happy'], answer: 'Surprised' },
 ];
-
 export default function Emotions() {
+  const grade = useGrade();
   return (
-    <SectionLayout title="Emotions" emoji="😊" backTo="/life-skills" speakText="How does this face feel?">
+    <SectionLayout title="Emotions" emoji="😊" backTo={`/${grade}/life-skills`} speakText="How does this face feel?">
       <QuestionRunner activityId="life.emotions" homePath="/life-skills" questions={QS} numQuestions={6} />
     </SectionLayout>
   );

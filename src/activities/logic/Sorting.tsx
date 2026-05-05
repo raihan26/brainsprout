@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import SectionLayout from '../../components/SectionLayout';
 import Celebration from '../../components/Celebration';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { playCorrect, playWrong } from '../../utils/sound';
 import { sample } from '../../utils/shuffle';
@@ -34,7 +35,8 @@ const GROUPS: { id: Group; label: string; emoji: string; color: string }[] = [
 
 export default function Sorting() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
   const TOTAL = 8;
 
@@ -72,7 +74,7 @@ export default function Sorting() {
   };
 
   return (
-    <SectionLayout title="Sorting Game" emoji="📦" backTo="/logic" speakText="Tap an item, then tap its group.">
+    <SectionLayout title="Sorting Game" emoji="📦" backTo={`/${grade}/logic`} speakText="Tap an item, then tap its group.">
       <div className="kid-card">
         <div className="text-xl font-extrabold mb-2 text-center">Tap an item, then tap its group</div>
         <div className="bg-yellow-50 rounded-2xl border-4 border-white p-3 min-h-[100px] flex flex-wrap gap-2 justify-center mb-3">
@@ -106,7 +108,7 @@ export default function Sorting() {
         </div>
       </div>
 
-      <Celebration show={done} stars={correct >= TOTAL ? 3 : 2} onPlayAgain={reset} onHome={() => nav('/logic')} />
+      <Celebration show={done} stars={correct >= TOTAL ? 3 : 2} onPlayAgain={reset} onHome={() => nav(`/${grade}/logic`)} />
     </SectionLayout>
   );
 }

@@ -1,4 +1,5 @@
 import QuestionRunner from '../../components/QuestionRunner';
+import { useGrade } from '../../hooks/useGrade';
 import SectionLayout from '../../components/SectionLayout';
 import type { Question } from '../../types';
 
@@ -14,10 +15,10 @@ const QS: Question[] = [
   { id: 'b9', prompt: 'Moon — what sound does it start with?', emoji: '🌙', choices: ['M', 'N', 'L'], answer: 'M' },
   { id: 'b10', prompt: 'Tree — what sound does it start with?', emoji: '🌳', choices: ['T', 'B', 'D'], answer: 'T' },
 ];
-
 export default function BeginningSounds() {
+  const grade = useGrade();
   return (
-    <SectionLayout title="Beginning Sounds" emoji="🔠" backTo="/reading" speakText="What sound does the word start with?">
+    <SectionLayout title="Beginning Sounds" emoji="🔠" backTo={`/${grade}/reading`} speakText="What sound does the word start with?">
       <QuestionRunner activityId="reading.sounds" homePath="/reading" questions={QS} speakChoices numQuestions={6} />
     </SectionLayout>
   );

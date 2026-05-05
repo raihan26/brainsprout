@@ -4,7 +4,7 @@ import { useProgress } from './useProgress';
 
 describe('useProgress', () => {
   it('records a completion and updates total stars', () => {
-    const { result } = renderHook(() => useProgress());
+    const { result } = renderHook(() => useProgress('k'));
     act(() => result.current.record('math.counting', 5, 5));
     expect(result.current.state.totalStars).toBe(3);
     expect(result.current.state.activities['math.counting'].stars).toBe(3);
@@ -12,17 +12,24 @@ describe('useProgress', () => {
   });
 
   it('persists across hook instances via localStorage', () => {
-    const first = renderHook(() => useProgress());
+    const first = renderHook(() => useProgress('k'));
     act(() => first.result.current.record('reading.letters', 4, 5));
-    const second = renderHook(() => useProgress());
+    const second = renderHook(() => useProgress('k'));
     expect(second.result.current.state.activities['reading.letters'].stars).toBe(2);
   });
 
   it('reset clears progress', () => {
-    const { result } = renderHook(() => useProgress());
+    const { result } = renderHook(() => useProgress('k'));
     act(() => result.current.record('math.counting', 5, 5));
     act(() => result.current.reset());
     expect(result.current.state.totalStars).toBe(0);
     expect(result.current.state.activities).toEqual({});
+  });
+
+  it('tracks progress per grade independently', () => {
+    const kinder = renderHook(() => useProgress('k'));
+    act(() => kinder.result.current.record('math.counting', 5, 5));
+    const grade1 = renderHook(() => useProgress('1'));
+    expect(grade1.result.current.state.totalStars).toBe(0);
   });
 });

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import SectionLayout from '../../components/SectionLayout';
 import Celebration from '../../components/Celebration';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { playCorrect, playTap, playWrong } from '../../utils/sound';
 import { sample, shuffle } from '../../utils/shuffle';
@@ -21,7 +22,8 @@ const buildDeck = (mode: Mode): Card[] => {
 
 export default function MemoryMatch() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
 
   const [mode, setMode] = useState<Mode>('easy');
@@ -79,7 +81,7 @@ export default function MemoryMatch() {
   const stars = moves <= ideal ? 3 : moves <= ideal + 2 ? 2 : 1;
 
   return (
-    <SectionLayout title="Memory Match" emoji="🃏" backTo="/logic" speakText="Match the pairs.">
+    <SectionLayout title="Memory Match" emoji="🃏" backTo={`/${grade}/logic`} speakText="Match the pairs.">
       <div className="kid-card">
         <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
           <div className="text-xl font-extrabold">Moves: {moves}</div>
@@ -104,7 +106,7 @@ export default function MemoryMatch() {
           })}
         </div>
       </div>
-      <Celebration show={done} stars={stars} onPlayAgain={() => restart(mode)} onHome={() => nav('/logic')} />
+      <Celebration show={done} stars={stars} onPlayAgain={() => restart(mode)} onHome={() => nav(`/${grade}/logic`)} />
     </SectionLayout>
   );
 }

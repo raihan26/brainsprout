@@ -5,6 +5,7 @@ import AnswerButton from '../../components/AnswerButton';
 import Celebration from '../../components/Celebration';
 import ProgressStars from '../../components/ProgressStars';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { calcStars } from '../../utils/storage';
 import { playCorrect, playWrong } from '../../utils/sound';
@@ -30,7 +31,8 @@ const build = (level: number): Q => {
 
 export default function Addition() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
   const TOTAL = 8;
 
@@ -71,7 +73,7 @@ export default function Addition() {
   const reset = () => { setI(0); setQ(build(0)); setPicked(null); setCorrect(0); setDone(false); };
 
   return (
-    <SectionLayout title="Addition Game" emoji="➕" backTo="/math" speakText={`What is ${q.a} plus ${q.b}?`}>
+    <SectionLayout title="Addition Game" emoji="➕" backTo={`/${grade}/math`} speakText={`What is ${q.a} plus ${q.b}?`}>
       <div className="flex items-center justify-between mb-3">
         <div className="text-lg font-bold text-gray-700">Question {i + 1} of {TOTAL}</div>
         <ProgressStars value={Math.min(3, Math.round((correct / TOTAL) * 3))} size="sm" />
@@ -105,7 +107,7 @@ export default function Addition() {
         })}
       </div>
 
-      <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav('/math')} />
+      <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav(`/${grade}/math`)} />
     </SectionLayout>
   );
 }

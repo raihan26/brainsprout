@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import GradePicker from './pages/GradePicker';
 import Home from './pages/Home';
 import SectionPage from './pages/SectionPage';
 import ParentDashboard from './pages/ParentDashboard';
@@ -45,48 +46,51 @@ import TruckRace from './activities/trucks/TruckRace';
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<GradePicker />} />
       <Route path="/parent" element={<ParentDashboard />} />
-      <Route path="/:sectionId" element={<SectionPage />} />
 
-      <Route path="/math/counting" element={<Counting />} />
-      <Route path="/math/addition" element={<Addition />} />
-      <Route path="/math/subtraction" element={<Subtraction />} />
-      <Route path="/math/tracing" element={<NumberTracing />} />
-      <Route path="/math/order" element={<NumberOrder />} />
+      {/* Grade-prefixed routes */}
+      <Route path="/:grade" element={<Home />} />
+      <Route path="/:grade/:sectionId" element={<SectionPage />} />
 
-      <Route path="/science/sink-or-float" element={<SinkOrFloat />} />
-      <Route path="/science/animal-homes" element={<AnimalHomes />} />
-      <Route path="/science/weather" element={<Weather />} />
-      <Route path="/science/plant" element={<PlantGrowth />} />
-      <Route path="/science/senses" element={<FiveSenses />} />
+      <Route path="/:grade/math/counting" element={<Counting />} />
+      <Route path="/:grade/math/addition" element={<Addition />} />
+      <Route path="/:grade/math/subtraction" element={<Subtraction />} />
+      <Route path="/:grade/math/tracing" element={<NumberTracing />} />
+      <Route path="/:grade/math/order" element={<NumberOrder />} />
 
-      <Route path="/reading/letters" element={<Letters />} />
-      <Route path="/reading/sounds" element={<BeginningSounds />} />
-      <Route path="/reading/words" element={<SimpleWords />} />
-      <Route path="/reading/rhyming" element={<Rhyming />} />
+      <Route path="/:grade/science/sink-or-float" element={<SinkOrFloat />} />
+      <Route path="/:grade/science/animal-homes" element={<AnimalHomes />} />
+      <Route path="/:grade/science/weather" element={<Weather />} />
+      <Route path="/:grade/science/plant" element={<PlantGrowth />} />
+      <Route path="/:grade/science/senses" element={<FiveSenses />} />
 
-      <Route path="/shapes/shapes" element={<ShapeMatching />} />
-      <Route path="/shapes/colors" element={<ColorMatching />} />
-      <Route path="/shapes/find" element={<FindShape />} />
-      <Route path="/shapes/pattern" element={<Pattern />} />
+      <Route path="/:grade/reading/letters" element={<Letters />} />
+      <Route path="/:grade/reading/sounds" element={<BeginningSounds />} />
+      <Route path="/:grade/reading/words" element={<SimpleWords />} />
+      <Route path="/:grade/reading/rhyming" element={<Rhyming />} />
 
-      <Route path="/logic/memory" element={<MemoryMatch />} />
-      <Route path="/logic/odd-one-out" element={<OddOneOut />} />
-      <Route path="/logic/sorting" element={<Sorting />} />
-      <Route path="/logic/sequence" element={<Sequence />} />
+      <Route path="/:grade/shapes/shapes" element={<ShapeMatching />} />
+      <Route path="/:grade/shapes/colors" element={<ColorMatching />} />
+      <Route path="/:grade/shapes/find" element={<FindShape />} />
+      <Route path="/:grade/shapes/pattern" element={<Pattern />} />
 
-      <Route path="/life/food" element={<HealthyFood />} />
-      <Route path="/life/habits" element={<GoodHabits />} />
-      <Route path="/life/emotions" element={<Emotions />} />
-      <Route path="/life/safety" element={<Safety />} />
+      <Route path="/:grade/logic/memory" element={<MemoryMatch />} />
+      <Route path="/:grade/logic/odd-one-out" element={<OddOneOut />} />
+      <Route path="/:grade/logic/sorting" element={<Sorting />} />
+      <Route path="/:grade/logic/sequence" element={<Sequence />} />
 
-      <Route path="/trucks/name" element={<NameTheTruck />} />
-      <Route path="/trucks/count" element={<CountTrucks />} />
-      <Route path="/trucks/math" element={<TruckMath />} />
-      <Route path="/trucks/sounds" element={<TruckSounds />} />
-      <Route path="/trucks/build" element={<BuildCybertruck />} />
-      <Route path="/trucks/race" element={<TruckRace />} />
+      <Route path="/:grade/life/food" element={<HealthyFood />} />
+      <Route path="/:grade/life/habits" element={<GoodHabits />} />
+      <Route path="/:grade/life/emotions" element={<Emotions />} />
+      <Route path="/:grade/life/safety" element={<Safety />} />
+
+      <Route path="/:grade/trucks/name" element={<NameTheTruck />} />
+      <Route path="/:grade/trucks/count" element={<CountTrucks />} />
+      <Route path="/:grade/trucks/math" element={<TruckMath />} />
+      <Route path="/:grade/trucks/sounds" element={<TruckSounds />} />
+      <Route path="/:grade/trucks/build" element={<BuildCybertruck />} />
+      <Route path="/:grade/trucks/race" element={<TruckRace />} />
     </Routes>
   );
 }

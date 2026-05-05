@@ -6,6 +6,7 @@ import Celebration from '../../components/Celebration';
 import ProgressStars from '../../components/ProgressStars';
 import SpeakButton from '../../components/SpeakButton';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { calcStars } from '../../utils/storage';
 import { playCorrect, playWrong } from '../../utils/sound';
@@ -34,7 +35,8 @@ const build = (): Q => {
 
 export default function SimpleWords() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
   const TOTAL = 8;
 
@@ -66,7 +68,7 @@ export default function SimpleWords() {
   const reset = () => { setI(0); setQ(build()); setPicked(null); setCorrect(0); setDone(false); };
 
   return (
-    <SectionLayout title="Simple Words" emoji="🐱" backTo="/reading" speakText={`What word is this?`}>
+    <SectionLayout title="Simple Words" emoji="🐱" backTo={`/${grade}/reading`} speakText={`What word is this?`}>
       <div className="flex items-center justify-between mb-3">
         <div className="text-lg font-bold text-gray-700">Question {i + 1} of {TOTAL}</div>
         <ProgressStars value={Math.min(3, Math.round((correct / TOTAL) * 3))} size="sm" />
@@ -86,7 +88,7 @@ export default function SimpleWords() {
           );
         })}
       </div>
-      <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav('/reading')} />
+      <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav(`/${grade}/reading`)} />
     </SectionLayout>
   );
 }

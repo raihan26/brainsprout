@@ -6,6 +6,7 @@ import Celebration from '../../components/Celebration';
 import ProgressStars from '../../components/ProgressStars';
 import TruckSvg, { type TruckId, TRUCK_NAMES } from '../../components/TruckSvg';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { calcStars } from '../../utils/storage';
 import { playCorrect, playWrong } from '../../utils/sound';
@@ -32,7 +33,8 @@ const build = (level: number): Q => {
 
 export default function TruckMath() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
   const TOTAL = 8;
 
@@ -68,7 +70,7 @@ export default function TruckMath() {
     <SectionLayout
       title="Truck Math"
       emoji="🧮"
-      backTo="/trucks"
+      backTo={`/${grade}/trucks`}
       speakText={`${q.a} ${TRUCK_NAMES[q.t1]}s plus ${q.b} ${TRUCK_NAMES[q.t2]}s equals what?`}
     >
       <div className="flex items-center justify-between mb-3">
@@ -104,7 +106,7 @@ export default function TruckMath() {
           );
         })}
       </div>
-      <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav('/trucks')} />
+      <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav(`/${grade}/trucks`)} />
     </SectionLayout>
   );
 }

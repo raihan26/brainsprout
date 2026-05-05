@@ -5,6 +5,7 @@ import AnswerButton from '../../components/AnswerButton';
 import Celebration from '../../components/Celebration';
 import ProgressStars from '../../components/ProgressStars';
 import { useProgress } from '../../hooks/useProgress';
+import { useGrade } from '../../hooks/useGrade';
 import { useSpeech } from '../../hooks/useSpeech';
 import { calcStars } from '../../utils/storage';
 import { playCorrect, playWrong } from '../../utils/sound';
@@ -42,7 +43,8 @@ const build = (): Q => {
 
 export default function Subtraction() {
   const nav = useNavigate();
-  const { record } = useProgress();
+  const grade = useGrade();
+  const { record } = useProgress(grade);
   const { speak } = useSpeech();
   const TOTAL = 8;
 
@@ -83,7 +85,7 @@ export default function Subtraction() {
   const reset = () => { setI(0); setQ(build()); setPicked(null); setCorrect(0); setDone(false); };
 
   return (
-    <SectionLayout title="Subtraction Game" emoji="➖" backTo="/math" speakText={`There are ${q.start} ${q.label}. ${q.remove} ${q.verb}. How many are left?`}>
+    <SectionLayout title="Subtraction Game" emoji="➖" backTo={`/${grade}/math`} speakText={`There are ${q.start} ${q.label}. ${q.remove} ${q.verb}. How many are left?`}>
       <div className="flex items-center justify-between mb-3">
         <div className="text-lg font-bold text-gray-700">Question {i + 1} of {TOTAL}</div>
         <ProgressStars value={Math.min(3, Math.round((correct / TOTAL) * 3))} size="sm" />
@@ -121,7 +123,7 @@ export default function Subtraction() {
         })}
       </div>
 
-      <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav('/math')} />
+      <Celebration show={done} stars={stars} onPlayAgain={reset} onHome={() => nav(`/${grade}/math`)} />
     </SectionLayout>
   );
 }
