@@ -3,39 +3,34 @@ import GradePicker from './pages/GradePicker';
 import Home from './pages/Home';
 import SectionPage from './pages/SectionPage';
 import ParentDashboard from './pages/ParentDashboard';
-// Math
+import KindergartenActivity from './pages/KindergartenActivity';
+// Legacy activities kept for grade 1-3 (they still use the old QuestionRunner)
 import Counting from './activities/math/Counting';
 import Addition from './activities/math/Addition';
 import Subtraction from './activities/math/Subtraction';
 import NumberTracing from './activities/math/NumberTracing';
 import NumberOrder from './activities/math/NumberOrder';
-// Science
 import SinkOrFloat from './activities/science/SinkOrFloat';
 import AnimalHomes from './activities/science/AnimalHomes';
 import Weather from './activities/science/Weather';
 import PlantGrowth from './activities/science/PlantGrowth';
 import FiveSenses from './activities/science/FiveSenses';
-// Reading
 import Letters from './activities/reading/Letters';
 import BeginningSounds from './activities/reading/BeginningSounds';
 import SimpleWords from './activities/reading/SimpleWords';
 import Rhyming from './activities/reading/Rhyming';
-// Shapes & Colors
 import ShapeMatching from './activities/shapes/ShapeMatching';
 import ColorMatching from './activities/shapes/ColorMatching';
 import FindShape from './activities/shapes/FindShape';
 import Pattern from './activities/shapes/Pattern';
-// Logic
 import MemoryMatch from './activities/logic/MemoryMatch';
 import OddOneOut from './activities/logic/OddOneOut';
 import Sorting from './activities/logic/Sorting';
 import Sequence from './activities/logic/Sequence';
-// Life skills
 import HealthyFood from './activities/life-skills/HealthyFood';
 import GoodHabits from './activities/life-skills/GoodHabits';
 import Emotions from './activities/life-skills/Emotions';
 import Safety from './activities/life-skills/Safety';
-// Trucks
 import NameTheTruck from './activities/trucks/NameTheTruck';
 import CountTrucks from './activities/trucks/CountTrucks';
 import TruckMath from './activities/trucks/TruckMath';
@@ -53,6 +48,10 @@ export default function App() {
       <Route path="/:grade" element={<Home />} />
       <Route path="/:grade/:sectionId" element={<SectionPage />} />
 
+      {/* Kindergarten new data-driven activities */}
+      <Route path="/k/:worldId/:activitySlug" element={<KindergartenActivity />} />
+
+      {/* Legacy routes for grades 1-3 (and backward compat for K) */}
       <Route path="/:grade/math/counting" element={<Counting />} />
       <Route path="/:grade/math/addition" element={<Addition />} />
       <Route path="/:grade/math/subtraction" element={<Subtraction />} />

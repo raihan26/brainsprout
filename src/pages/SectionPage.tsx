@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { sectionsByGrade, activitiesBySection } from '../data/activities';
 import SectionLayout from '../components/SectionLayout';
 import ActivityCard from '../components/ActivityCard';
-import { useProgress } from '../hooks/useProgress';
+import { useProgressV2 } from '../hooks/useProgressV2';
 import { useGrade } from '../hooks/useGrade';
 import type { SectionId } from '../types';
 
@@ -11,7 +11,7 @@ export default function SectionPage() {
   const { sectionId } = useParams<{ sectionId: string }>();
   const sections = sectionsByGrade(grade);
   const section = sections.find((s) => s.id === sectionId);
-  const { state } = useProgress(grade);
+  const { progress } = useProgressV2(grade);
 
   if (!section) {
     return (
@@ -39,7 +39,7 @@ export default function SectionPage() {
             emoji={a.emoji}
             title={a.title}
             description={a.description}
-            stars={state.activities[a.id]?.stars ?? 0}
+            stars={progress.activityBestStars[a.id] ?? 0}
             color={section.color}
           />
         ))}
