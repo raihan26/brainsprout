@@ -47,14 +47,14 @@ export default function ParentDashboard() {
   const hasData = progress.activityAttempts.length > 0;
 
   return (
-    <div className="min-h-screen bg-gray-50 px-3 sm:px-6 py-4 max-w-5xl mx-auto">
+    <div className="min-h-screen px-3 sm:px-6 py-5 max-w-5xl mx-auto">
       <header className="flex items-center justify-between flex-wrap gap-3 mb-6">
         <div className="flex items-center gap-3">
-          <Link to={`/${selectedGrade}`} className="text-lg font-semibold text-gray-600 hover:text-gray-900 no-underline">
+          <Link to={`/${selectedGrade}`} className="text-base font-body font-semibold text-slate/60 hover:text-slate no-underline">
             ← Back to {GRADES.find((g) => g.id === selectedGrade)?.title}
           </Link>
         </div>
-        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Parent Dashboard</h1>
+        <h1 className="text-2xl sm:text-3xl font-display font-bold text-slate">Parent Dashboard</h1>
       </header>
 
       {/* Grade selector */}

@@ -8,6 +8,7 @@ export const GRADES: GradeMeta[] = [
     emoji: '🌈',
     color: 'sun',
     bgGradient: 'from-yellow-200 via-orange-100 to-pink-100',
+    accentColor: '#f4a261',
     description: 'Colors, shapes, counting & first letters!',
   },
   {
@@ -17,6 +18,7 @@ export const GRADES: GradeMeta[] = [
     emoji: '🚀',
     color: 'sky',
     bgGradient: 'from-sky-200 via-blue-100 to-indigo-100',
+    accentColor: '#219ebc',
     description: 'Addition, subtraction & reading words!',
   },
   {
@@ -26,6 +28,7 @@ export const GRADES: GradeMeta[] = [
     emoji: '⚡',
     color: 'grass',
     bgGradient: 'from-emerald-200 via-green-100 to-teal-100',
+    accentColor: '#2a9d8f',
     description: 'Multiplication, stories & science!',
   },
   {
@@ -35,6 +38,7 @@ export const GRADES: GradeMeta[] = [
     emoji: '🏆',
     color: 'plum',
     bgGradient: 'from-purple-200 via-fuchsia-100 to-pink-100',
+    accentColor: '#7b2cbf',
     description: 'Division, paragraphs & experiments!',
   },
 ];

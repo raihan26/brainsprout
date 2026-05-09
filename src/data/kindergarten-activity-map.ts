@@ -37,6 +37,7 @@ import {
   vehicleSoundsQuestions,
   vehicleJobsQuestions,
   vehicleSizeQuestions,
+  truckMathQuestions,
 } from './kindergarten-questions';
 
 type ActivityConfig = {
@@ -441,7 +442,7 @@ export const KINDERGARTEN_ACTIVITY_MAP: Record<string, ActivityConfig> = {
     emoji: '🧮',
     worldId: 'trucks',
     backPath: 'trucks',
-    questions: additionQuestions,
+    questions: truckMathQuestions,
     skillIds: ['addition-within-5', 'vehicle-counting'],
     numQuestions: 6,
   },

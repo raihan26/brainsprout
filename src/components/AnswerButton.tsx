@@ -40,11 +40,11 @@ export default function AnswerButton({
 
   const stateRing =
     state === 'correct'
-      ? 'ring-4 ring-green-400 ring-offset-2'
+      ? 'ring-4 ring-emerald-400 ring-offset-2 brightness-110'
       : state === 'wrong'
-        ? 'ring-4 ring-red-400 ring-offset-2'
+        ? 'ring-4 ring-red-400 ring-offset-2 opacity-70'
         : '';
-  const sizeCls = size === 'lg' ? 'text-3xl py-6 px-6 min-h-[80px]' : 'text-2xl py-4 px-5';
+  const sizeCls = size === 'lg' ? 'text-2xl sm:text-3xl py-5 px-5 min-h-[72px]' : 'text-xl sm:text-2xl py-4 px-5';
 
   return (
     <button
@@ -52,7 +52,7 @@ export default function AnswerButton({
       onClick={onClick}
       disabled={disabled}
       aria-label={ariaLabel}
-      className={`${colorMap[color]} ${sizeCls} ${stateRing} ${shake ? 'animate-shake' : ''} w-full`}
+      className={`${colorMap[color]} ${sizeCls} ${stateRing} ${shake ? 'animate-shake' : ''} w-full font-body`}
     >
       {children}
     </button>

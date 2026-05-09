@@ -20,51 +20,52 @@ export default function Home() {
     : null;
 
   return (
-    <div className="min-h-screen px-3 sm:px-6 py-4 max-w-5xl mx-auto">
+    <div className="min-h-screen px-3 sm:px-6 py-5 max-w-5xl mx-auto">
       <header className="flex items-center justify-between flex-wrap gap-3">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <Link to="/" className="text-4xl animate-floaty no-underline" aria-label="Change grade">
             {gradeMeta.emoji}
           </Link>
           <div>
-            <div className="text-3xl sm:text-4xl font-extrabold">BrainSprout</div>
-            <div className="text-sm text-gray-700">{gradeMeta.title} — {gradeMeta.description}</div>
+            <div className="text-3xl sm:text-4xl font-display font-bold text-slate">BrainSprout</div>
+            <div className="text-sm text-slate/60 font-body">{gradeMeta.title} — {gradeMeta.description}</div>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <div className="kid-card !p-3 inline-flex items-center gap-2">
             <span aria-hidden="true">⭐</span>
-            <span className="font-extrabold text-xl">{progress.totalStars}</span>
+            <span className="font-display font-bold text-xl text-slate">{progress.totalStars}</span>
           </div>
           <VoiceToggle />
-          <Link to="/parent" className="kid-btn-light text-lg px-4 py-3">
+          <Link to="/parent" className="kid-btn-light !text-base !px-4 !py-2.5">
             👪 Parents
           </Link>
         </div>
       </header>
 
-      <main className="mt-6">
+      <main className="mt-8">
         {grade === 'k' && <TruckBanner />}
 
-        {/* Continue Learning / Recommended Next */}
+        {/* Continue Learning / Recommended */}
         {(lastActivity || recommendations.length > 0) && (
-          <div className="mb-5">
+          <div className="mb-6">
             {lastActivity && (
               <Link
                 to={`/${grade}${lastActivity.path}`}
-                className="kid-card bg-gradient-to-r from-indigo-50 to-purple-50 flex items-center gap-4 no-underline text-gray-900 hover:-translate-y-0.5 transition mb-3"
+                className="kid-card flex items-center gap-4 no-underline text-slate hover:-translate-y-0.5 hover:shadow-kidHover transition-all mb-3"
+                style={{ borderLeft: `4px solid ${gradeMeta.accentColor}` }}
               >
                 <span className="text-5xl">{lastActivity.emoji}</span>
                 <div>
-                  <div className="text-xs text-gray-500 font-semibold uppercase">Continue Learning</div>
-                  <div className="text-xl font-bold">{lastActivity.title}</div>
-                  <div className="text-sm text-gray-600">{lastActivity.description}</div>
+                  <div className="text-xs text-slate/50 font-display font-semibold uppercase tracking-wide">Continue Learning</div>
+                  <div className="text-xl font-display font-bold">{lastActivity.title}</div>
+                  <div className="text-sm text-slate/60 font-body">{lastActivity.description}</div>
                 </div>
               </Link>
             )}
             {recommendations.length > 0 && !lastActivity && (
-              <div className="kid-card bg-gradient-to-r from-green-50 to-emerald-50">
-                <div className="text-xs text-gray-500 font-semibold uppercase mb-1">Suggested Next</div>
+              <div className="kid-card" style={{ borderLeft: '4px solid #2a9d8f' }}>
+                <div className="text-xs text-slate/50 font-display font-semibold uppercase tracking-wide mb-2">Suggested Next</div>
                 {recommendations.map((rec) => {
                   const a = ACTIVITIES.find((act) => act.id === rec.activityId);
                   if (!a) return null;
@@ -72,12 +73,12 @@ export default function Home() {
                     <Link
                       key={rec.activityId}
                       to={`/${grade}${a.path}`}
-                      className="flex items-center gap-3 no-underline text-gray-900"
+                      className="flex items-center gap-3 no-underline text-slate"
                     >
                       <span className="text-4xl">{a.emoji}</span>
                       <div>
-                        <div className="text-lg font-bold">{a.title}</div>
-                        <div className="text-sm text-gray-600">{rec.reason}</div>
+                        <div className="text-lg font-display font-bold">{a.title}</div>
+                        <div className="text-sm text-slate/60 font-body">{rec.reason}</div>
                       </div>
                     </Link>
                   );
@@ -89,18 +90,23 @@ export default function Home() {
 
         <h2 className="sr-only">Choose a learning world</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {sections.map((s) => (
+          {sections.map((s, i) => (
             <Link
               key={s.id}
               to={`/${grade}/${s.id}`}
-              className={`kid-card group bg-gradient-to-br ${gradient(s.color)} no-underline text-gray-900 hover:-translate-y-1 transition`}
+              className="kid-card group no-underline text-slate hover:-translate-y-1 hover:shadow-kidHover transition-all animate-slide-up"
+              style={{ animationDelay: `${i * 60}ms` }}
             >
-              <div className="text-7xl text-center group-hover:animate-wiggle" aria-hidden="true">
+              <div
+                className="absolute top-0 left-0 right-0 h-1 rounded-t-4xl"
+                style={{ background: sectionAccent(s.color) }}
+              />
+              <div className="text-6xl sm:text-7xl text-center group-hover:animate-wiggle" aria-hidden="true">
                 {s.emoji}
               </div>
               <div className="mt-3 text-center">
-                <div className="text-2xl font-extrabold">{s.title}</div>
-                <div className="text-base text-gray-700">{s.tagline}</div>
+                <div className="text-xl sm:text-2xl font-display font-bold">{s.title}</div>
+                <div className="text-sm text-slate/60 font-body mt-0.5">{s.tagline}</div>
               </div>
               <div className="mt-3 text-center">
                 <ProgressStars value={countSectionStars(progress.activityBestStars, s.id)} max={3} size="sm" />
@@ -113,13 +119,13 @@ export default function Home() {
   );
 }
 
-function gradient(color: 'sun' | 'sky' | 'grass' | 'berry' | 'plum'): string {
+function sectionAccent(color: 'sun' | 'sky' | 'grass' | 'berry' | 'plum'): string {
   return {
-    sun: 'from-yellow-100 to-orange-100',
-    sky: 'from-sky-100 to-blue-100',
-    grass: 'from-emerald-100 to-green-100',
-    berry: 'from-pink-100 to-rose-100',
-    plum: 'from-purple-100 to-fuchsia-100',
+    sun: '#f4a261',
+    sky: '#219ebc',
+    grass: '#2a9d8f',
+    berry: '#e76f51',
+    plum: '#7b2cbf',
   }[color];
 }
 

@@ -168,12 +168,12 @@ export default function ActivityShell({
     return (
       <SectionLayout title={title} emoji={emoji} backTo={`/${grade}/${backPath}`}>
         <div className="kid-card text-center max-w-md mx-auto">
-          <div className="text-8xl mb-4 animate-floaty" aria-hidden="true">{emoji}</div>
-          <h2 className="text-2xl font-extrabold mb-2">{title}</h2>
-          <p className="text-lg text-gray-700 mb-1">{set.length} questions</p>
+          <div className="text-7xl sm:text-8xl mb-4 animate-floaty" aria-hidden="true">{emoji}</div>
+          <h2 className="text-2xl font-display font-bold mb-2 text-slate">{title}</h2>
+          <p className="text-lg text-slate/60 font-body mb-1">{set.length} questions</p>
           {bestStars > 0 && (
             <div className="mb-3">
-              <span className="text-sm text-gray-600">Your best: </span>
+              <span className="text-sm text-slate/50 font-body">Your best: </span>
               <ProgressStars value={bestStars} size="sm" />
             </div>
           )}
@@ -182,7 +182,7 @@ export default function ActivityShell({
             onClick={handleStart}
             className="kid-btn-green text-2xl w-full mt-4"
           >
-            Let's Go! 🚀
+            Let's Go!
           </button>
         </div>
       </SectionLayout>
@@ -199,14 +199,14 @@ export default function ActivityShell({
       speakText={q.speakText ?? q.prompt}
     >
       <div className="flex items-center justify-between mb-3">
-        <div className="text-lg font-bold text-gray-700">
+        <div className="text-base font-display font-semibold text-slate/70">
           {index + 1} of {set.length}
         </div>
         <ProgressStars value={Math.min(3, Math.round((correct / set.length) * 3))} size="sm" />
       </div>
 
       {/* Progress bar */}
-      <div className="h-2 rounded-full bg-gray-200 mb-5 overflow-hidden">
+      <div className="h-2.5 rounded-full bg-slate/10 mb-5 overflow-hidden">
         <div
           className="h-full bg-grass rounded-full transition-all duration-500"
           style={{ width: `${((index + (picked ? 1 : 0)) / set.length) * 100}%` }}
@@ -220,11 +220,11 @@ export default function ActivityShell({
           </div>
         )}
         {q.emoji && !q.visual && (
-          <div className="text-7xl sm:text-8xl mb-3 animate-floaty" aria-hidden="true">
+          <div className="text-6xl sm:text-7xl mb-3 animate-floaty" aria-hidden="true">
             {q.emoji}
           </div>
         )}
-        <div className="text-2xl sm:text-3xl font-extrabold text-gray-900">{q.prompt}</div>
+        <div className="text-2xl sm:text-3xl font-display font-bold text-slate">{q.prompt}</div>
         <div className="mt-2">
           <SpeakButton text={q.speakText ?? q.prompt} label="Read to me" />
         </div>

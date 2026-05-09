@@ -11,6 +11,14 @@ export const countingObjectsQuestions: Question[] = [
   { id: 'co-6', prompt: 'How many hearts?', speakText: 'How many hearts do you see?', visual: '❤️', choices: ['1', '2', '3'], answer: '1', skillIds: ['counting', 'one-to-one-correspondence'] },
   { id: 'co-7', prompt: 'How many balloons?', speakText: 'How many balloons do you see?', visual: '🎈🎈🎈🎈🎈🎈🎈', choices: ['6', '7', '8'], answer: '7', skillIds: ['counting', 'one-to-one-correspondence'] },
   { id: 'co-8', prompt: 'How many cats?', speakText: 'How many cats do you see?', visual: '🐱🐱🐱🐱🐱🐱🐱🐱', choices: ['7', '8', '9'], answer: '8', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-9', prompt: 'How many butterflies?', speakText: 'How many butterflies do you see?', visual: '🦋🦋🦋🦋🦋🦋🦋🦋🦋', choices: ['8', '9', '10'], answer: '9', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-10', prompt: 'How many moons?', speakText: 'How many moons do you see?', visual: '🌙🌙🌙🌙🌙🌙🌙🌙🌙🌙', choices: ['9', '10', '11'], answer: '10', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-11', prompt: 'How many bees?', speakText: 'How many bees do you see?', visual: '🐝🐝🐝', choices: ['2', '3', '4'], answer: '3', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-12', prompt: 'How many trees?', speakText: 'How many trees do you see?', visual: '🌳🌳🌳🌳🌳', choices: ['4', '5', '6'], answer: '5', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-13', prompt: 'How many rockets?', speakText: 'How many rockets do you see?', visual: '🚀🚀🚀🚀', choices: ['3', '4', '5'], answer: '4', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-14', prompt: 'How many birds?', speakText: 'How many birds do you see?', visual: '🐦🐦🐦🐦🐦🐦', choices: ['5', '6', '7'], answer: '6', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-15', prompt: 'How many suns?', speakText: 'How many suns do you see?', visual: '☀️☀️', choices: ['1', '2', '3'], answer: '2', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-16', prompt: 'How many ladybugs?', speakText: 'How many ladybugs do you see?', visual: '🐞🐞🐞🐞🐞🐞🐞', choices: ['6', '7', '8'], answer: '7', skillIds: ['counting', 'one-to-one-correspondence'] },
 ];
 
 export const numberRecognitionQuestions: Question[] = [
@@ -20,6 +28,15 @@ export const numberRecognitionQuestions: Question[] = [
   { id: 'nr-4', prompt: 'Which number is this?', visual: '9️⃣', choices: ['8', '9', '10'], answer: '9', skillIds: ['number-recognition'] },
   { id: 'nr-5', prompt: 'Which number is this?', visual: '1️⃣', choices: ['1', '2', '3'], answer: '1', skillIds: ['number-recognition'] },
   { id: 'nr-6', prompt: 'Which number is this?', visual: '4️⃣', choices: ['3', '4', '5'], answer: '4', skillIds: ['number-recognition'] },
+  { id: 'nr-7', prompt: 'Which number is this?', visual: '2️⃣', choices: ['1', '2', '3'], answer: '2', skillIds: ['number-recognition'] },
+  { id: 'nr-8', prompt: 'Which number is this?', visual: '6️⃣', choices: ['5', '6', '7'], answer: '6', skillIds: ['number-recognition'] },
+  { id: 'nr-9', prompt: 'Which number is this?', visual: '8️⃣', choices: ['7', '8', '9'], answer: '8', skillIds: ['number-recognition'] },
+  { id: 'nr-10', prompt: 'Which number is this?', visual: '🔟', choices: ['9', '10', '11'], answer: '10', skillIds: ['number-recognition'] },
+  { id: 'nr-11', prompt: 'Show me the number 5', choices: ['3', '5', '7'], answer: '5', skillIds: ['number-recognition'] },
+  { id: 'nr-12', prompt: 'Show me the number 2', choices: ['2', '4', '6'], answer: '2', skillIds: ['number-recognition'] },
+  { id: 'nr-13', prompt: 'Show me the number 8', choices: ['6', '8', '10'], answer: '8', skillIds: ['number-recognition'] },
+  { id: 'nr-14', prompt: 'Show me the number 1', choices: ['0', '1', '2'], answer: '1', skillIds: ['number-recognition'] },
+  { id: 'nr-15', prompt: 'Show me the number 10', choices: ['8', '9', '10'], answer: '10', skillIds: ['number-recognition'] },
 ];
 
 export const moreLessQuestions: Question[] = [
@@ -29,6 +46,15 @@ export const moreLessQuestions: Question[] = [
   { id: 'ml-4', prompt: 'Which is MORE?', choices: ['3', '7'], answer: '7', skillIds: ['more-less', 'number-recognition'] },
   { id: 'ml-5', prompt: 'Which is LESS?', choices: ['9', '4'], answer: '4', skillIds: ['more-less', 'number-recognition'] },
   { id: 'ml-6', prompt: 'Which group has MORE?', visual: '🌸🌸🌸🌸🌸 or 🌸🌸🌸', choices: ['Left (5)', 'Right (3)'], answer: 'Left (5)', skillIds: ['more-less', 'counting'] },
+  { id: 'ml-7', prompt: 'Which is MORE?', choices: ['1', '6'], answer: '6', skillIds: ['more-less', 'number-recognition'] },
+  { id: 'ml-8', prompt: 'Which is LESS?', choices: ['5', '2'], answer: '2', skillIds: ['more-less', 'number-recognition'] },
+  { id: 'ml-9', prompt: 'Which group has LESS?', visual: '🎈🎈🎈🎈🎈🎈 or 🎈🎈🎈', choices: ['Left (6)', 'Right (3)'], answer: 'Right (3)', skillIds: ['more-less', 'counting'] },
+  { id: 'ml-10', prompt: 'Which is MORE?', choices: ['8', '4'], answer: '8', skillIds: ['more-less', 'number-recognition'] },
+  { id: 'ml-11', prompt: 'Which is LESS?', choices: ['10', '7'], answer: '7', skillIds: ['more-less', 'number-recognition'] },
+  { id: 'ml-12', prompt: 'Which group has MORE?', visual: '🐝🐝🐝🐝 or 🐝🐝🐝🐝🐝🐝🐝', choices: ['Left (4)', 'Right (7)'], answer: 'Right (7)', skillIds: ['more-less', 'counting'] },
+  { id: 'ml-13', prompt: 'Which is MORE?', choices: ['2', '9'], answer: '9', skillIds: ['more-less', 'number-recognition'] },
+  { id: 'ml-14', prompt: 'Which is LESS?', choices: ['6', '3'], answer: '3', skillIds: ['more-less', 'number-recognition'] },
+  { id: 'ml-15', prompt: 'Which group has LESS?', visual: '🦋🦋 or 🦋🦋🦋🦋🦋', choices: ['Left (2)', 'Right (5)'], answer: 'Left (2)', skillIds: ['more-less', 'counting'] },
 ];
 
 export const additionQuestions: Question[] = [
@@ -40,6 +66,14 @@ export const additionQuestions: Question[] = [
   { id: 'add-6', prompt: '1 + 2 = ?', speakText: 'What is one plus two?', visual: '🎈 + 🎈🎈', choices: ['2', '3', '4'], answer: '3', skillIds: ['addition-within-5'] },
   { id: 'add-7', prompt: '3 + 2 = ?', speakText: 'What is three plus two?', visual: '🌸🌸🌸 + 🌸🌸', choices: ['4', '5', '6'], answer: '5', skillIds: ['addition-within-5'] },
   { id: 'add-8', prompt: '4 + 1 = ?', speakText: 'What is four plus one?', visual: '❤️❤️❤️❤️ + ❤️', choices: ['4', '5', '6'], answer: '5', skillIds: ['addition-within-5'] },
+  { id: 'add-9', prompt: '1 + 3 = ?', speakText: 'What is one plus three?', visual: '🌙 + 🌙🌙🌙', choices: ['3', '4', '5'], answer: '4', skillIds: ['addition-within-5'] },
+  { id: 'add-10', prompt: '1 + 4 = ?', speakText: 'What is one plus four?', visual: '🐝 + 🐝🐝🐝🐝', choices: ['4', '5', '6'], answer: '5', skillIds: ['addition-within-5'] },
+  { id: 'add-11', prompt: '0 + 3 = ?', speakText: 'What is zero plus three?', choices: ['2', '3', '4'], answer: '3', skillIds: ['addition-within-5'] },
+  { id: 'add-12', prompt: '0 + 5 = ?', speakText: 'What is zero plus five?', choices: ['4', '5', '6'], answer: '5', skillIds: ['addition-within-5'] },
+  { id: 'add-13', prompt: '4 + 0 = ?', speakText: 'What is four plus zero?', choices: ['3', '4', '5'], answer: '4', skillIds: ['addition-within-5'] },
+  { id: 'add-14', prompt: '2 + 2 = ?', speakText: 'What is two plus two?', visual: '🦋🦋 + 🦋🦋', choices: ['2', '3', '4'], answer: '4', skillIds: ['addition-within-5'] },
+  { id: 'add-15', prompt: '3 + 0 = ?', speakText: 'What is three plus zero?', choices: ['2', '3', '4'], answer: '3', skillIds: ['addition-within-5'] },
+  { id: 'add-16', prompt: '0 + 1 = ?', speakText: 'What is zero plus one?', choices: ['0', '1', '2'], answer: '1', skillIds: ['addition-within-5'] },
 ];
 
 export const subtractionQuestions: Question[] = [
@@ -50,6 +84,14 @@ export const subtractionQuestions: Question[] = [
   { id: 'sub-5', prompt: '5 - 3 = ?', speakText: 'What is five minus three?', visual: '🎈🎈🎈🎈🎈 take away 🎈🎈🎈', choices: ['1', '2', '3'], answer: '2', skillIds: ['subtraction-within-5'] },
   { id: 'sub-6', prompt: '4 - 1 = ?', speakText: 'What is four minus one?', visual: '🌸🌸🌸🌸 take away 🌸', choices: ['2', '3', '4'], answer: '3', skillIds: ['subtraction-within-5'] },
   { id: 'sub-7', prompt: '5 - 2 = ?', speakText: 'What is five minus two?', visual: '❤️❤️❤️❤️❤️ take away ❤️❤️', choices: ['2', '3', '4'], answer: '3', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-8', prompt: '3 - 2 = ?', speakText: 'What is three minus two?', visual: '🌙🌙🌙 take away 🌙🌙', choices: ['0', '1', '2'], answer: '1', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-9', prompt: '5 - 4 = ?', speakText: 'What is five minus four?', visual: '🐝🐝🐝🐝🐝 take away 🐝🐝🐝🐝', choices: ['0', '1', '2'], answer: '1', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-10', prompt: '4 - 3 = ?', speakText: 'What is four minus three?', visual: '🦋🦋🦋🦋 take away 🦋🦋🦋', choices: ['0', '1', '2'], answer: '1', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-11', prompt: '5 - 5 = ?', speakText: 'What is five minus five?', choices: ['0', '1', '2'], answer: '0', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-12', prompt: '3 - 0 = ?', speakText: 'What is three minus zero?', choices: ['2', '3', '4'], answer: '3', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-13', prompt: '4 - 4 = ?', speakText: 'What is four minus four?', choices: ['0', '1', '2'], answer: '0', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-14', prompt: '5 - 0 = ?', speakText: 'What is five minus zero?', choices: ['3', '4', '5'], answer: '5', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-15', prompt: '2 - 2 = ?', speakText: 'What is two minus two?', choices: ['0', '1', '2'], answer: '0', skillIds: ['subtraction-within-5'] },
 ];
 
 export const numberOrderQuestions: Question[] = [
@@ -59,6 +101,15 @@ export const numberOrderQuestions: Question[] = [
   { id: 'no-4', prompt: 'What comes between 2 and 4?', speakText: 'What number is between two and four?', choices: ['1', '3', '5'], answer: '3', skillIds: ['number-order'] },
   { id: 'no-5', prompt: 'What comes after 9?', speakText: 'What number comes after nine?', choices: ['8', '10', '11'], answer: '10', skillIds: ['number-order'] },
   { id: 'no-6', prompt: 'What comes before 1?', speakText: 'What number comes before one?', choices: ['0', '2', '3'], answer: '0', skillIds: ['number-order'] },
+  { id: 'no-7', prompt: 'What comes after 5?', speakText: 'What number comes after five?', choices: ['4', '6', '7'], answer: '6', skillIds: ['number-order'] },
+  { id: 'no-8', prompt: 'What comes before 8?', speakText: 'What number comes before eight?', choices: ['6', '7', '9'], answer: '7', skillIds: ['number-order'] },
+  { id: 'no-9', prompt: 'What comes between 6 and 8?', speakText: 'What number is between six and eight?', choices: ['5', '7', '9'], answer: '7', skillIds: ['number-order'] },
+  { id: 'no-10', prompt: 'What comes after 1?', speakText: 'What number comes after one?', choices: ['0', '2', '3'], answer: '2', skillIds: ['number-order'] },
+  { id: 'no-11', prompt: 'What comes before 10?', speakText: 'What number comes before ten?', choices: ['8', '9', '11'], answer: '9', skillIds: ['number-order'] },
+  { id: 'no-12', prompt: 'What comes between 4 and 6?', speakText: 'What number is between four and six?', choices: ['3', '5', '7'], answer: '5', skillIds: ['number-order'] },
+  { id: 'no-13', prompt: 'What comes after 0?', speakText: 'What number comes after zero?', choices: ['0', '1', '2'], answer: '1', skillIds: ['number-order'] },
+  { id: 'no-14', prompt: 'What comes before 3?', speakText: 'What number comes before three?', choices: ['1', '2', '4'], answer: '2', skillIds: ['number-order'] },
+  { id: 'no-15', prompt: 'What comes between 8 and 10?', speakText: 'What number is between eight and ten?', choices: ['7', '9', '11'], answer: '9', skillIds: ['number-order'] },
 ];
 
 // ====== LETTER TREEHOUSE ======
@@ -70,6 +121,15 @@ export const uppercaseLetterQuestions: Question[] = [
   { id: 'ul-4', prompt: 'Find the letter B', visual: 'B', choices: ['D', 'B', 'P'], answer: 'B', skillIds: ['uppercase-letters'] },
   { id: 'ul-5', prompt: 'Find the letter T', visual: 'T', choices: ['I', 'L', 'T'], answer: 'T', skillIds: ['uppercase-letters'] },
   { id: 'ul-6', prompt: 'Find the letter O', visual: 'O', choices: ['O', 'Q', 'C'], answer: 'O', skillIds: ['uppercase-letters'] },
+  { id: 'ul-7', prompt: 'Find the letter E', visual: 'E', choices: ['F', 'E', 'B'], answer: 'E', skillIds: ['uppercase-letters'] },
+  { id: 'ul-8', prompt: 'Find the letter K', visual: 'K', choices: ['K', 'X', 'Y'], answer: 'K', skillIds: ['uppercase-letters'] },
+  { id: 'ul-9', prompt: 'Find the letter R', visual: 'R', choices: ['P', 'B', 'R'], answer: 'R', skillIds: ['uppercase-letters'] },
+  { id: 'ul-10', prompt: 'Find the letter G', visual: 'G', choices: ['C', 'G', 'O'], answer: 'G', skillIds: ['uppercase-letters'] },
+  { id: 'ul-11', prompt: 'Find the letter H', visual: 'H', choices: ['N', 'M', 'H'], answer: 'H', skillIds: ['uppercase-letters'] },
+  { id: 'ul-12', prompt: 'Find the letter W', visual: 'W', choices: ['M', 'W', 'V'], answer: 'W', skillIds: ['uppercase-letters'] },
+  { id: 'ul-13', prompt: 'Find the letter D', visual: 'D', choices: ['D', 'B', 'P'], answer: 'D', skillIds: ['uppercase-letters'] },
+  { id: 'ul-14', prompt: 'Find the letter F', visual: 'F', choices: ['E', 'F', 'T'], answer: 'F', skillIds: ['uppercase-letters'] },
+  { id: 'ul-15', prompt: 'Find the letter L', visual: 'L', choices: ['I', 'L', 'T'], answer: 'L', skillIds: ['uppercase-letters'] },
 ];
 
 export const lowercaseLetterQuestions: Question[] = [
@@ -79,6 +139,15 @@ export const lowercaseLetterQuestions: Question[] = [
   { id: 'll-4', prompt: 'Match: G goes with...', choices: ['g', 'q', 'p'], answer: 'g', skillIds: ['lowercase-letters'] },
   { id: 'll-5', prompt: 'Match: R goes with...', choices: ['n', 'r', 'm'], answer: 'r', skillIds: ['lowercase-letters'] },
   { id: 'll-6', prompt: 'Match: S goes with...', choices: ['z', 'c', 's'], answer: 's', skillIds: ['lowercase-letters'] },
+  { id: 'll-7', prompt: 'Match: M goes with...', choices: ['n', 'w', 'm'], answer: 'm', skillIds: ['lowercase-letters'] },
+  { id: 'll-8', prompt: 'Match: T goes with...', choices: ['t', 'l', 'i'], answer: 't', skillIds: ['lowercase-letters'] },
+  { id: 'll-9', prompt: 'Match: H goes with...', choices: ['n', 'h', 'b'], answer: 'h', skillIds: ['lowercase-letters'] },
+  { id: 'll-10', prompt: 'Match: K goes with...', choices: ['k', 'x', 'h'], answer: 'k', skillIds: ['lowercase-letters'] },
+  { id: 'll-11', prompt: 'Match: P goes with...', choices: ['q', 'b', 'p'], answer: 'p', skillIds: ['lowercase-letters'] },
+  { id: 'll-12', prompt: 'Match: W goes with...', choices: ['w', 'm', 'v'], answer: 'w', skillIds: ['lowercase-letters'] },
+  { id: 'll-13', prompt: 'Match: F goes with...', choices: ['t', 'f', 'l'], answer: 'f', skillIds: ['lowercase-letters'] },
+  { id: 'll-14', prompt: 'Match: N goes with...', choices: ['m', 'n', 'h'], answer: 'n', skillIds: ['lowercase-letters'] },
+  { id: 'll-15', prompt: 'Match: E goes with...', choices: ['e', 'c', 'o'], answer: 'e', skillIds: ['lowercase-letters'] },
 ];
 
 export const beginningSoundsQuestions: Question[] = [
@@ -90,6 +159,14 @@ export const beginningSoundsQuestions: Question[] = [
   { id: 'bs-6', prompt: '🐝 Bee starts with...', speakText: 'Bee starts with what letter?', emoji: '🐝', choices: ['P', 'D', 'B'], answer: 'B', skillIds: ['beginning-sounds', 'letter-sounds'] },
   { id: 'bs-7', prompt: '🌳 Tree starts with...', speakText: 'Tree starts with what letter?', emoji: '🌳', choices: ['T', 'D', 'P'], answer: 'T', skillIds: ['beginning-sounds', 'letter-sounds'] },
   { id: 'bs-8', prompt: '🍕 Pizza starts with...', speakText: 'Pizza starts with what letter?', emoji: '🍕', choices: ['B', 'P', 'D'], answer: 'P', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-9', prompt: '🐸 Frog starts with...', speakText: 'Frog starts with what letter?', emoji: '🐸', choices: ['F', 'R', 'G'], answer: 'F', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-10', prompt: '🏠 House starts with...', speakText: 'House starts with what letter?', emoji: '🏠', choices: ['W', 'H', 'N'], answer: 'H', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-11', prompt: '🐻 Bear starts with...', speakText: 'Bear starts with what letter?', emoji: '🐻', choices: ['D', 'P', 'B'], answer: 'B', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-12', prompt: '🍌 Banana starts with...', speakText: 'Banana starts with what letter?', emoji: '🍌', choices: ['B', 'D', 'P'], answer: 'B', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-13', prompt: '🦁 Lion starts with...', speakText: 'Lion starts with what letter?', emoji: '🦁', choices: ['L', 'I', 'T'], answer: 'L', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-14', prompt: '🌈 Rainbow starts with...', speakText: 'Rainbow starts with what letter?', emoji: '🌈', choices: ['W', 'R', 'N'], answer: 'R', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-15', prompt: '🐢 Turtle starts with...', speakText: 'Turtle starts with what letter?', emoji: '🐢', choices: ['T', 'D', 'L'], answer: 'T', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-16', prompt: '🍇 Grapes starts with...', speakText: 'Grapes starts with what letter?', emoji: '🍇', choices: ['J', 'G', 'D'], answer: 'G', skillIds: ['beginning-sounds', 'letter-sounds'] },
 ];
 
 export const rhymingQuestions: Question[] = [
@@ -99,6 +176,15 @@ export const rhymingQuestions: Question[] = [
   { id: 'rh-4', prompt: 'What rhymes with FISH?', speakText: 'What rhymes with fish?', emoji: '🐟', choices: ['Bird', 'Dish', 'Tree'], answer: 'Dish', skillIds: ['rhyming'] },
   { id: 'rh-5', prompt: 'What rhymes with BEE?', speakText: 'What rhymes with bee?', emoji: '🐝', choices: ['Tree', 'Bug', 'Fly'], answer: 'Tree', skillIds: ['rhyming'] },
   { id: 'rh-6', prompt: 'What rhymes with STAR?', speakText: 'What rhymes with star?', emoji: '⭐', choices: ['Moon', 'Car', 'Sky'], answer: 'Car', skillIds: ['rhyming'] },
+  { id: 'rh-7', prompt: 'What rhymes with PIG?', speakText: 'What rhymes with pig?', emoji: '🐷', choices: ['Wig', 'Cow', 'Pen'], answer: 'Wig', skillIds: ['rhyming'] },
+  { id: 'rh-8', prompt: 'What rhymes with HOP?', speakText: 'What rhymes with hop?', emoji: '🐸', choices: ['Top', 'Jump', 'Run'], answer: 'Top', skillIds: ['rhyming'] },
+  { id: 'rh-9', prompt: 'What rhymes with CAKE?', speakText: 'What rhymes with cake?', emoji: '🎂', choices: ['Eat', 'Lake', 'Pie'], answer: 'Lake', skillIds: ['rhyming'] },
+  { id: 'rh-10', prompt: 'What rhymes with RING?', speakText: 'What rhymes with ring?', emoji: '💍', choices: ['Sing', 'Bell', 'Gold'], answer: 'Sing', skillIds: ['rhyming'] },
+  { id: 'rh-11', prompt: 'What rhymes with DUCK?', speakText: 'What rhymes with duck?', emoji: '🦆', choices: ['Truck', 'Pond', 'Bird'], answer: 'Truck', skillIds: ['rhyming'] },
+  { id: 'rh-12', prompt: 'What rhymes with BALL?', speakText: 'What rhymes with ball?', emoji: '⚽', choices: ['Tall', 'Kick', 'Game'], answer: 'Tall', skillIds: ['rhyming'] },
+  { id: 'rh-13', prompt: 'What rhymes with BOAT?', speakText: 'What rhymes with boat?', emoji: '⛵', choices: ['Coat', 'Water', 'Fish'], answer: 'Coat', skillIds: ['rhyming'] },
+  { id: 'rh-14', prompt: 'What rhymes with MOON?', speakText: 'What rhymes with moon?', emoji: '🌙', choices: ['Spoon', 'Star', 'Night'], answer: 'Spoon', skillIds: ['rhyming'] },
+  { id: 'rh-15', prompt: 'What rhymes with BEAR?', speakText: 'What rhymes with bear?', emoji: '🐻', choices: ['Chair', 'Cave', 'Fur'], answer: 'Chair', skillIds: ['rhyming'] },
 ];
 
 export const simpleWordsQuestions: Question[] = [
@@ -108,6 +194,15 @@ export const simpleWordsQuestions: Question[] = [
   { id: 'sw-4', prompt: 'What word is this?', visual: 'B-U-G', emoji: '🐛', choices: ['Bag', 'Big', 'Bug'], answer: 'Bug', skillIds: ['cvc-words'] },
   { id: 'sw-5', prompt: 'What word is this?', visual: 'H-A-T', emoji: '🎩', choices: ['Hot', 'Hat', 'Hit'], answer: 'Hat', skillIds: ['cvc-words'] },
   { id: 'sw-6', prompt: 'What word is this?', visual: 'P-I-G', emoji: '🐷', choices: ['Pig', 'Pug', 'Peg'], answer: 'Pig', skillIds: ['cvc-words'] },
+  { id: 'sw-7', prompt: 'What word is this?', visual: 'R-U-N', emoji: '🏃', choices: ['Ran', 'Run', 'Fun'], answer: 'Run', skillIds: ['cvc-words'] },
+  { id: 'sw-8', prompt: 'What word is this?', visual: 'C-U-P', emoji: '☕', choices: ['Cap', 'Cup', 'Cut'], answer: 'Cup', skillIds: ['cvc-words'] },
+  { id: 'sw-9', prompt: 'What word is this?', visual: 'B-E-D', emoji: '🛏️', choices: ['Bad', 'Bid', 'Bed'], answer: 'Bed', skillIds: ['cvc-words'] },
+  { id: 'sw-10', prompt: 'What word is this?', visual: 'M-A-P', emoji: '🗺️', choices: ['Map', 'Mop', 'Mud'], answer: 'Map', skillIds: ['cvc-words'] },
+  { id: 'sw-11', prompt: 'What word is this?', visual: 'F-O-X', emoji: '🦊', choices: ['Fix', 'Fox', 'Box'], answer: 'Fox', skillIds: ['cvc-words'] },
+  { id: 'sw-12', prompt: 'What word is this?', visual: 'H-E-N', emoji: '🐔', choices: ['Hen', 'Ten', 'Pen'], answer: 'Hen', skillIds: ['cvc-words'] },
+  { id: 'sw-13', prompt: 'What word is this?', visual: 'V-A-N', emoji: '🚐', choices: ['Van', 'Fan', 'Man'], answer: 'Van', skillIds: ['cvc-words'] },
+  { id: 'sw-14', prompt: 'What word is this?', visual: 'J-A-M', emoji: '🍓', choices: ['Jam', 'Ham', 'Ram'], answer: 'Jam', skillIds: ['cvc-words'] },
+  { id: 'sw-15', prompt: 'What word is this?', visual: 'N-E-T', emoji: '🥅', choices: ['Net', 'Nut', 'Not'], answer: 'Net', skillIds: ['cvc-words'] },
 ];
 
 export const sightWordsQuestions: Question[] = [
@@ -117,6 +212,15 @@ export const sightWordsQuestions: Question[] = [
   { id: 'stw-4', prompt: 'Find the word: CAN', choices: ['can', 'cat', 'car'], answer: 'can', skillIds: ['sight-words'] },
   { id: 'stw-5', prompt: 'Find the word: SEE', choices: ['she', 'see', 'say'], answer: 'see', skillIds: ['sight-words'] },
   { id: 'stw-6', prompt: 'Find the word: GO', choices: ['go', 'do', 'no'], answer: 'go', skillIds: ['sight-words'] },
+  { id: 'stw-7', prompt: 'Find the word: LIKE', choices: ['like', 'look', 'line'], answer: 'like', skillIds: ['sight-words'] },
+  { id: 'stw-8', prompt: 'Find the word: WE', choices: ['we', 'me', 'be'], answer: 'we', skillIds: ['sight-words'] },
+  { id: 'stw-9', prompt: 'Find the word: MY', choices: ['my', 'me', 'by'], answer: 'my', skillIds: ['sight-words'] },
+  { id: 'stw-10', prompt: 'Find the word: TO', choices: ['to', 'do', 'so'], answer: 'to', skillIds: ['sight-words'] },
+  { id: 'stw-11', prompt: 'Find the word: UP', choices: ['us', 'up', 'um'], answer: 'up', skillIds: ['sight-words'] },
+  { id: 'stw-12', prompt: 'Find the word: HE', choices: ['he', 'me', 'we'], answer: 'he', skillIds: ['sight-words'] },
+  { id: 'stw-13', prompt: 'Find the word: AM', choices: ['am', 'an', 'at'], answer: 'am', skillIds: ['sight-words'] },
+  { id: 'stw-14', prompt: 'Find the word: IT', choices: ['if', 'in', 'it'], answer: 'it', skillIds: ['sight-words'] },
+  { id: 'stw-15', prompt: 'Find the word: NO', choices: ['no', 'go', 'so'], answer: 'no', skillIds: ['sight-words'] },
 ];
 
 // ====== SCIENCE EXPLORERS ======
@@ -128,6 +232,15 @@ export const sinkOrFloatQuestions: Question[] = [
   { id: 'sf-4', prompt: 'Will a key sink or float?', emoji: '🔑', choices: ['Sink', 'Float'], answer: 'Sink', skillIds: ['sink-float'] },
   { id: 'sf-5', prompt: 'Will a duck float or sink?', emoji: '🦆', choices: ['Sink', 'Float'], answer: 'Float', skillIds: ['sink-float'] },
   { id: 'sf-6', prompt: 'Will a coin sink or float?', emoji: '🪙', choices: ['Sink', 'Float'], answer: 'Sink', skillIds: ['sink-float'] },
+  { id: 'sf-7', prompt: 'Will a feather float or sink?', emoji: '🪶', choices: ['Sink', 'Float'], answer: 'Float', skillIds: ['sink-float'] },
+  { id: 'sf-8', prompt: 'Will a brick sink or float?', emoji: '🧱', choices: ['Sink', 'Float'], answer: 'Sink', skillIds: ['sink-float'] },
+  { id: 'sf-9', prompt: 'Will a wooden boat float?', emoji: '⛵', choices: ['Sink', 'Float'], answer: 'Float', skillIds: ['sink-float'] },
+  { id: 'sf-10', prompt: 'Will a marble sink or float?', emoji: '🔮', choices: ['Sink', 'Float'], answer: 'Sink', skillIds: ['sink-float'] },
+  { id: 'sf-11', prompt: 'Will a stick float or sink?', emoji: '🪵', choices: ['Sink', 'Float'], answer: 'Float', skillIds: ['sink-float'] },
+  { id: 'sf-12', prompt: 'Will an apple float or sink?', emoji: '🍎', choices: ['Sink', 'Float'], answer: 'Float', skillIds: ['sink-float'] },
+  { id: 'sf-13', prompt: 'Will a nail sink or float?', emoji: '🔩', choices: ['Sink', 'Float'], answer: 'Sink', skillIds: ['sink-float'] },
+  { id: 'sf-14', prompt: 'Will a sponge float or sink?', emoji: '🧽', choices: ['Sink', 'Float'], answer: 'Float', skillIds: ['sink-float'] },
+  { id: 'sf-15', prompt: 'Will a hammer sink or float?', emoji: '🔨', choices: ['Sink', 'Float'], answer: 'Sink', skillIds: ['sink-float'] },
 ];
 
 export const animalHomesQuestions: Question[] = [
@@ -137,6 +250,15 @@ export const animalHomesQuestions: Question[] = [
   { id: 'ah-4', prompt: 'Where does a rabbit live?', emoji: '🐰', choices: ['Burrow', 'Tree', 'Water'], answer: 'Burrow', skillIds: ['animal-homes'] },
   { id: 'ah-5', prompt: 'Where does a bee live?', emoji: '🐝', choices: ['Water', 'Cave', 'Hive'], answer: 'Hive', skillIds: ['animal-homes'] },
   { id: 'ah-6', prompt: 'Where does a squirrel live?', emoji: '🐿️', choices: ['Tree', 'Water', 'Hive'], answer: 'Tree', skillIds: ['animal-homes'] },
+  { id: 'ah-7', prompt: 'Where does a spider live?', emoji: '🕷️', choices: ['Web', 'Nest', 'Cave'], answer: 'Web', skillIds: ['animal-homes'] },
+  { id: 'ah-8', prompt: 'Where does a turtle live?', emoji: '🐢', choices: ['Shell', 'Cave', 'Tree'], answer: 'Shell', skillIds: ['animal-homes'] },
+  { id: 'ah-9', prompt: 'Where does a fox live?', emoji: '🦊', choices: ['Den', 'Hive', 'Nest'], answer: 'Den', skillIds: ['animal-homes'] },
+  { id: 'ah-10', prompt: 'Where does an ant live?', emoji: '🐜', choices: ['Hill', 'Tree', 'Water'], answer: 'Hill', skillIds: ['animal-homes'] },
+  { id: 'ah-11', prompt: 'Where does a whale live?', emoji: '🐋', choices: ['Ocean', 'Lake', 'River'], answer: 'Ocean', skillIds: ['animal-homes'] },
+  { id: 'ah-12', prompt: 'Where does a beaver live?', emoji: '🦫', choices: ['Lodge', 'Cave', 'Nest'], answer: 'Lodge', skillIds: ['animal-homes'] },
+  { id: 'ah-13', prompt: 'Where does a snail live?', emoji: '🐌', choices: ['Shell', 'Burrow', 'Tree'], answer: 'Shell', skillIds: ['animal-homes'] },
+  { id: 'ah-14', prompt: 'Where does a bat live?', emoji: '🦇', choices: ['Cave', 'Nest', 'Water'], answer: 'Cave', skillIds: ['animal-homes'] },
+  { id: 'ah-15', prompt: 'Where does a penguin live?', emoji: '🐧', choices: ['Ice', 'Forest', 'Desert'], answer: 'Ice', skillIds: ['animal-homes'] },
 ];
 
 export const weatherQuestions: Question[] = [
@@ -146,6 +268,15 @@ export const weatherQuestions: Question[] = [
   { id: 'wt-4', prompt: 'It\'s windy! What might fly away?', emoji: '💨', choices: ['Rock 🪨', 'Hat 🎩', 'House 🏠'], answer: 'Hat 🎩', skillIds: ['weather'] },
   { id: 'wt-5', prompt: 'What season has snow?', emoji: '⛄', choices: ['Summer', 'Winter', 'Spring'], answer: 'Winter', skillIds: ['weather'] },
   { id: 'wt-6', prompt: 'What season has flowers?', emoji: '🌷', choices: ['Winter', 'Spring', 'Fall'], answer: 'Spring', skillIds: ['weather'] },
+  { id: 'wt-7', prompt: 'What do clouds make?', emoji: '☁️', choices: ['Sunshine', 'Rain', 'Wind'], answer: 'Rain', skillIds: ['weather'] },
+  { id: 'wt-8', prompt: 'What season is very hot?', emoji: '🔥', choices: ['Summer', 'Winter', 'Fall'], answer: 'Summer', skillIds: ['weather'] },
+  { id: 'wt-9', prompt: 'Leaves fall in which season?', emoji: '🍂', choices: ['Spring', 'Summer', 'Fall'], answer: 'Fall', skillIds: ['weather'] },
+  { id: 'wt-10', prompt: 'What makes a rainbow?', emoji: '🌈', choices: ['Sun and rain', 'Snow', 'Wind'], answer: 'Sun and rain', skillIds: ['weather'] },
+  { id: 'wt-11', prompt: 'What do you need on a cold day?', emoji: '🥶', choices: ['Gloves 🧤', 'Sandals 🩴', 'Shorts 🩳'], answer: 'Gloves 🧤', skillIds: ['weather'] },
+  { id: 'wt-12', prompt: 'Thunder comes with...', emoji: '⛈️', choices: ['Sunshine', 'Lightning', 'Snow'], answer: 'Lightning', skillIds: ['weather'] },
+  { id: 'wt-13', prompt: 'What melts in warm weather?', emoji: '🌡️', choices: ['Rock', 'Ice', 'Sand'], answer: 'Ice', skillIds: ['weather'] },
+  { id: 'wt-14', prompt: 'What do puddles come from?', emoji: '💧', choices: ['Sun', 'Wind', 'Rain'], answer: 'Rain', skillIds: ['weather'] },
+  { id: 'wt-15', prompt: 'What keeps you dry in rain?', emoji: '🌂', choices: ['Umbrella', 'Hat', 'Scarf'], answer: 'Umbrella', skillIds: ['weather'] },
 ];
 
 export const fiveSensesQuestions: Question[] = [
@@ -155,6 +286,15 @@ export const fiveSensesQuestions: Question[] = [
   { id: 'fs-4', prompt: 'We taste with our...', emoji: '👅', choices: ['Nose', 'Eyes', 'Tongue'], answer: 'Tongue', skillIds: ['five-senses'] },
   { id: 'fs-5', prompt: 'We touch with our...', emoji: '🤚', choices: ['Ears', 'Hands', 'Eyes'], answer: 'Hands', skillIds: ['five-senses'] },
   { id: 'fs-6', prompt: 'Which sense helps you hear music?', emoji: '🎵', choices: ['Sight', 'Hearing', 'Smell'], answer: 'Hearing', skillIds: ['five-senses'] },
+  { id: 'fs-7', prompt: 'Which sense helps you taste food?', emoji: '🍕', choices: ['Touch', 'Taste', 'Sight'], answer: 'Taste', skillIds: ['five-senses'] },
+  { id: 'fs-8', prompt: 'Which sense tells you a flower smells nice?', emoji: '🌹', choices: ['Smell', 'Taste', 'Touch'], answer: 'Smell', skillIds: ['five-senses'] },
+  { id: 'fs-9', prompt: 'Which sense helps you read a book?', emoji: '📖', choices: ['Hearing', 'Sight', 'Touch'], answer: 'Sight', skillIds: ['five-senses'] },
+  { id: 'fs-10', prompt: 'Which sense tells you if something is hot?', emoji: '🔥', choices: ['Smell', 'Sight', 'Touch'], answer: 'Touch', skillIds: ['five-senses'] },
+  { id: 'fs-11', prompt: 'Which sense helps you know a dog is barking?', emoji: '🐕', choices: ['Hearing', 'Sight', 'Taste'], answer: 'Hearing', skillIds: ['five-senses'] },
+  { id: 'fs-12', prompt: 'How many senses do we have?', emoji: '🖐️', choices: ['3', '5', '7'], answer: '5', skillIds: ['five-senses'] },
+  { id: 'fs-13', prompt: 'Which sense tells you ice cream is cold?', emoji: '🍦', choices: ['Touch', 'Smell', 'Hearing'], answer: 'Touch', skillIds: ['five-senses'] },
+  { id: 'fs-14', prompt: 'Which sense helps you see a rainbow?', emoji: '🌈', choices: ['Sight', 'Touch', 'Taste'], answer: 'Sight', skillIds: ['five-senses'] },
+  { id: 'fs-15', prompt: 'Which sense tells you cookies are baking?', emoji: '🍪', choices: ['Sight', 'Smell', 'Hearing'], answer: 'Smell', skillIds: ['five-senses'] },
 ];
 
 export const plantGrowthQuestions: Question[] = [
@@ -164,6 +304,15 @@ export const plantGrowthQuestions: Question[] = [
   { id: 'pg-4', prompt: 'Where do plants grow?', emoji: '🌿', choices: ['In soil', 'In the sky', 'On stars'], answer: 'In soil', skillIds: ['plant-growth'] },
   { id: 'pg-5', prompt: 'What comes first?', emoji: '🌱', choices: ['Seed', 'Flower', 'Tree'], answer: 'Seed', skillIds: ['plant-growth'] },
   { id: 'pg-6', prompt: 'What is the green part of a plant?', emoji: '🌿', choices: ['Leaf', 'Root', 'Seed'], answer: 'Leaf', skillIds: ['plant-growth'] },
+  { id: 'pg-7', prompt: 'What part of the plant is underground?', emoji: '🌱', choices: ['Flower', 'Leaf', 'Root'], answer: 'Root', skillIds: ['plant-growth'] },
+  { id: 'pg-8', prompt: 'Bees help plants by spreading...', emoji: '🐝', choices: ['Pollen', 'Water', 'Seeds'], answer: 'Pollen', skillIds: ['plant-growth'] },
+  { id: 'pg-9', prompt: 'What do plants breathe in?', emoji: '🌳', choices: ['Air', 'Water', 'Soil'], answer: 'Air', skillIds: ['plant-growth'] },
+  { id: 'pg-10', prompt: 'A sunflower turns toward the...', emoji: '🌻', choices: ['Moon', 'Sun', 'Rain'], answer: 'Sun', skillIds: ['plant-growth'] },
+  { id: 'pg-11', prompt: 'What does a seed need to sprout?', emoji: '🌱', choices: ['Water & warmth', 'Ice & cold', 'Darkness'], answer: 'Water & warmth', skillIds: ['plant-growth'] },
+  { id: 'pg-12', prompt: 'Trees give us...', emoji: '🌳', choices: ['Shade', 'Snow', 'Rocks'], answer: 'Shade', skillIds: ['plant-growth'] },
+  { id: 'pg-13', prompt: 'Fruits have ____ inside them', emoji: '🍎', choices: ['Seeds', 'Rocks', 'Water'], answer: 'Seeds', skillIds: ['plant-growth'] },
+  { id: 'pg-14', prompt: 'What color are most leaves?', emoji: '🍃', choices: ['Red', 'Green', 'Blue'], answer: 'Green', skillIds: ['plant-growth'] },
+  { id: 'pg-15', prompt: 'A flower is part of a...', emoji: '🌸', choices: ['Plant', 'Rock', 'Cloud'], answer: 'Plant', skillIds: ['plant-growth'] },
 ];
 
 export const dayNightQuestions: Question[] = [
@@ -173,6 +322,15 @@ export const dayNightQuestions: Question[] = [
   { id: 'dn-4', prompt: 'When do we go to school?', emoji: '🏫', choices: ['Day', 'Night'], answer: 'Day', skillIds: ['day-night'] },
   { id: 'dn-5', prompt: 'When is the moon bright?', emoji: '🌙', choices: ['Day', 'Night'], answer: 'Night', skillIds: ['day-night'] },
   { id: 'dn-6', prompt: 'When do birds sing?', emoji: '🐦', choices: ['Day', 'Night'], answer: 'Day', skillIds: ['day-night'] },
+  { id: 'dn-7', prompt: 'When do owls come out?', emoji: '🦉', choices: ['Day', 'Night'], answer: 'Night', skillIds: ['day-night'] },
+  { id: 'dn-8', prompt: 'When do we eat breakfast?', emoji: '🥣', choices: ['Day', 'Night'], answer: 'Day', skillIds: ['day-night'] },
+  { id: 'dn-9', prompt: 'When do fireflies glow?', emoji: '✨', choices: ['Day', 'Night'], answer: 'Night', skillIds: ['day-night'] },
+  { id: 'dn-10', prompt: 'When do roosters crow?', emoji: '🐓', choices: ['Day', 'Night'], answer: 'Day', skillIds: ['day-night'] },
+  { id: 'dn-11', prompt: 'When can you see your shadow outside?', emoji: '👤', choices: ['Day', 'Night'], answer: 'Day', skillIds: ['day-night'] },
+  { id: 'dn-12', prompt: 'When do bats fly?', emoji: '🦇', choices: ['Day', 'Night'], answer: 'Night', skillIds: ['day-night'] },
+  { id: 'dn-13', prompt: 'When do we wear pajamas?', emoji: '👔', choices: ['Day', 'Night'], answer: 'Night', skillIds: ['day-night'] },
+  { id: 'dn-14', prompt: 'When do flowers open up?', emoji: '🌸', choices: ['Day', 'Night'], answer: 'Day', skillIds: ['day-night'] },
+  { id: 'dn-15', prompt: 'When do we read bedtime stories?', emoji: '📖', choices: ['Day', 'Night'], answer: 'Night', skillIds: ['day-night'] },
 ];
 
 export const livingNonlivingQuestions: Question[] = [
@@ -182,6 +340,15 @@ export const livingNonlivingQuestions: Question[] = [
   { id: 'ln-4', prompt: 'Is a car living or non-living?', emoji: '🚗', choices: ['Living', 'Non-living'], answer: 'Non-living', skillIds: ['living-nonliving'] },
   { id: 'ln-5', prompt: 'Is a flower living or non-living?', emoji: '🌸', choices: ['Living', 'Non-living'], answer: 'Living', skillIds: ['living-nonliving'] },
   { id: 'ln-6', prompt: 'Is a chair living or non-living?', emoji: '🪑', choices: ['Living', 'Non-living'], answer: 'Non-living', skillIds: ['living-nonliving'] },
+  { id: 'ln-7', prompt: 'Is a butterfly living or non-living?', emoji: '🦋', choices: ['Living', 'Non-living'], answer: 'Living', skillIds: ['living-nonliving'] },
+  { id: 'ln-8', prompt: 'Is a book living or non-living?', emoji: '📚', choices: ['Living', 'Non-living'], answer: 'Non-living', skillIds: ['living-nonliving'] },
+  { id: 'ln-9', prompt: 'Is a fish living or non-living?', emoji: '🐟', choices: ['Living', 'Non-living'], answer: 'Living', skillIds: ['living-nonliving'] },
+  { id: 'ln-10', prompt: 'Is a pencil living or non-living?', emoji: '✏️', choices: ['Living', 'Non-living'], answer: 'Non-living', skillIds: ['living-nonliving'] },
+  { id: 'ln-11', prompt: 'Is grass living or non-living?', emoji: '🌱', choices: ['Living', 'Non-living'], answer: 'Living', skillIds: ['living-nonliving'] },
+  { id: 'ln-12', prompt: 'Is a ball living or non-living?', emoji: '⚽', choices: ['Living', 'Non-living'], answer: 'Non-living', skillIds: ['living-nonliving'] },
+  { id: 'ln-13', prompt: 'Is a worm living or non-living?', emoji: '🪱', choices: ['Living', 'Non-living'], answer: 'Living', skillIds: ['living-nonliving'] },
+  { id: 'ln-14', prompt: 'Is a cloud living or non-living?', emoji: '☁️', choices: ['Living', 'Non-living'], answer: 'Non-living', skillIds: ['living-nonliving'] },
+  { id: 'ln-15', prompt: 'Is a bird living or non-living?', emoji: '🐦', choices: ['Living', 'Non-living'], answer: 'Living', skillIds: ['living-nonliving'] },
 ];
 
 // ====== SHAPES & COLORS STUDIO ======
@@ -193,6 +360,15 @@ export const shapeMatchingQuestions: Question[] = [
   { id: 'sm-4', prompt: 'What shape is this?', visual: '⭐', choices: ['Heart', 'Star', 'Diamond'], answer: 'Star', skillIds: ['shape-recognition'] },
   { id: 'sm-5', prompt: 'What shape is this?', visual: '💎', choices: ['Triangle', 'Diamond', 'Square'], answer: 'Diamond', skillIds: ['shape-recognition'] },
   { id: 'sm-6', prompt: 'What shape is this?', visual: '❤️', choices: ['Circle', 'Star', 'Heart'], answer: 'Heart', skillIds: ['shape-recognition'] },
+  { id: 'sm-7', prompt: 'What shape has 3 sides?', choices: ['Square', 'Triangle', 'Circle'], answer: 'Triangle', skillIds: ['shape-recognition'] },
+  { id: 'sm-8', prompt: 'What shape has 4 equal sides?', choices: ['Triangle', 'Circle', 'Square'], answer: 'Square', skillIds: ['shape-recognition'] },
+  { id: 'sm-9', prompt: 'What shape has no corners?', choices: ['Circle', 'Square', 'Triangle'], answer: 'Circle', skillIds: ['shape-recognition'] },
+  { id: 'sm-10', prompt: 'What shape has 5 points?', choices: ['Heart', 'Star', 'Diamond'], answer: 'Star', skillIds: ['shape-recognition'] },
+  { id: 'sm-11', prompt: 'What shape is a pizza box?', choices: ['Square', 'Circle', 'Triangle'], answer: 'Square', skillIds: ['shape-recognition'] },
+  { id: 'sm-12', prompt: 'What shape is a coin?', choices: ['Square', 'Triangle', 'Circle'], answer: 'Circle', skillIds: ['shape-recognition'] },
+  { id: 'sm-13', prompt: 'What shape is a yield sign?', choices: ['Triangle', 'Square', 'Circle'], answer: 'Triangle', skillIds: ['shape-recognition'] },
+  { id: 'sm-14', prompt: 'What shape is an egg?', choices: ['Square', 'Oval', 'Triangle'], answer: 'Oval', skillIds: ['shape-recognition'] },
+  { id: 'sm-15', prompt: 'What shape has 4 sides (2 long, 2 short)?', choices: ['Square', 'Rectangle', 'Triangle'], answer: 'Rectangle', skillIds: ['shape-recognition'] },
 ];
 
 export const colorMatchingQuestions: Question[] = [
@@ -202,6 +378,15 @@ export const colorMatchingQuestions: Question[] = [
   { id: 'cm-4', prompt: 'What color is this?', visual: '🟨', choices: ['Red', 'Green', 'Yellow'], answer: 'Yellow', skillIds: ['color-recognition'] },
   { id: 'cm-5', prompt: 'What color is this?', visual: '🟧', choices: ['Orange', 'Red', 'Yellow'], answer: 'Orange', skillIds: ['color-recognition'] },
   { id: 'cm-6', prompt: 'What color is this?', visual: '🟪', choices: ['Blue', 'Purple', 'Pink'], answer: 'Purple', skillIds: ['color-recognition'] },
+  { id: 'cm-7', prompt: 'What color is grass?', emoji: '🌿', choices: ['Green', 'Blue', 'Red'], answer: 'Green', skillIds: ['color-recognition'] },
+  { id: 'cm-8', prompt: 'What color is the sky?', emoji: '🌤️', choices: ['Green', 'Blue', 'Red'], answer: 'Blue', skillIds: ['color-recognition'] },
+  { id: 'cm-9', prompt: 'What color is a banana?', emoji: '🍌', choices: ['Yellow', 'Red', 'Blue'], answer: 'Yellow', skillIds: ['color-recognition'] },
+  { id: 'cm-10', prompt: 'What color is a strawberry?', emoji: '🍓', choices: ['Blue', 'Green', 'Red'], answer: 'Red', skillIds: ['color-recognition'] },
+  { id: 'cm-11', prompt: 'What color is chocolate?', emoji: '🍫', choices: ['Brown', 'White', 'Pink'], answer: 'Brown', skillIds: ['color-recognition'] },
+  { id: 'cm-12', prompt: 'What color is snow?', emoji: '❄️', choices: ['Blue', 'White', 'Gray'], answer: 'White', skillIds: ['color-recognition'] },
+  { id: 'cm-13', prompt: 'What color is a pig?', emoji: '🐷', choices: ['Pink', 'Brown', 'White'], answer: 'Pink', skillIds: ['color-recognition'] },
+  { id: 'cm-14', prompt: 'What colors make orange?', choices: ['Red + Yellow', 'Blue + Red', 'Blue + Yellow'], answer: 'Red + Yellow', skillIds: ['color-recognition'] },
+  { id: 'cm-15', prompt: 'What colors make green?', choices: ['Red + Yellow', 'Blue + Red', 'Blue + Yellow'], answer: 'Blue + Yellow', skillIds: ['color-recognition'] },
 ];
 
 export const patternQuestions: Question[] = [
@@ -211,6 +396,15 @@ export const patternQuestions: Question[] = [
   { id: 'pt-4', prompt: '🐶🐱🐶🐱🐶 ... what comes next?', speakText: 'Dog cat dog cat dog. What comes next?', choices: ['🐶', '🐱', '🐦'], answer: '🐱', skillIds: ['patterns'] },
   { id: 'pt-5', prompt: '🟢🟢🔴🟢🟢🔴🟢🟢 ... what comes next?', speakText: 'Green green red green green red green green. What comes next?', choices: ['🟢', '🔴', '🔵'], answer: '🔴', skillIds: ['patterns'] },
   { id: 'pt-6', prompt: '🔵🔵🔵🟡🔵🔵🔵 ... what comes next?', speakText: 'Blue blue blue yellow blue blue blue. What comes next?', choices: ['🔵', '🟡', '🔴'], answer: '🟡', skillIds: ['patterns'] },
+  { id: 'pt-7', prompt: '🌸🌸🌻🌸🌸🌻 ... what comes next?', speakText: 'Pink pink sunflower pink pink sunflower. What comes next?', choices: ['🌸', '🌻', '🌹'], answer: '🌸', skillIds: ['patterns'] },
+  { id: 'pt-8', prompt: '🐝🐝🦋🐝🐝🦋 ... what comes next?', speakText: 'Bee bee butterfly bee bee butterfly. What comes next?', choices: ['🐝', '🦋', '🐛'], answer: '🐝', skillIds: ['patterns'] },
+  { id: 'pt-9', prompt: '🔺🔵🔺🔵🔺 ... what comes next?', speakText: 'Triangle circle triangle circle triangle. What comes next?', choices: ['🔺', '🔵', '⬜'], answer: '🔵', skillIds: ['patterns'] },
+  { id: 'pt-10', prompt: '1️⃣2️⃣1️⃣2️⃣1️⃣ ... what comes next?', speakText: 'One two one two one. What comes next?', choices: ['1️⃣', '2️⃣', '3️⃣'], answer: '2️⃣', skillIds: ['patterns'] },
+  { id: 'pt-11', prompt: '😊😊😢😊😊😢 ... what comes next?', speakText: 'Happy happy sad happy happy sad. What comes next?', choices: ['😊', '😢', '😠'], answer: '😊', skillIds: ['patterns'] },
+  { id: 'pt-12', prompt: '🚗🚌🚗🚌🚗 ... what comes next?', speakText: 'Car bus car bus car. What comes next?', choices: ['🚗', '🚌', '🚒'], answer: '🚌', skillIds: ['patterns'] },
+  { id: 'pt-13', prompt: '⬆️⬇️⬆️⬇️⬆️ ... what comes next?', speakText: 'Up down up down up. What comes next?', choices: ['⬆️', '⬇️', '➡️'], answer: '⬇️', skillIds: ['patterns'] },
+  { id: 'pt-14', prompt: '🎵🎵🥁🎵🎵🥁 ... what comes next?', speakText: 'Note note drum note note drum. What comes next?', choices: ['🎵', '🥁', '🎸'], answer: '🎵', skillIds: ['patterns'] },
+  { id: 'pt-15', prompt: '🐟🐟🐟🐙🐟🐟🐟 ... what comes next?', speakText: 'Fish fish fish octopus fish fish fish. What comes next?', choices: ['🐟', '🐙', '🦀'], answer: '🐙', skillIds: ['patterns'] },
 ];
 
 export const sortingShapesQuestions: Question[] = [
@@ -220,6 +414,15 @@ export const sortingShapesQuestions: Question[] = [
   { id: 'ss-4', prompt: 'How many sides does a triangle have?', choices: ['2', '3', '4'], answer: '3', skillIds: ['shape-recognition'] },
   { id: 'ss-5', prompt: 'How many sides does a square have?', choices: ['3', '4', '5'], answer: '4', skillIds: ['shape-recognition'] },
   { id: 'ss-6', prompt: 'A circle has how many corners?', choices: ['0', '2', '4'], answer: '0', skillIds: ['shape-recognition'] },
+  { id: 'ss-7', prompt: 'Which one is a triangle?', choices: ['🔺', '⬜', '🔴'], answer: '🔺', skillIds: ['shape-recognition', 'sorting'] },
+  { id: 'ss-8', prompt: 'Which shape rolls?', choices: ['Square', 'Circle', 'Triangle'], answer: 'Circle', skillIds: ['shape-recognition'] },
+  { id: 'ss-9', prompt: 'Which shape has the most sides?', choices: ['Triangle', 'Square', 'Hexagon'], answer: 'Hexagon', skillIds: ['shape-recognition'] },
+  { id: 'ss-10', prompt: 'Which shape can you stack best?', choices: ['Circle', 'Square', 'Star'], answer: 'Square', skillIds: ['shape-recognition'] },
+  { id: 'ss-11', prompt: 'A square has all sides the ___', choices: ['Different', 'Same', 'Long'], answer: 'Same', skillIds: ['shape-recognition'] },
+  { id: 'ss-12', prompt: 'Which is the smallest shape?', visual: '🔺 ⬜ 🔴', choices: ['They can be any size'], answer: 'They can be any size', skillIds: ['shape-recognition'] },
+  { id: 'ss-13', prompt: 'How many corners does a square have?', choices: ['3', '4', '5'], answer: '4', skillIds: ['shape-recognition'] },
+  { id: 'ss-14', prompt: 'What shape has 0 sides?', choices: ['Circle', 'Square', 'Triangle'], answer: 'Circle', skillIds: ['shape-recognition'] },
+  { id: 'ss-15', prompt: 'How many corners does a triangle have?', choices: ['2', '3', '4'], answer: '3', skillIds: ['shape-recognition'] },
 ];
 
 export const realWorldShapesQuestions: Question[] = [
@@ -229,6 +432,15 @@ export const realWorldShapesQuestions: Question[] = [
   { id: 'rws-4', prompt: 'What shape is a clock?', emoji: '🕐', choices: ['Circle', 'Square', 'Star'], answer: 'Circle', skillIds: ['real-world-shapes'] },
   { id: 'rws-5', prompt: 'What shape is a door?', emoji: '🚪', choices: ['Circle', 'Rectangle', 'Triangle'], answer: 'Rectangle', skillIds: ['real-world-shapes'] },
   { id: 'rws-6', prompt: 'What shape is a stop sign?', emoji: '🛑', choices: ['Circle', 'Square', 'Octagon'], answer: 'Octagon', skillIds: ['real-world-shapes'] },
+  { id: 'rws-7', prompt: 'What shape is a sandwich?', emoji: '🥪', choices: ['Triangle', 'Circle', 'Star'], answer: 'Triangle', skillIds: ['real-world-shapes'] },
+  { id: 'rws-8', prompt: 'What shape is a cookie?', emoji: '🍪', choices: ['Circle', 'Square', 'Triangle'], answer: 'Circle', skillIds: ['real-world-shapes'] },
+  { id: 'rws-9', prompt: 'What shape is a TV screen?', emoji: '📺', choices: ['Circle', 'Rectangle', 'Triangle'], answer: 'Rectangle', skillIds: ['real-world-shapes'] },
+  { id: 'rws-10', prompt: 'What shape is a dice?', emoji: '🎲', choices: ['Cube', 'Circle', 'Triangle'], answer: 'Cube', skillIds: ['real-world-shapes'] },
+  { id: 'rws-11', prompt: 'What shape is a plate?', emoji: '🍽️', choices: ['Circle', 'Square', 'Star'], answer: 'Circle', skillIds: ['real-world-shapes'] },
+  { id: 'rws-12', prompt: 'What shape is a roof?', emoji: '🏠', choices: ['Circle', 'Square', 'Triangle'], answer: 'Triangle', skillIds: ['real-world-shapes'] },
+  { id: 'rws-13', prompt: 'What shape is a book?', emoji: '📕', choices: ['Circle', 'Rectangle', 'Triangle'], answer: 'Rectangle', skillIds: ['real-world-shapes'] },
+  { id: 'rws-14', prompt: 'What shape is a ball?', emoji: '⚽', choices: ['Circle', 'Square', 'Star'], answer: 'Circle', skillIds: ['real-world-shapes'] },
+  { id: 'rws-15', prompt: 'What shape is an ice cream cone?', emoji: '🍦', choices: ['Circle', 'Triangle', 'Square'], answer: 'Triangle', skillIds: ['real-world-shapes'] },
 ];
 
 // ====== LOGIC PLAYGROUND ======
@@ -240,6 +452,15 @@ export const oddOneOutQuestions: Question[] = [
   { id: 'ooo-4', prompt: 'Which one does NOT belong?', visual: '✈️ 🚗 🚌 🍎', choices: ['✈️', '🚗', '🚌', '🍎'], answer: '🍎', explanation: 'The apple is not a vehicle!', skillIds: ['odd-one-out', 'categorizing'] },
   { id: 'ooo-5', prompt: 'Which one does NOT belong?', visual: '🌸 🌹 🌻 🐕', choices: ['🌸', '🌹', '🌻', '🐕'], answer: '🐕', explanation: 'The dog is not a flower!', skillIds: ['odd-one-out', 'categorizing'] },
   { id: 'ooo-6', prompt: 'Which one does NOT belong?', visual: '2️⃣ 4️⃣ 🐱 6️⃣', choices: ['2️⃣', '4️⃣', '🐱', '6️⃣'], answer: '🐱', explanation: 'The cat is not a number!', skillIds: ['odd-one-out', 'categorizing'] },
+  { id: 'ooo-7', prompt: 'Which one does NOT belong?', visual: '🎸 🎹 🥁 🍕', choices: ['🎸', '🎹', '🥁', '🍕'], answer: '🍕', explanation: 'Pizza is not an instrument!', skillIds: ['odd-one-out', 'categorizing'] },
+  { id: 'ooo-8', prompt: 'Which one does NOT belong?', visual: '👟 🥾 🩴 🎒', choices: ['👟', '🥾', '🩴', '🎒'], answer: '🎒', explanation: 'The backpack is not footwear!', skillIds: ['odd-one-out', 'categorizing'] },
+  { id: 'ooo-9', prompt: 'Which one does NOT belong?', visual: '🐝 🦋 🐜 🐟', choices: ['🐝', '🦋', '🐜', '🐟'], answer: '🐟', explanation: 'The fish is not an insect!', skillIds: ['odd-one-out', 'categorizing'] },
+  { id: 'ooo-10', prompt: 'Which one does NOT belong?', visual: '🌧️ ❄️ ☀️ 🧸', choices: ['🌧️', '❄️', '☀️', '🧸'], answer: '🧸', explanation: 'The teddy bear is not weather!', skillIds: ['odd-one-out', 'categorizing'] },
+  { id: 'ooo-11', prompt: 'Which one does NOT belong?', visual: '🍕 🍔 🌮 📚', choices: ['🍕', '🍔', '🌮', '📚'], answer: '📚', explanation: 'A book is not food!', skillIds: ['odd-one-out', 'categorizing'] },
+  { id: 'ooo-12', prompt: 'Which one does NOT belong?', visual: '🐘 🦒 🐻 🪑', choices: ['🐘', '🦒', '🐻', '🪑'], answer: '🪑', explanation: 'A chair is not an animal!', skillIds: ['odd-one-out', 'categorizing'] },
+  { id: 'ooo-13', prompt: 'Which one does NOT belong?', visual: '🌲 🌳 🌴 🏀', choices: ['🌲', '🌳', '🌴', '🏀'], answer: '🏀', explanation: 'A basketball is not a tree!', skillIds: ['odd-one-out', 'categorizing'] },
+  { id: 'ooo-14', prompt: 'Which one does NOT belong?', visual: '👀 👃 👂 🧦', choices: ['👀', '👃', '👂', '🧦'], answer: '🧦', explanation: 'Socks are not part of your face!', skillIds: ['odd-one-out', 'categorizing'] },
+  { id: 'ooo-15', prompt: 'Which one does NOT belong?', visual: '🍓 🫐 🍊 🚂', choices: ['🍓', '🫐', '🍊', '🚂'], answer: '🚂', explanation: 'A train is not a fruit!', skillIds: ['odd-one-out', 'categorizing'] },
 ];
 
 export const sequenceQuestions: Question[] = [
@@ -249,6 +470,15 @@ export const sequenceQuestions: Question[] = [
   { id: 'sq-4', prompt: 'What comes after 1, 2, 3?', choices: ['5', '4', '6'], answer: '4', skillIds: ['sequences', 'number-order'] },
   { id: 'sq-5', prompt: 'What comes after Monday?', choices: ['Sunday', 'Tuesday', 'Wednesday'], answer: 'Tuesday', skillIds: ['sequences'] },
   { id: 'sq-6', prompt: 'To make a sandwich: first get bread, then...', choices: ['Eat it', 'Add filling', 'Throw it away'], answer: 'Add filling', skillIds: ['sequences'] },
+  { id: 'sq-7', prompt: 'First you put on socks, then...', choices: ['Shoes', 'Hat', 'Shirt'], answer: 'Shoes', skillIds: ['sequences'] },
+  { id: 'sq-8', prompt: 'Caterpillar → Cocoon → ?', choices: ['Butterfly', 'Worm', 'Ant'], answer: 'Butterfly', skillIds: ['sequences'] },
+  { id: 'sq-9', prompt: 'What comes before you eat lunch?', choices: ['Wash hands', 'Go to sleep', 'Put on pajamas'], answer: 'Wash hands', skillIds: ['sequences'] },
+  { id: 'sq-10', prompt: 'Baby → Kid → ?', choices: ['Baby', 'Adult', 'Egg'], answer: 'Adult', skillIds: ['sequences'] },
+  { id: 'sq-11', prompt: 'Egg → Chick → ?', choices: ['Egg', 'Hen', 'Fish'], answer: 'Hen', skillIds: ['sequences'] },
+  { id: 'sq-12', prompt: 'What do you do after waking up?', choices: ['Brush teeth', 'Go to sleep', 'Eat dinner'], answer: 'Brush teeth', skillIds: ['sequences'] },
+  { id: 'sq-13', prompt: 'First mix, then bake, then...', choices: ['Eat!', 'Mix again', 'Sleep'], answer: 'Eat!', skillIds: ['sequences'] },
+  { id: 'sq-14', prompt: 'What comes after spring?', choices: ['Winter', 'Summer', 'Fall'], answer: 'Summer', skillIds: ['sequences'] },
+  { id: 'sq-15', prompt: 'Morning → Afternoon → ?', choices: ['Night', 'Morning', 'Noon'], answer: 'Night', skillIds: ['sequences'] },
 ];
 
 export const sameDifferentQuestions: Question[] = [
@@ -258,6 +488,15 @@ export const sameDifferentQuestions: Question[] = [
   { id: 'sd-4', prompt: 'Which is DIFFERENT?', visual: '🍎 🍎 🍌', choices: ['First 🍎', 'Second 🍎', '🍌'], answer: '🍌', skillIds: ['same-different'] },
   { id: 'sd-5', prompt: 'Which two are the SAME size?', visual: 'Big 🐶 Small 🐶 Big 🐶', choices: ['Big and Big', 'Big and Small', 'Small and Small'], answer: 'Big and Big', skillIds: ['same-different', 'size-comparison'] },
   { id: 'sd-6', prompt: 'Which is DIFFERENT?', visual: '🟢 🟢 🟢 🔴', choices: ['First 🟢', 'Last one 🔴', 'Third 🟢'], answer: 'Last one 🔴', skillIds: ['same-different'] },
+  { id: 'sd-7', prompt: 'Which is DIFFERENT?', visual: '🐝 🐝 🦋 🐝', choices: ['First 🐝', '🦋', 'Last 🐝'], answer: '🦋', skillIds: ['same-different'] },
+  { id: 'sd-8', prompt: 'Which two are the SAME?', visual: '🌸 🌻 🌸', choices: ['🌸 and 🌸', '🌸 and 🌻', '🌻 and 🌻'], answer: '🌸 and 🌸', skillIds: ['same-different'] },
+  { id: 'sd-9', prompt: 'Which is DIFFERENT?', visual: '⬜ ⬜ 🔺 ⬜', choices: ['First ⬜', '🔺', 'Last ⬜'], answer: '🔺', skillIds: ['same-different'] },
+  { id: 'sd-10', prompt: 'Which is DIFFERENT?', visual: '🚗 🚗 🚌 🚗', choices: ['First 🚗', '🚌', 'Last 🚗'], answer: '🚌', skillIds: ['same-different'] },
+  { id: 'sd-11', prompt: 'Which two are the SAME?', visual: '🎈 🎁 🎈', choices: ['🎈 and 🎈', '🎈 and 🎁', '🎁 and 🎁'], answer: '🎈 and 🎈', skillIds: ['same-different'] },
+  { id: 'sd-12', prompt: 'Which is DIFFERENT?', visual: '😊 😊 😊 😢', choices: ['First 😊', 'Second 😊', '😢'], answer: '😢', skillIds: ['same-different'] },
+  { id: 'sd-13', prompt: 'Which is DIFFERENT?', visual: '🔵 🔴 🔵 🔵', choices: ['🔴', 'First 🔵', 'Last 🔵'], answer: '🔴', skillIds: ['same-different'] },
+  { id: 'sd-14', prompt: 'Which two are the SAME?', visual: '🐟 🐠 🐟', choices: ['🐟 and 🐟', '🐟 and 🐠', '🐠 and 🐠'], answer: '🐟 and 🐟', skillIds: ['same-different'] },
+  { id: 'sd-15', prompt: 'Which is DIFFERENT?', visual: '🌳 🌳 🌵 🌳', choices: ['First 🌳', '🌵', 'Last 🌳'], answer: '🌵', skillIds: ['same-different'] },
 ];
 
 // ====== DAILY LIFE SKILLS ======
@@ -269,6 +508,15 @@ export const healthyFoodQuestions: Question[] = [
   { id: 'hf-4', prompt: 'Which helps you grow strong?', choices: ['🥛 Milk', '🍭 Lollipop', '🧁 Cupcake'], answer: '🥛 Milk', skillIds: ['healthy-food'] },
   { id: 'hf-5', prompt: 'Which is a vegetable?', choices: ['🥦 Broccoli', '🍩 Donut', '🎂 Cake'], answer: '🥦 Broccoli', skillIds: ['healthy-food'] },
   { id: 'hf-6', prompt: 'What should you drink the most?', choices: ['🥤 Soda', '💧 Water', '🧃 Juice'], answer: '💧 Water', skillIds: ['healthy-food'] },
+  { id: 'hf-7', prompt: 'Which snack is healthier?', choices: ['🥜 Nuts', '🍫 Chocolate bar', '🧁 Cupcake'], answer: '🥜 Nuts', skillIds: ['healthy-food'] },
+  { id: 'hf-8', prompt: 'Which food gives you energy?', choices: ['🍚 Rice', '🍬 Candy', '🍭 Lollipop'], answer: '🍚 Rice', skillIds: ['healthy-food'] },
+  { id: 'hf-9', prompt: 'Which is a fruit?', choices: ['🍓 Strawberry', '🌭 Hot dog', '🍿 Popcorn'], answer: '🍓 Strawberry', skillIds: ['healthy-food'] },
+  { id: 'hf-10', prompt: 'Which is good for your bones?', choices: ['🧀 Cheese', '🍬 Candy', '🥤 Soda'], answer: '🧀 Cheese', skillIds: ['healthy-food'] },
+  { id: 'hf-11', prompt: 'Which is a vegetable?', choices: ['🥬 Lettuce', '🍩 Donut', '🍦 Ice cream'], answer: '🥬 Lettuce', skillIds: ['healthy-food'] },
+  { id: 'hf-12', prompt: 'Which breakfast is healthier?', choices: ['🥣 Oatmeal', '🍫 Chocolate', '🍬 Candy'], answer: '🥣 Oatmeal', skillIds: ['healthy-food'] },
+  { id: 'hf-13', prompt: 'Which is a healthy lunch?', choices: ['🥗 Salad', '🍰 Cake', '🍭 Candy'], answer: '🥗 Salad', skillIds: ['healthy-food'] },
+  { id: 'hf-14', prompt: 'Which gives you vitamins?', choices: ['🍊 Orange', '🍟 Fries', '🧁 Cupcake'], answer: '🍊 Orange', skillIds: ['healthy-food'] },
+  { id: 'hf-15', prompt: 'How many fruits should you eat daily?', choices: ['0', '2-3', '10'], answer: '2-3', skillIds: ['healthy-food'] },
 ];
 
 export const emotionsQuestions: Question[] = [
@@ -278,6 +526,15 @@ export const emotionsQuestions: Question[] = [
   { id: 'em-4', prompt: 'How does this face feel?', emoji: '😮', choices: ['Sad', 'Angry', 'Surprised'], answer: 'Surprised', skillIds: ['emotions'] },
   { id: 'em-5', prompt: 'How does this face feel?', emoji: '😨', choices: ['Happy', 'Scared', 'Angry'], answer: 'Scared', skillIds: ['emotions'] },
   { id: 'em-6', prompt: 'You get a present! How do you feel?', emoji: '🎁', choices: ['Happy', 'Sad', 'Angry'], answer: 'Happy', skillIds: ['emotions'] },
+  { id: 'em-7', prompt: 'Your toy breaks. How do you feel?', emoji: '🧸', choices: ['Happy', 'Sad', 'Excited'], answer: 'Sad', skillIds: ['emotions'] },
+  { id: 'em-8', prompt: 'How does this face feel?', emoji: '🥰', choices: ['Loved', 'Angry', 'Scared'], answer: 'Loved', skillIds: ['emotions'] },
+  { id: 'em-9', prompt: 'You made a new friend! How do you feel?', emoji: '🤝', choices: ['Sad', 'Happy', 'Angry'], answer: 'Happy', skillIds: ['emotions'] },
+  { id: 'em-10', prompt: 'You hear a loud noise! How do you feel?', emoji: '💥', choices: ['Happy', 'Startled', 'Sleepy'], answer: 'Startled', skillIds: ['emotions'] },
+  { id: 'em-11', prompt: 'How does this face feel?', emoji: '😴', choices: ['Angry', 'Happy', 'Sleepy'], answer: 'Sleepy', skillIds: ['emotions'] },
+  { id: 'em-12', prompt: 'You can\'t find your toy. How do you feel?', emoji: '😟', choices: ['Worried', 'Happy', 'Sleepy'], answer: 'Worried', skillIds: ['emotions'] },
+  { id: 'em-13', prompt: 'Your friend shares cookies! How do you feel?', emoji: '🍪', choices: ['Grateful', 'Angry', 'Sad'], answer: 'Grateful', skillIds: ['emotions'] },
+  { id: 'em-14', prompt: 'How does this face feel?', emoji: '🤗', choices: ['Loving', 'Scared', 'Angry'], answer: 'Loving', skillIds: ['emotions'] },
+  { id: 'em-15', prompt: 'It\'s your birthday! How do you feel?', emoji: '🎂', choices: ['Sad', 'Excited', 'Angry'], answer: 'Excited', skillIds: ['emotions'] },
 ];
 
 export const safetyQuestions: Question[] = [
@@ -287,6 +544,15 @@ export const safetyQuestions: Question[] = [
   { id: 'sf2-4', prompt: 'A stranger offers you candy. What do you do?', emoji: '🍬', choices: ['Take it', 'Say no, tell an adult', 'Follow them'], answer: 'Say no, tell an adult', skillIds: ['safety'] },
   { id: 'sf2-5', prompt: 'What color means STOP?', emoji: '🚦', choices: ['Green', 'Red', 'Blue'], answer: 'Red', skillIds: ['safety'] },
   { id: 'sf2-6', prompt: 'If you feel lost, who should you find?', emoji: '👮', choices: ['A police officer', 'Another kid', 'Nobody'], answer: 'A police officer', skillIds: ['safety'] },
+  { id: 'sf2-7', prompt: 'What color means GO?', emoji: '🚦', choices: ['Red', 'Yellow', 'Green'], answer: 'Green', skillIds: ['safety'] },
+  { id: 'sf2-8', prompt: 'Should you play with matches?', emoji: '🔥', choices: ['Yes', 'Never!', 'Sometimes'], answer: 'Never!', skillIds: ['safety'] },
+  { id: 'sf2-9', prompt: 'What do you do in a fire drill?', emoji: '🏫', choices: ['Hide', 'Walk outside calmly', 'Run around'], answer: 'Walk outside calmly', skillIds: ['safety'] },
+  { id: 'sf2-10', prompt: 'Should you touch a hot stove?', emoji: '🔥', choices: ['Yes', 'No, never!', 'If hungry'], answer: 'No, never!', skillIds: ['safety'] },
+  { id: 'sf2-11', prompt: 'What do you do if the smoke alarm beeps?', emoji: '🚨', choices: ['Ignore it', 'Go outside', 'Go to sleep'], answer: 'Go outside', skillIds: ['safety'] },
+  { id: 'sf2-12', prompt: 'Is it safe to swim alone?', emoji: '🏊', choices: ['Yes', 'No, need an adult', 'Sometimes'], answer: 'No, need an adult', skillIds: ['safety'] },
+  { id: 'sf2-13', prompt: 'What number do you call in an emergency?', emoji: '📱', choices: ['123', '911', '555'], answer: '911', skillIds: ['safety'] },
+  { id: 'sf2-14', prompt: 'Should you run near a pool?', emoji: '🏊', choices: ['Yes', 'No, walk!', 'Only if late'], answer: 'No, walk!', skillIds: ['safety'] },
+  { id: 'sf2-15', prompt: 'What should you always wear in a car?', emoji: '🚗', choices: ['Hat', 'Seatbelt', 'Sunglasses'], answer: 'Seatbelt', skillIds: ['safety'] },
 ];
 
 export const routinesQuestions: Question[] = [
@@ -296,6 +562,15 @@ export const routinesQuestions: Question[] = [
   { id: 'rt-4', prompt: 'After playing outside, you should...', emoji: '🧼', choices: ['Watch TV', 'Wash hands', 'Go to bed'], answer: 'Wash hands', skillIds: ['routines', 'good-habits'] },
   { id: 'rt-5', prompt: 'What helps you sleep well?', emoji: '😴', choices: ['Sugar', 'Dark quiet room', 'Loud music'], answer: 'Dark quiet room', skillIds: ['routines'] },
   { id: 'rt-6', prompt: 'When do we take a bath?', emoji: '🛁', choices: ['Every day', 'Once a year', 'Never'], answer: 'Every day', skillIds: ['routines', 'good-habits'] },
+  { id: 'rt-7', prompt: 'What do you do after waking up?', emoji: '🌅', choices: ['Get dressed', 'Go to sleep', 'Skip dinner'], answer: 'Get dressed', skillIds: ['routines'] },
+  { id: 'rt-8', prompt: 'When should you wash your hands?', emoji: '🧴', choices: ['Before eating', 'Never', 'Only on Mondays'], answer: 'Before eating', skillIds: ['routines', 'good-habits'] },
+  { id: 'rt-9', prompt: 'What do you do before leaving the house?', emoji: '🚪', choices: ['Put on shoes', 'Take a nap', 'Eat dinner'], answer: 'Put on shoes', skillIds: ['routines'] },
+  { id: 'rt-10', prompt: 'How often should you exercise?', emoji: '🏃', choices: ['Every day', 'Once a year', 'Never'], answer: 'Every day', skillIds: ['routines', 'good-habits'] },
+  { id: 'rt-11', prompt: 'What should you drink when thirsty?', emoji: '🥤', choices: ['Water', 'Soda', 'Juice only'], answer: 'Water', skillIds: ['routines', 'good-habits'] },
+  { id: 'rt-12', prompt: 'Where do dirty clothes go?', emoji: '👕', choices: ['Floor', 'Laundry basket', 'Under bed'], answer: 'Laundry basket', skillIds: ['routines'] },
+  { id: 'rt-13', prompt: 'What do you say when someone helps you?', emoji: '🙏', choices: ['Nothing', 'Thank you!', 'Give me more'], answer: 'Thank you!', skillIds: ['routines', 'good-habits'] },
+  { id: 'rt-14', prompt: 'How many hours of sleep do kids need?', emoji: '🌙', choices: ['2 hours', '10 hours', '1 hour'], answer: '10 hours', skillIds: ['routines'] },
+  { id: 'rt-15', prompt: 'After using the toilet, you should...', emoji: '🚽', choices: ['Wash hands', 'Run away', 'Take a nap'], answer: 'Wash hands', skillIds: ['routines', 'good-habits'] },
 ];
 
 export const friendshipQuestions: Question[] = [
@@ -305,6 +580,15 @@ export const friendshipQuestions: Question[] = [
   { id: 'fr-4', prompt: 'Is it kind to share?', emoji: '🤲', choices: ['Yes!', 'No', 'Only sometimes'], answer: 'Yes!', skillIds: ['friendship', 'good-habits'] },
   { id: 'fr-5', prompt: 'Your friend wants to play something different. What do you do?', emoji: '🎮', choices: ['Take turns choosing', 'Only play your game', 'Get angry'], answer: 'Take turns choosing', skillIds: ['friendship'] },
   { id: 'fr-6', prompt: 'What makes a good friend?', emoji: '💛', choices: ['Being kind', 'Being mean', 'Being bossy'], answer: 'Being kind', skillIds: ['friendship'] },
+  { id: 'fr-7', prompt: 'Someone drops their books. What do you do?', emoji: '📚', choices: ['Laugh', 'Help them pick up', 'Walk away'], answer: 'Help them pick up', skillIds: ['friendship'] },
+  { id: 'fr-8', prompt: 'A new kid joins your class. What do you do?', emoji: '🆕', choices: ['Ignore them', 'Invite them to play', 'Be mean'], answer: 'Invite them to play', skillIds: ['friendship'] },
+  { id: 'fr-9', prompt: 'Your friend made a mistake. What do you do?', emoji: '🫂', choices: ['Make fun of them', 'Help them', 'Tell everyone'], answer: 'Help them', skillIds: ['friendship'] },
+  { id: 'fr-10', prompt: 'What should you say if you bump into someone?', emoji: '💬', choices: ['Nothing', 'Sorry!', 'Move!'], answer: 'Sorry!', skillIds: ['friendship', 'good-habits'] },
+  { id: 'fr-11', prompt: 'Your friend wins a game. What do you say?', emoji: '🏆', choices: ['That\'s not fair!', 'Good job!', 'I quit!'], answer: 'Good job!', skillIds: ['friendship'] },
+  { id: 'fr-12', prompt: 'Is it okay to feel angry sometimes?', emoji: '😠', choices: ['Yes, feelings are okay', 'No, never', 'Only adults can'], answer: 'Yes, feelings are okay', skillIds: ['friendship', 'emotions'] },
+  { id: 'fr-13', prompt: 'Someone is being mean to a friend. What do you do?', emoji: '🛡️', choices: ['Join in', 'Tell a teacher', 'Watch'], answer: 'Tell a teacher', skillIds: ['friendship'] },
+  { id: 'fr-14', prompt: 'What is a good way to solve a problem?', emoji: '🗣️', choices: ['Hit', 'Talk about it', 'Scream'], answer: 'Talk about it', skillIds: ['friendship'] },
+  { id: 'fr-15', prompt: 'How do you show someone you care?', emoji: '❤️', choices: ['Listen to them', 'Ignore them', 'Boss them around'], answer: 'Listen to them', skillIds: ['friendship'] },
 ];
 
 // ====== TRUCKS & CARS ======
@@ -316,6 +600,15 @@ export const truckNamesQuestions: Question[] = [
   { id: 'tn-4', prompt: 'This vehicle takes kids to school!', emoji: '🚌', choices: ['Fire Truck', 'School Bus', 'Police Car'], answer: 'School Bus', skillIds: ['vehicle-recognition'] },
   { id: 'tn-5', prompt: 'This car helps catch bad guys!', emoji: '🚓', choices: ['Taxi', 'Ambulance', 'Police Car'], answer: 'Police Car', skillIds: ['vehicle-recognition'] },
   { id: 'tn-6', prompt: 'This vehicle helps sick people!', emoji: '🚑', choices: ['School Bus', 'Ambulance', 'Taxi'], answer: 'Ambulance', skillIds: ['vehicle-recognition'] },
+  { id: 'tn-7', prompt: 'This truck delivers packages!', emoji: '📦', choices: ['Delivery Truck', 'Fire Truck', 'Bus'], answer: 'Delivery Truck', skillIds: ['vehicle-recognition'] },
+  { id: 'tn-8', prompt: 'This truck moves other cars!', emoji: '🚗', choices: ['School Bus', 'Tow Truck', 'Taxi'], answer: 'Tow Truck', skillIds: ['vehicle-recognition'] },
+  { id: 'tn-9', prompt: 'This truck sells ice cream!', emoji: '🍦', choices: ['Fire Truck', 'Ice Cream Truck', 'Mail Truck'], answer: 'Ice Cream Truck', skillIds: ['vehicle-recognition'] },
+  { id: 'tn-10', prompt: 'This vehicle flies in the sky!', emoji: '✈️', choices: ['Car', 'Airplane', 'Boat'], answer: 'Airplane', skillIds: ['vehicle-recognition'] },
+  { id: 'tn-11', prompt: 'This vehicle goes on water!', emoji: '🚢', choices: ['Truck', 'Airplane', 'Ship'], answer: 'Ship', skillIds: ['vehicle-recognition'] },
+  { id: 'tn-12', prompt: 'This vehicle has a ladder on top!', emoji: '🪜', choices: ['Fire Truck', 'School Bus', 'Taxi'], answer: 'Fire Truck', skillIds: ['vehicle-recognition'] },
+  { id: 'tn-13', prompt: 'This truck mixes concrete!', emoji: '🏗️', choices: ['Cement Mixer', 'Garbage Truck', 'Dump Truck'], answer: 'Cement Mixer', skillIds: ['vehicle-recognition'] },
+  { id: 'tn-14', prompt: 'This vehicle runs on rails!', emoji: '🚂', choices: ['Bus', 'Car', 'Train'], answer: 'Train', skillIds: ['vehicle-recognition'] },
+  { id: 'tn-15', prompt: 'This vehicle has blinking lights and a siren!', emoji: '🚨', choices: ['School Bus', 'Emergency Vehicle', 'Bicycle'], answer: 'Emergency Vehicle', skillIds: ['vehicle-recognition'] },
 ];
 
 export const vehicleCountingQuestions: Question[] = [
@@ -325,6 +618,15 @@ export const vehicleCountingQuestions: Question[] = [
   { id: 'vc-4', prompt: 'How many cars?', visual: '🚗🚗🚗🚗🚗🚗', choices: ['5', '6', '7'], answer: '6', skillIds: ['vehicle-counting', 'counting'] },
   { id: 'vc-5', prompt: 'How many bikes?', visual: '🚲🚲🚲🚲', choices: ['3', '4', '5'], answer: '4', skillIds: ['vehicle-counting', 'counting'] },
   { id: 'vc-6', prompt: 'How many helicopters?', visual: '🚁🚁🚁🚁🚁🚁🚁', choices: ['6', '7', '8'], answer: '7', skillIds: ['vehicle-counting', 'counting'] },
+  { id: 'vc-7', prompt: 'How many planes?', visual: '✈️✈️✈️', choices: ['2', '3', '4'], answer: '3', skillIds: ['vehicle-counting', 'counting'] },
+  { id: 'vc-8', prompt: 'How many boats?', visual: '⛵⛵⛵⛵⛵⛵⛵⛵', choices: ['7', '8', '9'], answer: '8', skillIds: ['vehicle-counting', 'counting'] },
+  { id: 'vc-9', prompt: 'How many trains?', visual: '🚂', choices: ['1', '2', '3'], answer: '1', skillIds: ['vehicle-counting', 'counting'] },
+  { id: 'vc-10', prompt: 'How many rockets?', visual: '🚀🚀🚀🚀🚀🚀🚀🚀🚀', choices: ['8', '9', '10'], answer: '9', skillIds: ['vehicle-counting', 'counting'] },
+  { id: 'vc-11', prompt: 'How many taxis?', visual: '🚕🚕🚕🚕🚕', choices: ['4', '5', '6'], answer: '5', skillIds: ['vehicle-counting', 'counting'] },
+  { id: 'vc-12', prompt: 'How many scooters?', visual: '🛴🛴🛴🛴🛴🛴🛴🛴🛴🛴', choices: ['9', '10', '11'], answer: '10', skillIds: ['vehicle-counting', 'counting'] },
+  { id: 'vc-13', prompt: 'How many motorcycles?', visual: '🏍️🏍️🏍️🏍️🏍️🏍️', choices: ['5', '6', '7'], answer: '6', skillIds: ['vehicle-counting', 'counting'] },
+  { id: 'vc-14', prompt: 'How many ambulances?', visual: '🚑🚑🚑🚑', choices: ['3', '4', '5'], answer: '4', skillIds: ['vehicle-counting', 'counting'] },
+  { id: 'vc-15', prompt: 'How many police cars?', visual: '🚓🚓🚓🚓🚓🚓🚓', choices: ['6', '7', '8'], answer: '7', skillIds: ['vehicle-counting', 'counting'] },
 ];
 
 export const vehicleSoundsQuestions: Question[] = [
@@ -334,6 +636,15 @@ export const vehicleSoundsQuestions: Question[] = [
   { id: 'vs-4', prompt: 'VROOM VROOM! What makes this sound?', choices: ['Race car 🏎️', 'Boat ⛵', 'Bike 🚲'], answer: 'Race car 🏎️', skillIds: ['vehicle-sounds'] },
   { id: 'vs-5', prompt: 'HONK HONK! What makes this sound?', choices: ['Truck 🚛', 'Fish 🐟', 'Cloud ☁️'], answer: 'Truck 🚛', skillIds: ['vehicle-sounds'] },
   { id: 'vs-6', prompt: 'WHOOSH! What makes this sound?', choices: ['Rock 🪨', 'Airplane ✈️', 'House 🏠'], answer: 'Airplane ✈️', skillIds: ['vehicle-sounds'] },
+  { id: 'vs-7', prompt: 'DING DING! What makes this sound?', choices: ['Bicycle bell 🚲', 'Truck 🚛', 'Plane ✈️'], answer: 'Bicycle bell 🚲', skillIds: ['vehicle-sounds'] },
+  { id: 'vs-8', prompt: 'SPLASH! What makes this sound?', choices: ['Car 🚗', 'Boat in water 🚤', 'Train 🚂'], answer: 'Boat in water 🚤', skillIds: ['vehicle-sounds'] },
+  { id: 'vs-9', prompt: 'CLACK CLACK! What makes this sound?', choices: ['Train on tracks 🚂', 'Bicycle 🚲', 'Airplane ✈️'], answer: 'Train on tracks 🚂', skillIds: ['vehicle-sounds'] },
+  { id: 'vs-10', prompt: 'PUTT PUTT! What makes this sound?', choices: ['Motorcycle 🏍️', 'Kite 🪁', 'Ball ⚽'], answer: 'Motorcycle 🏍️', skillIds: ['vehicle-sounds'] },
+  { id: 'vs-11', prompt: 'NEE-NAW NEE-NAW! What makes this sound?', choices: ['Ambulance 🚑', 'School bus 🚌', 'Tractor 🚜'], answer: 'Ambulance 🚑', skillIds: ['vehicle-sounds'] },
+  { id: 'vs-12', prompt: 'RUMBLE RUMBLE! What makes this sound?', choices: ['Big truck engine 🚛', 'Bird 🐦', 'Cloud ☁️'], answer: 'Big truck engine 🚛', skillIds: ['vehicle-sounds'] },
+  { id: 'vs-13', prompt: 'WHIRR WHIRR! What makes this sound?', choices: ['Helicopter 🚁', 'Bicycle 🚲', 'Boat ⛵'], answer: 'Helicopter 🚁', skillIds: ['vehicle-sounds'] },
+  { id: 'vs-14', prompt: 'SCREECH! What makes this sound?', choices: ['Car brakes 🚗', 'Fish 🐟', 'Tree 🌳'], answer: 'Car brakes 🚗', skillIds: ['vehicle-sounds'] },
+  { id: 'vs-15', prompt: 'TOOT TOOT! What makes this sound?', choices: ['Ship horn 🚢', 'Cat 🐱', 'Ball ⚽'], answer: 'Ship horn 🚢', skillIds: ['vehicle-sounds'] },
 ];
 
 export const vehicleJobsQuestions: Question[] = [
@@ -343,6 +654,15 @@ export const vehicleJobsQuestions: Question[] = [
   { id: 'vj-4', prompt: 'Which vehicle builds roads?', emoji: '🛣️', choices: ['Bulldozer', 'Bicycle', 'Airplane'], answer: 'Bulldozer', skillIds: ['vehicle-jobs'] },
   { id: 'vj-5', prompt: 'Which vehicle flies in the sky?', emoji: '🌤️', choices: ['Boat', 'Airplane', 'Train'], answer: 'Airplane', skillIds: ['vehicle-jobs'] },
   { id: 'vj-6', prompt: 'Which vehicle carries things across water?', emoji: '🌊', choices: ['Truck', 'Boat', 'Helicopter'], answer: 'Boat', skillIds: ['vehicle-jobs'] },
+  { id: 'vj-7', prompt: 'Which vehicle plows a farm field?', emoji: '🌾', choices: ['Tractor', 'Airplane', 'Taxi'], answer: 'Tractor', skillIds: ['vehicle-jobs'] },
+  { id: 'vj-8', prompt: 'Which vehicle takes many people across a city?', emoji: '🏙️', choices: ['Bicycle', 'Bus', 'Skateboard'], answer: 'Bus', skillIds: ['vehicle-jobs'] },
+  { id: 'vj-9', prompt: 'Which vehicle lifts heavy things on a building?', emoji: '🏗️', choices: ['Crane', 'Scooter', 'Sailboat'], answer: 'Crane', skillIds: ['vehicle-jobs'] },
+  { id: 'vj-10', prompt: 'Which vehicle cleans the streets?', emoji: '🧹', choices: ['Race car', 'Street sweeper', 'Airplane'], answer: 'Street sweeper', skillIds: ['vehicle-jobs'] },
+  { id: 'vj-11', prompt: 'Which vehicle saves people at the beach?', emoji: '🏖️', choices: ['Lifeguard boat', 'Train', 'Dump truck'], answer: 'Lifeguard boat', skillIds: ['vehicle-jobs'] },
+  { id: 'vj-12', prompt: 'Which vehicle takes you on a ride for money?', emoji: '💰', choices: ['Police car', 'Taxi', 'Fire truck'], answer: 'Taxi', skillIds: ['vehicle-jobs'] },
+  { id: 'vj-13', prompt: 'Which vehicle brings food to stores?', emoji: '🏪', choices: ['Delivery truck', 'Bicycle', 'Canoe'], answer: 'Delivery truck', skillIds: ['vehicle-jobs'] },
+  { id: 'vj-14', prompt: 'Which vehicle explores space?', emoji: '🚀', choices: ['Airplane', 'Rocket', 'Helicopter'], answer: 'Rocket', skillIds: ['vehicle-jobs'] },
+  { id: 'vj-15', prompt: 'Which vehicle digs holes in the ground?', emoji: '🕳️', choices: ['Excavator', 'Bicycle', 'Sailboat'], answer: 'Excavator', skillIds: ['vehicle-jobs'] },
 ];
 
 export const vehicleSizeQuestions: Question[] = [
@@ -352,4 +672,32 @@ export const vehicleSizeQuestions: Question[] = [
   { id: 'vsize-4', prompt: 'Which is the SMALLEST?', choices: ['🛴 Scooter', '🚌 Bus', '🚂 Train'], answer: '🛴 Scooter', skillIds: ['size-comparison', 'vehicle-recognition'] },
   { id: 'vsize-5', prompt: 'Which is BIGGER?', choices: ['🏍️ Motorcycle', '🚁 Helicopter'], answer: '🚁 Helicopter', skillIds: ['size-comparison', 'vehicle-recognition'] },
   { id: 'vsize-6', prompt: 'Which is the BIGGEST?', choices: ['🚗 Car', '🚢 Ship', '🚌 Bus'], answer: '🚢 Ship', skillIds: ['size-comparison', 'vehicle-recognition'] },
+  { id: 'vsize-7', prompt: 'Which is SMALLER?', choices: ['🚀 Rocket', '🚗 Car'], answer: '🚗 Car', skillIds: ['size-comparison', 'vehicle-recognition'] },
+  { id: 'vsize-8', prompt: 'Which is the SMALLEST?', choices: ['🛹 Skateboard', '🚗 Car', '🚌 Bus'], answer: '🛹 Skateboard', skillIds: ['size-comparison', 'vehicle-recognition'] },
+  { id: 'vsize-9', prompt: 'Which is BIGGER?', choices: ['🚲 Bicycle', '🚗 Car'], answer: '🚗 Car', skillIds: ['size-comparison', 'vehicle-recognition'] },
+  { id: 'vsize-10', prompt: 'Which is the BIGGEST?', choices: ['🚂 Train', '🚗 Car', '🚲 Bicycle'], answer: '🚂 Train', skillIds: ['size-comparison', 'vehicle-recognition'] },
+  { id: 'vsize-11', prompt: 'Which is SMALLER?', choices: ['🚁 Helicopter', '✈️ Airplane'], answer: '🚁 Helicopter', skillIds: ['size-comparison', 'vehicle-recognition'] },
+  { id: 'vsize-12', prompt: 'Which is the SMALLEST?', choices: ['🏍️ Motorcycle', '🚢 Ship', '✈️ Airplane'], answer: '🏍️ Motorcycle', skillIds: ['size-comparison', 'vehicle-recognition'] },
+  { id: 'vsize-13', prompt: 'Which is BIGGER?', choices: ['🚌 Bus', '🚂 Train'], answer: '🚂 Train', skillIds: ['size-comparison', 'vehicle-recognition'] },
+  { id: 'vsize-14', prompt: 'Which is SMALLER?', choices: ['🚗 Car', '🚢 Ship'], answer: '🚗 Car', skillIds: ['size-comparison', 'vehicle-recognition'] },
+  { id: 'vsize-15', prompt: 'Which is the BIGGEST?', choices: ['🛴 Scooter', '🚌 Bus', '🚢 Ship'], answer: '🚢 Ship', skillIds: ['size-comparison', 'vehicle-recognition'] },
+];
+
+// Truck Math - dedicated truck-themed math questions (not reusing generic addition)
+export const truckMathQuestions: Question[] = [
+  { id: 'tm-1', prompt: '2 trucks + 1 truck = ?', speakText: 'Two trucks plus one truck equals?', visual: '🚛🚛 + 🚛', choices: ['2', '3', '4'], answer: '3', skillIds: ['addition-within-5', 'vehicle-counting'] },
+  { id: 'tm-2', prompt: '1 bus + 2 buses = ?', speakText: 'One bus plus two buses equals?', visual: '🚌 + 🚌🚌', choices: ['2', '3', '4'], answer: '3', skillIds: ['addition-within-5', 'vehicle-counting'] },
+  { id: 'tm-3', prompt: '3 cars + 1 car = ?', speakText: 'Three cars plus one car equals?', visual: '🚗🚗🚗 + 🚗', choices: ['3', '4', '5'], answer: '4', skillIds: ['addition-within-5', 'vehicle-counting'] },
+  { id: 'tm-4', prompt: '2 bikes + 2 bikes = ?', speakText: 'Two bikes plus two bikes equals?', visual: '🚲🚲 + 🚲🚲', choices: ['3', '4', '5'], answer: '4', skillIds: ['addition-within-5', 'vehicle-counting'] },
+  { id: 'tm-5', prompt: '1 fire truck + 1 fire truck = ?', speakText: 'One fire truck plus one fire truck equals?', visual: '🚒 + 🚒', choices: ['1', '2', '3'], answer: '2', skillIds: ['addition-within-5', 'vehicle-counting'] },
+  { id: 'tm-6', prompt: '2 planes + 3 planes = ?', speakText: 'Two planes plus three planes equals?', visual: '✈️✈️ + ✈️✈️✈️', choices: ['4', '5', '6'], answer: '5', skillIds: ['addition-within-5', 'vehicle-counting'] },
+  { id: 'tm-7', prompt: '4 boats - 2 boats = ?', speakText: 'Four boats minus two boats equals?', visual: '⛵⛵⛵⛵ take away ⛵⛵', choices: ['1', '2', '3'], answer: '2', skillIds: ['subtraction-within-5', 'vehicle-counting'] },
+  { id: 'tm-8', prompt: '3 trains - 1 train = ?', speakText: 'Three trains minus one train equals?', visual: '🚂🚂🚂 take away 🚂', choices: ['1', '2', '3'], answer: '2', skillIds: ['subtraction-within-5', 'vehicle-counting'] },
+  { id: 'tm-9', prompt: '5 taxis - 3 taxis = ?', speakText: 'Five taxis minus three taxis equals?', visual: '🚕🚕🚕🚕🚕 take away 🚕🚕🚕', choices: ['1', '2', '3'], answer: '2', skillIds: ['subtraction-within-5', 'vehicle-counting'] },
+  { id: 'tm-10', prompt: '3 helicopters + 2 helicopters = ?', speakText: 'Three helicopters plus two helicopters equals?', visual: '🚁🚁🚁 + 🚁🚁', choices: ['4', '5', '6'], answer: '5', skillIds: ['addition-within-5', 'vehicle-counting'] },
+  { id: 'tm-11', prompt: '5 trucks - 2 trucks = ?', speakText: 'Five trucks minus two trucks equals?', visual: '🚛🚛🚛🚛🚛 take away 🚛🚛', choices: ['2', '3', '4'], answer: '3', skillIds: ['subtraction-within-5', 'vehicle-counting'] },
+  { id: 'tm-12', prompt: '1 rocket + 4 rockets = ?', speakText: 'One rocket plus four rockets equals?', visual: '🚀 + 🚀🚀🚀🚀', choices: ['4', '5', '6'], answer: '5', skillIds: ['addition-within-5', 'vehicle-counting'] },
+  { id: 'tm-13', prompt: '4 police cars - 1 police car = ?', speakText: 'Four police cars minus one police car equals?', visual: '🚓🚓🚓🚓 take away 🚓', choices: ['2', '3', '4'], answer: '3', skillIds: ['subtraction-within-5', 'vehicle-counting'] },
+  { id: 'tm-14', prompt: '0 trucks + 3 trucks = ?', speakText: 'Zero trucks plus three trucks equals?', choices: ['2', '3', '4'], answer: '3', skillIds: ['addition-within-5', 'vehicle-counting'] },
+  { id: 'tm-15', prompt: '2 ambulances + 2 ambulances = ?', speakText: 'Two ambulances plus two ambulances equals?', visual: '🚑🚑 + 🚑🚑', choices: ['3', '4', '5'], answer: '4', skillIds: ['addition-within-5', 'vehicle-counting'] },
 ];

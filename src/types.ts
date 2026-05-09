@@ -7,6 +7,7 @@ export type GradeMeta = {
   emoji: string;
   color: string;
   bgGradient: string;
+  accentColor: string;
   description: string;
 };
 
