@@ -14,7 +14,7 @@ type Props = {
 
 export default function SectionLayout({ title, emoji, intro, backTo, speakText, children }: Props) {
   return (
-    <div className="min-h-screen px-3 sm:px-6 py-4 max-w-5xl mx-auto">
+    <div className="min-h-screen px-3 sm:px-6 py-5 max-w-5xl mx-auto">
       <header className="flex items-center justify-between gap-3 flex-wrap">
         <BackButton to={backTo} />
         <div className="flex gap-2 items-center">
@@ -22,7 +22,7 @@ export default function SectionLayout({ title, emoji, intro, backTo, speakText, 
           <VoiceToggle />
         </div>
       </header>
-      <h1 className="mt-4 text-3xl sm:text-4xl font-extrabold text-center">
+      <h1 className="mt-5 text-3xl sm:text-4xl font-display font-bold text-center text-slate text-shadow-kid">
         {emoji && (
           <span className="mr-2" aria-hidden="true">
             {emoji}
@@ -30,7 +30,7 @@ export default function SectionLayout({ title, emoji, intro, backTo, speakText, 
         )}
         {title}
       </h1>
-      {intro && <p className="text-center text-lg text-gray-700 mt-1">{intro}</p>}
+      {intro && <p className="text-center text-lg text-slate/60 font-body mt-1">{intro}</p>}
       <main className="mt-6">{children}</main>
     </div>
   );
