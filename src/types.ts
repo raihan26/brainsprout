@@ -18,7 +18,8 @@ export type SectionId =
   | 'shapes'
   | 'logic'
   | 'life-skills'
-  | 'trucks';
+  | 'trucks'
+  | 'stem';
 
 export type Question = {
   id: string;

@@ -8,6 +8,7 @@ export const SECTIONS: { id: SectionId; title: string; emoji: string; color: 'su
   { id: 'shapes', title: 'Shapes & Colors', emoji: '🔷', color: 'sun', tagline: 'Spot shapes and colors everywhere', grades: ['k', '1'] },
   { id: 'logic', title: 'Logic Playground', emoji: '🧠', color: 'grass', tagline: 'Think, match, and solve', grades: ['k', '1', '2', '3'] },
   { id: 'life-skills', title: 'Daily Life Skills', emoji: '⭐', color: 'sky', tagline: 'Healthy, kind, and safe', grades: ['k', '1'] },
+  { id: 'stem', title: 'STEM Lab', emoji: '🤖', color: 'plum', tagline: 'Robots, computers & building!', grades: ['k', '1', '2', '3'] },
 ];
 
 export const ACTIVITIES: ActivityMeta[] = [
@@ -65,6 +66,13 @@ export const ACTIVITIES: ActivityMeta[] = [
   { id: 'trucks.jobs', grade: 'k', section: 'trucks', title: 'Vehicle Jobs', shortTitle: 'Jobs', emoji: '👷', description: 'Match vehicle to job', path: '/trucks/jobs', skillIds: ['vehicle-jobs'], estimatedMinutes: 2, difficulty: 'easy' },
   { id: 'trucks.size', grade: 'k', section: 'trucks', title: 'Big or Small?', shortTitle: 'Size', emoji: '📏', description: 'Compare vehicle sizes', path: '/trucks/size', skillIds: ['size-comparison'], estimatedMinutes: 2, difficulty: 'easy' },
   { id: 'trucks.math', grade: 'k', section: 'trucks', title: 'Truck Math', shortTitle: 'Math', emoji: '🧮', description: 'Add up the trucks', path: '/trucks/math', skillIds: ['addition-within-5', 'vehicle-counting'], estimatedMinutes: 3, difficulty: 'medium' },
+
+  // STEM Lab
+  { id: 'stem.computers', grade: 'k', section: 'stem', title: 'What is a Computer?', shortTitle: 'Computers', emoji: '💻', description: 'Learn about computers!', path: '/stem/computers', skillIds: ['computers', 'technology'], estimatedMinutes: 3, difficulty: 'easy' },
+  { id: 'stem.robots', grade: 'k', section: 'stem', title: 'Robots & Helpers', shortTitle: 'Robots', emoji: '🤖', description: 'What do robots do?', path: '/stem/robots', skillIds: ['robotics', 'technology'], estimatedMinutes: 3, difficulty: 'easy' },
+  { id: 'stem.build', grade: 'k', section: 'stem', title: 'Build & Create', shortTitle: 'Build', emoji: '🔧', description: 'How things are made', path: '/stem/build', skillIds: ['engineering', 'building'], estimatedMinutes: 3, difficulty: 'easy' },
+  { id: 'stem.space', grade: 'k', section: 'stem', title: 'Space Explorer', shortTitle: 'Space', emoji: '🚀', description: 'Rockets, planets & stars', path: '/stem/space', skillIds: ['space', 'science'], estimatedMinutes: 3, difficulty: 'easy' },
+  { id: 'stem.electricity', grade: 'k', section: 'stem', title: 'Power & Energy', shortTitle: 'Energy', emoji: '⚡', description: 'What makes things go?', path: '/stem/electricity', skillIds: ['energy', 'technology'], estimatedMinutes: 2, difficulty: 'medium' },
 
   // === GRADE 1 ===
   { id: 'g1.math.addition', grade: '1', section: 'math', title: 'Addition to 20', emoji: '➕', description: 'Add numbers up to 20', path: '/math/addition', skillIds: ['addition-within-5'] },
