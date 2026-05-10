@@ -1,13 +1,13 @@
 import type { ActivityMeta, GradeId, SectionId } from '../types';
 
 export const SECTIONS: { id: SectionId; title: string; emoji: string; color: 'sun' | 'sky' | 'grass' | 'berry' | 'plum'; tagline: string; grades: GradeId[] }[] = [
-  { id: 'trucks', title: 'Trucks & Cars', emoji: '🛻', color: 'berry', tagline: 'Cybertruck, monster trucks & more!', grades: ['k'] },
-  { id: 'math', title: 'Math Garden', emoji: '🧮', color: 'sky', tagline: 'Counting, adding, and number fun', grades: ['k', '1', '2', '3'] },
-  { id: 'reading', title: 'Letter Treehouse', emoji: '📚', color: 'plum', tagline: 'Letters, sounds, and first words', grades: ['k', '1', '2', '3'] },
-  { id: 'science', title: 'Science Explorers', emoji: '🔬', color: 'grass', tagline: 'Explore the world around us', grades: ['k', '1', '2', '3'] },
-  { id: 'shapes', title: 'Shapes & Colors', emoji: '🎨', color: 'sun', tagline: 'Spot shapes and colors everywhere', grades: ['k', '1'] },
-  { id: 'logic', title: 'Logic Playground', emoji: '🧩', color: 'grass', tagline: 'Think, match, and solve', grades: ['k', '1', '2', '3'] },
-  { id: 'life-skills', title: 'Daily Life Skills', emoji: '🌟', color: 'sky', tagline: 'Healthy, kind, and safe', grades: ['k', '1'] },
+  { id: 'trucks', title: 'Wheels & Engines', emoji: '🚒', color: 'berry', tagline: 'Fire trucks, buses, cars & more!', grades: ['k'] },
+  { id: 'math', title: 'Math Garden', emoji: '🔢', color: 'sky', tagline: 'Counting, adding, and number fun', grades: ['k', '1', '2', '3'] },
+  { id: 'reading', title: 'Letter Treehouse', emoji: '📖', color: 'plum', tagline: 'Letters, sounds, and first words', grades: ['k', '1', '2', '3'] },
+  { id: 'science', title: 'Science Explorers', emoji: '🌍', color: 'grass', tagline: 'Explore the world around us', grades: ['k', '1', '2', '3'] },
+  { id: 'shapes', title: 'Shapes & Colors', emoji: '🔷', color: 'sun', tagline: 'Spot shapes and colors everywhere', grades: ['k', '1'] },
+  { id: 'logic', title: 'Logic Playground', emoji: '🧠', color: 'grass', tagline: 'Think, match, and solve', grades: ['k', '1', '2', '3'] },
+  { id: 'life-skills', title: 'Daily Life Skills', emoji: '⭐', color: 'sky', tagline: 'Healthy, kind, and safe', grades: ['k', '1'] },
 ];
 
 export const ACTIVITIES: ActivityMeta[] = [
@@ -59,7 +59,7 @@ export const ACTIVITIES: ActivityMeta[] = [
   { id: 'life.friendship', grade: 'k', section: 'life-skills', title: 'Being a Good Friend', shortTitle: 'Friends', emoji: '🤝', description: 'Kind and caring', path: '/life/friendship', skillIds: ['friendship'], estimatedMinutes: 2, difficulty: 'easy' },
 
   // Trucks & Cars Garage
-  { id: 'trucks.name', grade: 'k', section: 'trucks', title: 'Name the Truck', shortTitle: 'Name', emoji: '🛻', description: 'What truck is this?', path: '/trucks/name', skillIds: ['vehicle-recognition'], estimatedMinutes: 3, difficulty: 'easy' },
+  { id: 'trucks.name', grade: 'k', section: 'trucks', title: 'Name the Vehicle', shortTitle: 'Name', emoji: '🚗', description: 'What vehicle is this?', path: '/trucks/name', skillIds: ['vehicle-recognition'], estimatedMinutes: 3, difficulty: 'easy' },
   { id: 'trucks.count', grade: 'k', section: 'trucks', title: 'Count the Vehicles', shortTitle: 'Count', emoji: '🚚', description: 'How many vehicles?', path: '/trucks/count', skillIds: ['vehicle-counting', 'counting'], estimatedMinutes: 2, difficulty: 'easy' },
   { id: 'trucks.sounds', grade: 'k', section: 'trucks', title: 'Vehicle Sounds', shortTitle: 'Sounds', emoji: '📢', description: 'What makes this sound?', path: '/trucks/sounds', skillIds: ['vehicle-sounds'], estimatedMinutes: 2, difficulty: 'easy' },
   { id: 'trucks.jobs', grade: 'k', section: 'trucks', title: 'Vehicle Jobs', shortTitle: 'Jobs', emoji: '👷', description: 'Match vehicle to job', path: '/trucks/jobs', skillIds: ['vehicle-jobs'], estimatedMinutes: 2, difficulty: 'easy' },

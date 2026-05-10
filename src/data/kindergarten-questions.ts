@@ -19,6 +19,16 @@ export const countingObjectsQuestions: Question[] = [
   { id: 'co-14', prompt: 'How many birds?', speakText: 'How many birds do you see?', visual: '🐦🐦🐦🐦🐦🐦', choices: ['5', '6', '7'], answer: '6', skillIds: ['counting', 'one-to-one-correspondence'] },
   { id: 'co-15', prompt: 'How many suns?', speakText: 'How many suns do you see?', visual: '☀️☀️', choices: ['1', '2', '3'], answer: '2', skillIds: ['counting', 'one-to-one-correspondence'] },
   { id: 'co-16', prompt: 'How many ladybugs?', speakText: 'How many ladybugs do you see?', visual: '🐞🐞🐞🐞🐞🐞🐞', choices: ['6', '7', '8'], answer: '7', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-17', prompt: 'How many frogs?', speakText: 'How many frogs do you see?', visual: '🐸🐸🐸🐸🐸', choices: ['4', '5', '6'], answer: '5', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-18', prompt: 'How many cherries?', speakText: 'How many cherries do you see?', visual: '🍒🍒🍒🍒🍒🍒🍒🍒🍒', choices: ['8', '9', '10'], answer: '9', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-19', prompt: 'How many snails?', speakText: 'How many snails do you see?', visual: '🐌🐌🐌', choices: ['2', '3', '4'], answer: '3', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-20', prompt: 'How many rainbows?', speakText: 'How many rainbows do you see?', visual: '🌈🌈🌈🌈', choices: ['3', '4', '5'], answer: '4', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-21', prompt: 'How many mushrooms?', speakText: 'How many mushrooms do you see?', visual: '🍄🍄🍄🍄🍄🍄🍄🍄', choices: ['7', '8', '9'], answer: '8', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-22', prompt: 'How many turtles?', speakText: 'How many turtles do you see?', visual: '🐢🐢🐢🐢🐢🐢', choices: ['5', '6', '7'], answer: '6', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-23', prompt: 'How many strawberries?', speakText: 'How many strawberries do you see?', visual: '🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓', choices: ['9', '10', '11'], answer: '10', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-24', prompt: 'How many pandas?', speakText: 'How many pandas do you see?', visual: '🐼🐼', choices: ['1', '2', '3'], answer: '2', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-25', prompt: 'How many clouds?', speakText: 'How many clouds do you see?', visual: '☁️☁️☁️☁️☁️☁️☁️', choices: ['6', '7', '8'], answer: '7', skillIds: ['counting', 'one-to-one-correspondence'] },
+  { id: 'co-26', prompt: 'How many penguins?', speakText: 'How many penguins do you see?', visual: '🐧🐧🐧🐧🐧🐧🐧🐧🐧', choices: ['8', '9', '10'], answer: '9', skillIds: ['counting', 'one-to-one-correspondence'] },
 ];
 
 export const numberRecognitionQuestions: Question[] = [
@@ -37,6 +47,16 @@ export const numberRecognitionQuestions: Question[] = [
   { id: 'nr-13', prompt: 'Show me the number 8', choices: ['6', '8', '10'], answer: '8', skillIds: ['number-recognition'] },
   { id: 'nr-14', prompt: 'Show me the number 1', choices: ['0', '1', '2'], answer: '1', skillIds: ['number-recognition'] },
   { id: 'nr-15', prompt: 'Show me the number 10', choices: ['8', '9', '10'], answer: '10', skillIds: ['number-recognition'] },
+  { id: 'nr-16', prompt: 'Show me the number 3', choices: ['1', '3', '5'], answer: '3', skillIds: ['number-recognition'] },
+  { id: 'nr-17', prompt: 'Show me the number 7', choices: ['5', '7', '9'], answer: '7', skillIds: ['number-recognition'] },
+  { id: 'nr-18', prompt: 'Show me the number 4', choices: ['2', '4', '6'], answer: '4', skillIds: ['number-recognition'] },
+  { id: 'nr-19', prompt: 'Show me the number 6', choices: ['4', '6', '8'], answer: '6', skillIds: ['number-recognition'] },
+  { id: 'nr-20', prompt: 'Show me the number 9', choices: ['7', '9', '10'], answer: '9', skillIds: ['number-recognition'] },
+  { id: 'nr-21', prompt: 'What number has zero in it?', choices: ['9', '10', '5'], answer: '10', skillIds: ['number-recognition'] },
+  { id: 'nr-22', prompt: 'Which is the biggest number?', choices: ['3', '7', '10'], answer: '10', skillIds: ['number-recognition'] },
+  { id: 'nr-23', prompt: 'Which is the smallest number?', choices: ['1', '5', '8'], answer: '1', skillIds: ['number-recognition'] },
+  { id: 'nr-24', prompt: 'How many fingers on one hand?', choices: ['4', '5', '6'], answer: '5', skillIds: ['number-recognition'] },
+  { id: 'nr-25', prompt: 'How many fingers on two hands?', choices: ['8', '9', '10'], answer: '10', skillIds: ['number-recognition'] },
 ];
 
 export const moreLessQuestions: Question[] = [
@@ -55,6 +75,16 @@ export const moreLessQuestions: Question[] = [
   { id: 'ml-13', prompt: 'Which is MORE?', choices: ['2', '9'], answer: '9', skillIds: ['more-less', 'number-recognition'] },
   { id: 'ml-14', prompt: 'Which is LESS?', choices: ['6', '3'], answer: '3', skillIds: ['more-less', 'number-recognition'] },
   { id: 'ml-15', prompt: 'Which group has LESS?', visual: '🦋🦋 or 🦋🦋🦋🦋🦋', choices: ['Left (2)', 'Right (5)'], answer: 'Left (2)', skillIds: ['more-less', 'counting'] },
+  { id: 'ml-16', prompt: 'Which is MORE?', choices: ['5', '10'], answer: '10', skillIds: ['more-less', 'number-recognition'] },
+  { id: 'ml-17', prompt: 'Which is LESS?', choices: ['1', '8'], answer: '1', skillIds: ['more-less', 'number-recognition'] },
+  { id: 'ml-18', prompt: 'Which group has MORE?', visual: '🐸🐸🐸 or 🐸🐸🐸🐸🐸🐸🐸🐸', choices: ['Left (3)', 'Right (8)'], answer: 'Right (8)', skillIds: ['more-less', 'counting'] },
+  { id: 'ml-19', prompt: 'Which is MORE?', choices: ['6', '2'], answer: '6', skillIds: ['more-less', 'number-recognition'] },
+  { id: 'ml-20', prompt: 'Which group has LESS?', visual: '🌻🌻🌻🌻🌻🌻🌻 or 🌻🌻🌻🌻', choices: ['Left (7)', 'Right (4)'], answer: 'Right (4)', skillIds: ['more-less', 'counting'] },
+  { id: 'ml-21', prompt: 'Which is LESS?', choices: ['3', '9'], answer: '3', skillIds: ['more-less', 'number-recognition'] },
+  { id: 'ml-22', prompt: 'Which is MORE?', choices: ['7', '3'], answer: '7', skillIds: ['more-less', 'number-recognition'] },
+  { id: 'ml-23', prompt: 'Which group has MORE?', visual: '🐢🐢🐢🐢🐢🐢🐢🐢🐢 or 🐢🐢🐢🐢', choices: ['Left (9)', 'Right (4)'], answer: 'Left (9)', skillIds: ['more-less', 'counting'] },
+  { id: 'ml-24', prompt: 'Which is LESS?', choices: ['4', '7'], answer: '4', skillIds: ['more-less', 'number-recognition'] },
+  { id: 'ml-25', prompt: 'Which is MORE?', choices: ['10', '5'], answer: '10', skillIds: ['more-less', 'number-recognition'] },
 ];
 
 export const additionQuestions: Question[] = [
@@ -71,9 +101,18 @@ export const additionQuestions: Question[] = [
   { id: 'add-11', prompt: '0 + 3 = ?', speakText: 'What is zero plus three?', choices: ['2', '3', '4'], answer: '3', skillIds: ['addition-within-5'] },
   { id: 'add-12', prompt: '0 + 5 = ?', speakText: 'What is zero plus five?', choices: ['4', '5', '6'], answer: '5', skillIds: ['addition-within-5'] },
   { id: 'add-13', prompt: '4 + 0 = ?', speakText: 'What is four plus zero?', choices: ['3', '4', '5'], answer: '4', skillIds: ['addition-within-5'] },
-  { id: 'add-14', prompt: '2 + 2 = ?', speakText: 'What is two plus two?', visual: '🦋🦋 + 🦋🦋', choices: ['2', '3', '4'], answer: '4', skillIds: ['addition-within-5'] },
+  { id: 'add-14', prompt: '0 + 4 = ?', speakText: 'What is zero plus four?', visual: '🦋🦋🦋🦋', choices: ['3', '4', '5'], answer: '4', skillIds: ['addition-within-5'] },
   { id: 'add-15', prompt: '3 + 0 = ?', speakText: 'What is three plus zero?', choices: ['2', '3', '4'], answer: '3', skillIds: ['addition-within-5'] },
   { id: 'add-16', prompt: '0 + 1 = ?', speakText: 'What is zero plus one?', choices: ['0', '1', '2'], answer: '1', skillIds: ['addition-within-5'] },
+  { id: 'add-17', prompt: '5 + 0 = ?', speakText: 'What is five plus zero?', visual: '🌟🌟🌟🌟🌟', choices: ['4', '5', '6'], answer: '5', skillIds: ['addition-within-5'] },
+  { id: 'add-18', prompt: '0 + 2 = ?', speakText: 'What is zero plus two?', visual: '🐸🐸', choices: ['1', '2', '3'], answer: '2', skillIds: ['addition-within-5'] },
+  { id: 'add-19', prompt: '4 + 1 = ?', speakText: 'What is four plus one?', visual: '🦋🦋🦋🦋 + 🦋', choices: ['4', '5', '6'], answer: '5', skillIds: ['addition-within-5'] },
+  { id: 'add-20', prompt: '1 + 1 = ?', speakText: 'What is one plus one?', visual: '🐢 + 🐢', choices: ['1', '2', '3'], answer: '2', skillIds: ['addition-within-5'] },
+  { id: 'add-21', prompt: '2 + 1 = ?', speakText: 'What is two plus one?', visual: '🌻🌻 + 🌻', choices: ['2', '3', '4'], answer: '3', skillIds: ['addition-within-5'] },
+  { id: 'add-22', prompt: '3 + 2 = ?', speakText: 'What is three plus two?', visual: '🐝🐝🐝 + 🐝🐝', choices: ['4', '5', '6'], answer: '5', skillIds: ['addition-within-5'] },
+  { id: 'add-23', prompt: '1 + 4 = ?', speakText: 'What is one plus four?', visual: '🍓 + 🍓🍓🍓🍓', choices: ['4', '5', '6'], answer: '5', skillIds: ['addition-within-5'] },
+  { id: 'add-24', prompt: '2 + 3 = ?', speakText: 'What is two plus three?', visual: '🐞🐞 + 🐞🐞🐞', choices: ['4', '5', '6'], answer: '5', skillIds: ['addition-within-5'] },
+  { id: 'add-25', prompt: '4 + 0 = ?', speakText: 'What is four plus zero?', visual: '🌈🌈🌈🌈', choices: ['3', '4', '5'], answer: '4', skillIds: ['addition-within-5'] },
 ];
 
 export const subtractionQuestions: Question[] = [
@@ -92,6 +131,16 @@ export const subtractionQuestions: Question[] = [
   { id: 'sub-13', prompt: '4 - 4 = ?', speakText: 'What is four minus four?', choices: ['0', '1', '2'], answer: '0', skillIds: ['subtraction-within-5'] },
   { id: 'sub-14', prompt: '5 - 0 = ?', speakText: 'What is five minus zero?', choices: ['3', '4', '5'], answer: '5', skillIds: ['subtraction-within-5'] },
   { id: 'sub-15', prompt: '2 - 2 = ?', speakText: 'What is two minus two?', choices: ['0', '1', '2'], answer: '0', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-16', prompt: '1 - 1 = ?', speakText: 'What is one minus one?', visual: '🐸 take away 🐸', choices: ['0', '1', '2'], answer: '0', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-17', prompt: '4 - 2 = ?', speakText: 'What is four minus two?', visual: '🌻🌻🌻🌻 take away 🌻🌻', choices: ['1', '2', '3'], answer: '2', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-18', prompt: '3 - 3 = ?', speakText: 'What is three minus three?', visual: '🐝🐝🐝 take away 🐝🐝🐝', choices: ['0', '1', '2'], answer: '0', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-19', prompt: '5 - 4 = ?', speakText: 'What is five minus four?', visual: '🌈🌈🌈🌈🌈 take away 🌈🌈🌈🌈', choices: ['0', '1', '2'], answer: '1', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-20', prompt: '4 - 0 = ?', speakText: 'What is four minus zero?', choices: ['3', '4', '5'], answer: '4', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-21', prompt: '2 - 0 = ?', speakText: 'What is two minus zero?', choices: ['0', '1', '2'], answer: '2', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-22', prompt: '5 - 1 = ?', speakText: 'What is five minus one?', visual: '🐞🐞🐞🐞🐞 take away 🐞', choices: ['3', '4', '5'], answer: '4', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-23', prompt: '3 - 1 = ?', speakText: 'What is three minus one?', visual: '🍓🍓🍓 take away 🍓', choices: ['1', '2', '3'], answer: '2', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-24', prompt: '4 - 3 = ?', speakText: 'What is four minus three?', visual: '🐸🐸🐸🐸 take away 🐸🐸🐸', choices: ['0', '1', '2'], answer: '1', skillIds: ['subtraction-within-5'] },
+  { id: 'sub-25', prompt: '1 - 0 = ?', speakText: 'What is one minus zero?', choices: ['0', '1', '2'], answer: '1', skillIds: ['subtraction-within-5'] },
 ];
 
 export const numberOrderQuestions: Question[] = [
@@ -110,6 +159,16 @@ export const numberOrderQuestions: Question[] = [
   { id: 'no-13', prompt: 'What comes after 0?', speakText: 'What number comes after zero?', choices: ['0', '1', '2'], answer: '1', skillIds: ['number-order'] },
   { id: 'no-14', prompt: 'What comes before 3?', speakText: 'What number comes before three?', choices: ['1', '2', '4'], answer: '2', skillIds: ['number-order'] },
   { id: 'no-15', prompt: 'What comes between 8 and 10?', speakText: 'What number is between eight and ten?', choices: ['7', '9', '11'], answer: '9', skillIds: ['number-order'] },
+  { id: 'no-16', prompt: 'What comes after 4?', speakText: 'What number comes after four?', choices: ['3', '5', '6'], answer: '5', skillIds: ['number-order'] },
+  { id: 'no-17', prompt: 'What comes before 7?', speakText: 'What number comes before seven?', choices: ['5', '6', '8'], answer: '6', skillIds: ['number-order'] },
+  { id: 'no-18', prompt: 'What comes between 1 and 3?', speakText: 'What number is between one and three?', choices: ['0', '2', '4'], answer: '2', skillIds: ['number-order'] },
+  { id: 'no-19', prompt: 'What comes after 6?', speakText: 'What number comes after six?', choices: ['5', '7', '8'], answer: '7', skillIds: ['number-order'] },
+  { id: 'no-20', prompt: 'What comes before 9?', speakText: 'What number comes before nine?', choices: ['7', '8', '10'], answer: '8', skillIds: ['number-order'] },
+  { id: 'no-21', prompt: 'What comes between 3 and 5?', speakText: 'What number is between three and five?', choices: ['2', '4', '6'], answer: '4', skillIds: ['number-order'] },
+  { id: 'no-22', prompt: 'What comes after 2?', speakText: 'What number comes after two?', choices: ['1', '3', '4'], answer: '3', skillIds: ['number-order'] },
+  { id: 'no-23', prompt: 'What comes before 6?', speakText: 'What number comes before six?', choices: ['4', '5', '7'], answer: '5', skillIds: ['number-order'] },
+  { id: 'no-24', prompt: 'What comes between 7 and 9?', speakText: 'What number is between seven and nine?', choices: ['6', '8', '10'], answer: '8', skillIds: ['number-order'] },
+  { id: 'no-25', prompt: 'What comes after 8?', speakText: 'What number comes after eight?', choices: ['7', '9', '10'], answer: '9', skillIds: ['number-order'] },
 ];
 
 // ====== LETTER TREEHOUSE ======
@@ -130,6 +189,16 @@ export const uppercaseLetterQuestions: Question[] = [
   { id: 'ul-13', prompt: 'Find the letter D', visual: 'D', choices: ['D', 'B', 'P'], answer: 'D', skillIds: ['uppercase-letters'] },
   { id: 'ul-14', prompt: 'Find the letter F', visual: 'F', choices: ['E', 'F', 'T'], answer: 'F', skillIds: ['uppercase-letters'] },
   { id: 'ul-15', prompt: 'Find the letter L', visual: 'L', choices: ['I', 'L', 'T'], answer: 'L', skillIds: ['uppercase-letters'] },
+  { id: 'ul-16', prompt: 'Find the letter C', visual: 'C', choices: ['C', 'G', 'O'], answer: 'C', skillIds: ['uppercase-letters'] },
+  { id: 'ul-17', prompt: 'Find the letter N', visual: 'N', choices: ['M', 'N', 'H'], answer: 'N', skillIds: ['uppercase-letters'] },
+  { id: 'ul-18', prompt: 'Find the letter V', visual: 'V', choices: ['W', 'U', 'V'], answer: 'V', skillIds: ['uppercase-letters'] },
+  { id: 'ul-19', prompt: 'Find the letter P', visual: 'P', choices: ['P', 'R', 'B'], answer: 'P', skillIds: ['uppercase-letters'] },
+  { id: 'ul-20', prompt: 'Find the letter Y', visual: 'Y', choices: ['V', 'Y', 'T'], answer: 'Y', skillIds: ['uppercase-letters'] },
+  { id: 'ul-21', prompt: 'Find the letter J', visual: 'J', choices: ['I', 'J', 'L'], answer: 'J', skillIds: ['uppercase-letters'] },
+  { id: 'ul-22', prompt: 'Find the letter Q', visual: 'Q', choices: ['O', 'Q', 'G'], answer: 'Q', skillIds: ['uppercase-letters'] },
+  { id: 'ul-23', prompt: 'Find the letter X', visual: 'X', choices: ['K', 'Y', 'X'], answer: 'X', skillIds: ['uppercase-letters'] },
+  { id: 'ul-24', prompt: 'Find the letter Z', visual: 'Z', choices: ['Z', 'S', 'N'], answer: 'Z', skillIds: ['uppercase-letters'] },
+  { id: 'ul-25', prompt: 'Find the letter I', visual: 'I', choices: ['L', 'I', 'T'], answer: 'I', skillIds: ['uppercase-letters'] },
 ];
 
 export const lowercaseLetterQuestions: Question[] = [
@@ -148,6 +217,16 @@ export const lowercaseLetterQuestions: Question[] = [
   { id: 'll-13', prompt: 'Match: F goes with...', choices: ['t', 'f', 'l'], answer: 'f', skillIds: ['lowercase-letters'] },
   { id: 'll-14', prompt: 'Match: N goes with...', choices: ['m', 'n', 'h'], answer: 'n', skillIds: ['lowercase-letters'] },
   { id: 'll-15', prompt: 'Match: E goes with...', choices: ['e', 'c', 'o'], answer: 'e', skillIds: ['lowercase-letters'] },
+  { id: 'll-16', prompt: 'Match: C goes with...', choices: ['o', 'c', 'e'], answer: 'c', skillIds: ['lowercase-letters'] },
+  { id: 'll-17', prompt: 'Match: L goes with...', choices: ['i', 'l', 't'], answer: 'l', skillIds: ['lowercase-letters'] },
+  { id: 'll-18', prompt: 'Match: V goes with...', choices: ['w', 'v', 'u'], answer: 'v', skillIds: ['lowercase-letters'] },
+  { id: 'll-19', prompt: 'Match: J goes with...', choices: ['j', 'i', 'l'], answer: 'j', skillIds: ['lowercase-letters'] },
+  { id: 'll-20', prompt: 'Match: Y goes with...', choices: ['v', 'y', 'g'], answer: 'y', skillIds: ['lowercase-letters'] },
+  { id: 'll-21', prompt: 'Match: Q goes with...', choices: ['p', 'g', 'q'], answer: 'q', skillIds: ['lowercase-letters'] },
+  { id: 'll-22', prompt: 'Match: Z goes with...', choices: ['z', 's', 'x'], answer: 'z', skillIds: ['lowercase-letters'] },
+  { id: 'll-23', prompt: 'Match: X goes with...', choices: ['x', 'z', 'k'], answer: 'x', skillIds: ['lowercase-letters'] },
+  { id: 'll-24', prompt: 'Match: O goes with...', choices: ['c', 'o', 'a'], answer: 'o', skillIds: ['lowercase-letters'] },
+  { id: 'll-25', prompt: 'Match: I goes with...', choices: ['l', 't', 'i'], answer: 'i', skillIds: ['lowercase-letters'] },
 ];
 
 export const beginningSoundsQuestions: Question[] = [
@@ -167,6 +246,15 @@ export const beginningSoundsQuestions: Question[] = [
   { id: 'bs-14', prompt: '🌈 Rainbow starts with...', speakText: 'Rainbow starts with what letter?', emoji: '🌈', choices: ['W', 'R', 'N'], answer: 'R', skillIds: ['beginning-sounds', 'letter-sounds'] },
   { id: 'bs-15', prompt: '🐢 Turtle starts with...', speakText: 'Turtle starts with what letter?', emoji: '🐢', choices: ['T', 'D', 'L'], answer: 'T', skillIds: ['beginning-sounds', 'letter-sounds'] },
   { id: 'bs-16', prompt: '🍇 Grapes starts with...', speakText: 'Grapes starts with what letter?', emoji: '🍇', choices: ['J', 'G', 'D'], answer: 'G', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-17', prompt: '🐘 Elephant starts with...', speakText: 'Elephant starts with what letter?', emoji: '🐘', choices: ['A', 'E', 'I'], answer: 'E', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-18', prompt: '🧊 Ice starts with...', speakText: 'Ice starts with what letter?', emoji: '🧊', choices: ['I', 'A', 'E'], answer: 'I', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-19', prompt: '🐊 Alligator starts with...', speakText: 'Alligator starts with what letter?', emoji: '🐊', choices: ['E', 'O', 'A'], answer: 'A', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-20', prompt: '🎃 Pumpkin starts with...', speakText: 'Pumpkin starts with what letter?', emoji: '🎃', choices: ['B', 'P', 'D'], answer: 'P', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-21', prompt: '🦊 Fox starts with...', speakText: 'Fox starts with what letter?', emoji: '🦊', choices: ['F', 'V', 'P'], answer: 'F', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-22', prompt: '🍉 Watermelon starts with...', speakText: 'Watermelon starts with what letter?', emoji: '🍉', choices: ['M', 'V', 'W'], answer: 'W', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-23', prompt: '🦁 Lion starts with...', speakText: 'Lion starts with what letter?', emoji: '🦁', choices: ['I', 'L', 'R'], answer: 'L', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-24', prompt: '🎵 Music starts with...', speakText: 'Music starts with what letter?', emoji: '🎵', choices: ['N', 'M', 'W'], answer: 'M', skillIds: ['beginning-sounds', 'letter-sounds'] },
+  { id: 'bs-25', prompt: '🍊 Orange starts with...', speakText: 'Orange starts with what letter?', emoji: '🍊', choices: ['A', 'U', 'O'], answer: 'O', skillIds: ['beginning-sounds', 'letter-sounds'] },
 ];
 
 export const rhymingQuestions: Question[] = [
