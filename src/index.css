@@ -43,38 +43,61 @@
     background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
   }
 
-  /* Mars scene animations */
-  .rocket-path {
-    animation: rocket-fly 12s ease-in-out infinite;
+  /* Cinematic space scene */
+  .star-twinkle {
+    animation: twinkle var(--duration, 3s) ease-in-out infinite;
   }
-  .mars-drive {
-    animation: mars-truck 16s linear infinite;
+  .rocket-cinema {
+    animation: rocket-cinema 14s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    position: absolute;
   }
-  .shooting-star {
-    animation: shoot 6s linear infinite;
-    animation-delay: 3s;
-    opacity: 0;
+  .cybertruck-drive {
+    animation: truck-drive 20s linear infinite;
+  }
+  .shooting-star-1 {
+    position: absolute;
+    animation: shoot-star 7s linear infinite;
+    animation-delay: 2s;
+  }
+  .shooting-star-2 {
+    position: absolute;
+    animation: shoot-star 9s linear infinite;
+    animation-delay: 5s;
+  }
+  .crane-block {
+    animation: crane-swing 3s ease-in-out infinite;
+    transform-origin: 131px 22px;
   }
 }
 
-@keyframes rocket-fly {
-  0% { left: 75%; top: 55%; transform: rotate(-35deg); opacity: 0; }
-  10% { opacity: 1; }
-  50% { left: 20%; top: 12%; transform: rotate(-40deg); opacity: 1; }
-  60% { opacity: 0; }
-  100% { left: 10%; top: 5%; transform: rotate(-40deg); opacity: 0; }
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
 }
 
-@keyframes mars-truck {
-  0% { left: -15%; }
-  100% { left: 105%; }
+@keyframes rocket-cinema {
+  0% { left: 70%; top: 60%; transform: rotate(-35deg) scale(0.8); opacity: 0; }
+  8% { opacity: 1; }
+  45% { left: 18%; top: 10%; transform: rotate(-42deg) scale(1); opacity: 1; }
+  55% { opacity: 0; transform: rotate(-42deg) scale(0.6); }
+  100% { left: 5%; top: 2%; transform: rotate(-42deg) scale(0.4); opacity: 0; }
 }
 
-@keyframes shoot {
-  0% { left: 80%; top: 5%; opacity: 0; transform: rotate(215deg); }
-  5% { opacity: 1; }
-  15% { left: 40%; top: 25%; opacity: 0; }
-  100% { left: 40%; top: 25%; opacity: 0; }
+@keyframes truck-drive {
+  0% { left: -12%; }
+  100% { left: 108%; }
+}
+
+@keyframes shoot-star {
+  0% { left: 85%; top: 8%; opacity: 0; transform: rotate(220deg); }
+  3% { opacity: 1; }
+  12% { left: 35%; top: 30%; opacity: 0; }
+  100% { left: 35%; top: 30%; opacity: 0; }
+}
+
+@keyframes crane-swing {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 
 @layer components {

@@ -5,227 +5,332 @@ import { playTap, playWin } from '../utils/sound';
 
 export default function GradePicker() {
   const [loaded, setLoaded] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
   const [tapped, setTapped] = useState<string | null>(null);
   const [confetti, setConfetti] = useState<{ id: number; x: number; y: number; emoji: string }[]>([]);
   const confettiId = useRef(0);
+  const sceneRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const t = setTimeout(() => setLoaded(true), 80);
+    const t = setTimeout(() => setLoaded(true), 50);
     return () => clearTimeout(t);
   }, []);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!sceneRef.current) return;
+    const rect = sceneRef.current.getBoundingClientRect();
+    setMousePos({
+      x: (e.clientX - rect.left) / rect.width,
+      y: (e.clientY - rect.top) / rect.height,
+    });
+  };
 
   const spawnConfetti = (e: React.MouseEvent | React.TouchEvent) => {
     const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
     const cx = rect.left + rect.width / 2;
     const cy = rect.top + rect.height / 2;
-    const emojis = ['🎉', '⭐', '✨', '🌟', '🎊', '💫', '🚀'];
-    const burst = Array.from({ length: 10 }, () => ({
+    const emojis = ['🎉', '⭐', '✨', '🌟', '🚀', '💫', '🔥'];
+    const burst = Array.from({ length: 14 }, () => ({
       id: confettiId.current++,
-      x: cx + (Math.random() - 0.5) * 180,
-      y: cy + (Math.random() - 0.5) * 180,
+      x: cx + (Math.random() - 0.5) * 220,
+      y: cy + (Math.random() - 0.5) * 220,
       emoji: emojis[Math.floor(Math.random() * emojis.length)],
     }));
     setConfetti((prev) => [...prev, ...burst]);
-    setTimeout(() => setConfetti((prev) => prev.filter((p) => !burst.includes(p))), 900);
+    setTimeout(() => setConfetti((prev) => prev.filter((p) => !burst.includes(p))), 1000);
   };
 
+  const parallaxX = (mousePos.x - 0.5) * 20;
+  const parallaxY = (mousePos.y - 0.5) * 10;
+
   return (
-    <div className="min-h-screen flex flex-col relative overflow-hidden select-none">
-      {/* ===== ANIMATED MARS SCENE ===== */}
-      <div className="relative w-full h-[280px] sm:h-[340px] overflow-hidden bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e]">
-        {/* Stars */}
-        <div className="absolute inset-0">
-          {Array.from({ length: 40 }).map((_, i) => (
+    <div
+      className="min-h-screen flex flex-col relative overflow-hidden select-none bg-[#0a0a1a]"
+      onMouseMove={handleMouseMove}
+      ref={sceneRef}
+    >
+      {/* ===== CINEMATIC SPACE SCENE ===== */}
+      <div className="relative w-full h-[320px] sm:h-[380px] lg:h-[420px] overflow-hidden">
+        {/* Deep space gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a2e] via-[#1a1a4e] to-[#2d1b69]" />
+
+        {/* Nebula glow effects - parallax reactive */}
+        <div
+          className="absolute inset-0 opacity-40 transition-transform duration-[2000ms] ease-out"
+          style={{ transform: `translate(${parallaxX * 0.3}px, ${parallaxY * 0.3}px)` }}
+        >
+          <div className="absolute w-[300px] h-[300px] rounded-full bg-[#7c3aed] blur-[100px] top-[-50px] left-[10%] opacity-30" />
+          <div className="absolute w-[250px] h-[250px] rounded-full bg-[#0ea5e9] blur-[80px] top-[20%] right-[15%] opacity-25" />
+          <div className="absolute w-[200px] h-[200px] rounded-full bg-[#f97316] blur-[90px] bottom-[10%] left-[40%] opacity-20" />
+        </div>
+
+        {/* Star field - layer 1 (far, slow) */}
+        <div
+          className="absolute inset-0 transition-transform duration-[3000ms] ease-out"
+          style={{ transform: `translate(${parallaxX * 0.1}px, ${parallaxY * 0.1}px)` }}
+        >
+          {Array.from({ length: 60 }).map((_, i) => (
             <span
-              key={i}
-              className="absolute rounded-full bg-white animate-pulse-soft"
+              key={`s1-${i}`}
+              className="absolute rounded-full bg-white star-twinkle"
               style={{
-                width: `${1 + Math.random() * 2}px`,
-                height: `${1 + Math.random() * 2}px`,
+                width: `${0.5 + Math.random() * 1.5}px`,
+                height: `${0.5 + Math.random() * 1.5}px`,
                 left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 60}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 2}s`,
+                top: `${Math.random() * 70}%`,
+                animationDelay: `${Math.random() * 4}s`,
+                animationDuration: `${2 + Math.random() * 3}s`,
               }}
               aria-hidden="true"
             />
           ))}
         </div>
 
-        {/* Earth in distance */}
-        <div className="absolute top-6 right-8 sm:right-16 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#74b9ff] to-[#0984e3] opacity-80 shadow-[0_0_20px_rgba(116,185,255,0.4)]" aria-hidden="true">
-          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-[#00b894] to-[#0984e3] opacity-60" />
+        {/* Star field - layer 2 (closer, brighter) */}
+        <div
+          className="absolute inset-0 transition-transform duration-[2000ms] ease-out"
+          style={{ transform: `translate(${parallaxX * 0.2}px, ${parallaxY * 0.2}px)` }}
+        >
+          {Array.from({ length: 20 }).map((_, i) => (
+            <span
+              key={`s2-${i}`}
+              className="absolute rounded-full bg-white star-twinkle"
+              style={{
+                width: `${1.5 + Math.random() * 2}px`,
+                height: `${1.5 + Math.random() * 2}px`,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 60}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${1.5 + Math.random() * 2}s`,
+                boxShadow: '0 0 4px rgba(255,255,255,0.8)',
+              }}
+              aria-hidden="true"
+            />
+          ))}
         </div>
 
-        {/* Mars (planet destination) */}
-        <div className="absolute top-4 left-8 sm:left-16 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-[#e17055] to-[#d63031] opacity-90" aria-hidden="true" />
+        {/* Earth - with glow and atmosphere */}
+        <div
+          className="absolute top-8 right-[8%] sm:right-[12%] transition-transform duration-[2500ms] ease-out"
+          style={{ transform: `translate(${parallaxX * -0.4}px, ${parallaxY * -0.2}px)` }}
+          aria-hidden="true"
+        >
+          <div className="relative w-14 h-14 sm:w-20 sm:h-20">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#74b9ff] to-[#0984e3] shadow-[0_0_30px_rgba(9,132,227,0.5)]" />
+            <div className="absolute inset-[15%] rounded-full bg-gradient-to-br from-[#00b894] via-[#0984e3] to-[#00b894] opacity-60" />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent to-white/10" />
+          </div>
+        </div>
 
-        {/* Rocket flying to Mars */}
-        <div className="absolute rocket-path" aria-hidden="true">
-          <div className="text-3xl sm:text-4xl animate-floaty" style={{ animationDuration: '1.5s' }}>
+        {/* Mars */}
+        <div
+          className="absolute top-12 left-[6%] sm:left-[10%] transition-transform duration-[2500ms] ease-out"
+          style={{ transform: `translate(${parallaxX * -0.3}px, ${parallaxY * -0.15}px)` }}
+          aria-hidden="true"
+        >
+          <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-[#e17055] to-[#d63031] shadow-[0_0_20px_rgba(214,48,49,0.4)]" />
+        </div>
+
+        {/* Rocket - cinematic flight path */}
+        <div className="absolute rocket-cinema" aria-hidden="true">
+          <div className="text-3xl sm:text-5xl drop-shadow-[0_0_12px_rgba(249,115,22,0.8)]">
             🚀
           </div>
+          {/* Flame trail */}
+          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-8 bg-gradient-to-b from-orange-400 via-yellow-300 to-transparent rounded-full blur-sm opacity-80 animate-pulse-soft" />
         </div>
 
-        {/* Mars surface */}
-        <div className="absolute bottom-0 left-0 right-0 h-[100px] sm:h-[120px]">
-          {/* Rocky terrain */}
-          <svg viewBox="0 0 800 120" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
-            <path d="M0,40 Q100,20 200,35 Q300,50 400,30 Q500,10 600,40 Q700,55 800,30 L800,120 L0,120 Z" fill="#c0392b" />
-            <path d="M0,60 Q150,45 300,55 Q450,65 600,50 Q750,40 800,55 L800,120 L0,120 Z" fill="#e74c3c" />
-            <path d="M0,80 Q200,70 400,80 Q600,90 800,75 L800,120 L0,120 Z" fill="#d63031" />
+        {/* Shooting stars */}
+        <div className="shooting-star-1" aria-hidden="true">
+          <div className="w-[2px] h-[2px] bg-white rounded-full shadow-[0_0_6px_#fff,-10px_0_15px_rgba(255,255,255,0.3),-20px_0_25px_rgba(255,255,255,0.1)]" />
+        </div>
+        <div className="shooting-star-2" aria-hidden="true">
+          <div className="w-[2px] h-[2px] bg-white rounded-full shadow-[0_0_6px_#fff,-10px_0_15px_rgba(255,255,255,0.3)]" />
+        </div>
+
+        {/* Mars surface with depth */}
+        <div className="absolute bottom-0 left-0 right-0 h-[110px] sm:h-[130px]">
+          <svg viewBox="0 0 1200 130" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
+            <defs>
+              <linearGradient id="marsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#c0392b" />
+                <stop offset="100%" stopColor="#922b21" />
+              </linearGradient>
+            </defs>
+            <path d="M0,50 Q150,20 300,45 Q450,70 600,35 Q750,10 900,50 Q1050,70 1200,40 L1200,130 L0,130 Z" fill="url(#marsGrad)" />
+            <path d="M0,70 Q200,55 400,70 Q600,85 800,60 Q1000,45 1200,65 L1200,130 L0,130 Z" fill="#a93226" />
+            <path d="M0,90 Q300,80 600,95 Q900,105 1200,85 L1200,130 L0,130 Z" fill="#922b21" />
           </svg>
 
-          {/* Mars base structure */}
-          <div className="absolute bottom-4 left-[8%] sm:left-[12%]" aria-hidden="true">
-            <svg width="120" height="70" viewBox="0 0 120 70">
-              {/* Dome habitat */}
-              <ellipse cx="40" cy="55" rx="35" ry="20" fill="#636e72" opacity="0.9" />
-              <ellipse cx="40" cy="55" rx="35" ry="20" fill="none" stroke="#b2bec3" strokeWidth="1" />
-              <path d="M5,55 Q40,15 75,55" fill="#74b9ff" opacity="0.3" />
+          {/* Mars base - parallax layer */}
+          <div
+            className="absolute bottom-6 left-[6%] sm:left-[10%] transition-transform duration-[1500ms] ease-out"
+            style={{ transform: `translate(${parallaxX * 0.5}px, 0)` }}
+            aria-hidden="true"
+          >
+            <svg width="160" height="80" viewBox="0 0 160 80" className="drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
+              {/* Dome */}
+              <ellipse cx="50" cy="60" rx="40" ry="22" fill="#4a5568" opacity="0.95" />
+              <path d="M10,60 Q50,20 90,60" fill="#74b9ff" opacity="0.15" />
+              <ellipse cx="50" cy="60" rx="40" ry="22" fill="none" stroke="#a0aec0" strokeWidth="0.8" />
+              {/* Dome window glow */}
+              <ellipse cx="50" cy="52" rx="12" ry="8" fill="#74b9ff" opacity="0.3" />
               {/* Antenna */}
-              <line x1="40" y1="35" x2="40" y2="15" stroke="#b2bec3" strokeWidth="2" />
-              <circle cx="40" cy="13" r="3" fill="#e74c3c" className="animate-pulse-soft" />
-              {/* Solar panel */}
-              <rect x="80" y="40" width="30" height="18" rx="2" fill="#2d3436" />
-              <rect x="82" y="42" width="12" height="7" fill="#0984e3" opacity="0.7" />
-              <rect x="96" y="42" width="12" height="7" fill="#0984e3" opacity="0.7" />
-              <rect x="82" y="51" width="12" height="5" fill="#0984e3" opacity="0.5" />
-              <rect x="96" y="51" width="12" height="5" fill="#0984e3" opacity="0.5" />
-              <rect x="93" y="58" width="4" height="10" fill="#636e72" />
-              {/* Construction crane */}
-              <line x1="105" y1="20" x2="105" y2="58" stroke="#fdcb6e" strokeWidth="2" />
-              <line x1="85" y1="20" x2="115" y2="20" stroke="#fdcb6e" strokeWidth="2" />
-              <line x1="90" y1="20" x2="90" y2="30" stroke="#636e72" strokeWidth="1" />
-              <rect x="87" y="30" width="6" height="6" fill="#b2bec3" className="animate-bounce-slow" style={{ transformOrigin: '90px 20px' }} />
+              <line x1="50" y1="38" x2="50" y2="18" stroke="#a0aec0" strokeWidth="1.5" />
+              <circle cx="50" cy="16" r="3" fill="#ef4444" className="animate-pulse-soft" />
+              {/* Solar array */}
+              <rect x="100" y="42" width="40" height="22" rx="2" fill="#1a202c" />
+              <rect x="103" y="44" width="16" height="9" fill="#0ea5e9" opacity="0.6" />
+              <rect x="121" y="44" width="16" height="9" fill="#0ea5e9" opacity="0.6" />
+              <rect x="103" y="55" width="16" height="7" fill="#0ea5e9" opacity="0.4" />
+              <rect x="121" y="55" width="16" height="7" fill="#0ea5e9" opacity="0.4" />
+              <rect x="118" y="64" width="4" height="12" fill="#4a5568" />
+              {/* Crane */}
+              <line x1="145" y1="22" x2="145" y2="64" stroke="#ecc94b" strokeWidth="1.5" />
+              <line x1="125" y1="22" x2="155" y2="22" stroke="#ecc94b" strokeWidth="1.5" />
+              <rect x="128" y="28" width="6" height="6" fill="#a0aec0" className="crane-block" />
             </svg>
           </div>
 
-          {/* Cybertruck driving on Mars */}
-          <div className="absolute bottom-2 mars-drive" aria-hidden="true">
-            <svg width="80" height="45" viewBox="0 0 220 130">
-              <polygon
-                points="15,100 25,100 25,80 40,55 110,42 200,55 215,80 215,100 205,100"
-                fill="#b2bec3"
-              />
-              <polygon points="25,80 25,100 110,100 110,80" fill="#95a5a6" />
-              <polygon points="115,80 140,55 200,55 200,80" fill="#2d3436" opacity="0.7" />
-              <line x1="200" y1="62" x2="215" y2="76" stroke="#ffffff" strokeWidth="4" strokeLinecap="round" />
-              <circle cx="53" cy="104" r="14" fill="#2d3436" />
-              <circle cx="53" cy="104" r="8" fill="#636e72" />
-              <circle cx="170" cy="104" r="14" fill="#2d3436" />
-              <circle cx="170" cy="104" r="8" fill="#636e72" />
+          {/* Cybertruck driving */}
+          <div className="absolute bottom-3 cybertruck-drive" aria-hidden="true">
+            <svg width="70" height="35" viewBox="0 0 220 110" className="drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
+              <polygon points="15,80 25,80 25,65 40,45 110,35 200,45 215,65 215,80 205,80" fill="#b2bec3" />
+              <polygon points="25,65 25,80 110,80 110,65" fill="#95a5a6" />
+              <polygon points="115,65 140,45 200,45 200,65" fill="#1a202c" opacity="0.7" />
+              <line x1="200" y1="50" x2="215" y2="62" stroke="#fff" strokeWidth="3" strokeLinecap="round" opacity="0.9" />
+              <circle cx="53" cy="84" r="12" fill="#1a202c" />
+              <circle cx="53" cy="84" r="7" fill="#4a5568" />
+              <circle cx="170" cy="84" r="12" fill="#1a202c" />
+              <circle cx="170" cy="84" r="7" fill="#4a5568" />
             </svg>
+            {/* Dust trail */}
+            <div className="absolute -left-4 bottom-0 w-8 h-4 bg-gradient-to-l from-[#92322180] to-transparent rounded-full blur-sm" />
           </div>
 
-          {/* Robot helper */}
-          <div className="absolute bottom-6 right-[15%] sm:right-[20%] text-2xl sm:text-3xl animate-floaty" style={{ animationDuration: '2s' }} aria-hidden="true">
+          {/* Robot */}
+          <div className="absolute bottom-8 right-[12%] sm:right-[18%] text-2xl sm:text-3xl animate-floaty drop-shadow-[0_0_8px_rgba(116,185,255,0.4)]" style={{ animationDuration: '2.5s' }} aria-hidden="true">
             🤖
           </div>
 
           {/* Flag */}
-          <div className="absolute bottom-4 right-[35%] sm:right-[40%]" aria-hidden="true">
-            <svg width="24" height="40" viewBox="0 0 24 40">
-              <line x1="3" y1="5" x2="3" y2="40" stroke="#b2bec3" strokeWidth="2" />
-              <rect x="5" y="5" width="18" height="12" rx="1" fill="#e74c3c" />
-              <text x="10" y="14" fontSize="6" fill="#fff" fontWeight="bold">BS</text>
+          <div className="absolute bottom-6 right-[32%] sm:right-[38%]" aria-hidden="true">
+            <svg width="20" height="36" viewBox="0 0 20 36">
+              <line x1="2" y1="4" x2="2" y2="36" stroke="#a0aec0" strokeWidth="1.5" />
+              <rect x="4" y="4" width="15" height="10" rx="1" fill="#7c3aed" />
+              <text x="7" y="12" fontSize="5" fill="#fff" fontWeight="bold">BS</text>
             </svg>
           </div>
         </div>
-
-        {/* Shooting star */}
-        <div className="absolute shooting-star" aria-hidden="true">
-          <div className="w-1 h-1 bg-white rounded-full shadow-[0_0_6px_#fff]" />
-        </div>
       </div>
 
-      {/* ===== MAIN CONTENT ===== */}
-      <div className="flex-1 flex flex-col items-center justify-center px-4 py-8 -mt-6 relative z-10">
-        {/* Confetti bursts */}
-        {confetti.map((c) => (
-          <span
-            key={c.id}
-            className="fixed pointer-events-none text-2xl animate-confetti-pop z-50"
-            style={{ left: c.x, top: c.y }}
-            aria-hidden="true"
-          >
-            {c.emoji}
-          </span>
-        ))}
+      {/* ===== GLASS CONTENT AREA ===== */}
+      <div className="flex-1 relative bg-gradient-to-b from-[#1a1040] via-cream to-cream">
+        {/* Gradient transition overlay */}
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#922b21] to-transparent pointer-events-none" />
 
-        {/* Header */}
-        <div className={`text-center mb-8 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`}>
-          <div
-            className="text-6xl sm:text-7xl mb-3 animate-bounce-slow cursor-pointer hover:scale-110 transition-transform inline-block"
-            onClick={() => playWin()}
-          >
-            🌱
+        <div className="relative z-10 flex flex-col items-center px-4 pt-10 pb-8">
+          {/* Confetti */}
+          {confetti.map((c) => (
+            <span
+              key={c.id}
+              className="fixed pointer-events-none text-2xl animate-confetti-pop z-50"
+              style={{ left: c.x, top: c.y }}
+              aria-hidden="true"
+            >
+              {c.emoji}
+            </span>
+          ))}
+
+          {/* Header with glow */}
+          <div className={`text-center mb-8 transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-12'}`}>
+            <div
+              className="text-5xl sm:text-6xl mb-3 cursor-pointer hover:scale-125 transition-transform duration-300 inline-block drop-shadow-[0_0_20px_rgba(34,197,94,0.4)]"
+              onClick={() => playWin()}
+            >
+              🌱
+            </div>
+            <h1 className="text-4xl sm:text-5xl font-display font-bold text-slate text-shadow-kid">
+              BrainSprout
+            </h1>
+            <p className="text-base sm:text-lg text-slate/60 mt-2 font-body font-semibold">
+              Launch your learning adventure!
+            </p>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-display font-bold text-slate text-shadow-kid">
-            BrainSprout
-          </h1>
-          <p className="text-lg sm:text-xl text-slate/60 mt-2 font-body font-semibold">
-            Launch your learning adventure!
-          </p>
-        </div>
 
-        {/* Grade cards */}
-        <div className="grid grid-cols-2 gap-4 sm:gap-5 w-full max-w-xl px-2">
-          {GRADES.map((g, i) => {
-            const isTapped = tapped === g.id;
-            return (
-              <Link
-                key={g.id}
-                to={`/${g.id}`}
-                className={`
-                  group relative kid-card overflow-hidden
-                  no-underline text-slate
-                  transition-all duration-500
-                  hover:scale-[1.04] hover:-translate-y-1 hover:shadow-kidHover
-                  active:scale-95 active:shadow-kidPress
-                  ${isTapped ? 'scale-95 ring-3 ring-sun' : ''}
-                  ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-                `}
-                style={{ transitionDelay: loaded ? `${150 + i * 100}ms` : '0ms' }}
-                onMouseEnter={() => playTap()}
-                onClick={(e) => {
-                  setTapped(g.id);
-                  playWin();
-                  spawnConfetti(e);
-                }}
-              >
-                {/* Color accent bar at top */}
-                <div
-                  className="absolute top-0 left-0 right-0 h-1.5 rounded-t-4xl"
-                  style={{ background: g.accentColor }}
-                />
-
-                {/* Main emoji */}
-                <div className="text-4xl sm:text-5xl text-center mt-2 group-hover:animate-wiggle transition-transform">
-                  {g.emoji}
-                </div>
-
-                {/* Grade info */}
-                <div className="mt-3 text-center">
+          {/* Grade cards - glass morphism style */}
+          <div className="grid grid-cols-2 gap-4 sm:gap-5 w-full max-w-xl">
+            {GRADES.map((g, i) => {
+              const isTapped = tapped === g.id;
+              return (
+                <Link
+                  key={g.id}
+                  to={`/${g.id}`}
+                  className={`
+                    group relative overflow-hidden rounded-3xl p-5 sm:p-6
+                    no-underline text-slate
+                    bg-white/80 backdrop-blur-md
+                    border border-white/60
+                    shadow-[0_8px_32px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.9)]
+                    transition-all duration-500 ease-out
+                    hover:scale-[1.05] hover:-translate-y-2
+                    hover:shadow-[0_20px_60px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,1)]
+                    active:scale-95
+                    ${isTapped ? 'scale-95 ring-3 ring-sun' : ''}
+                    ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}
+                  `}
+                  style={{
+                    transitionDelay: loaded ? `${300 + i * 120}ms` : '0ms',
+                  }}
+                  onMouseEnter={() => playTap()}
+                  onClick={(e) => {
+                    setTapped(g.id);
+                    playWin();
+                    spawnConfetti(e);
+                  }}
+                >
+                  {/* Accent glow on hover */}
                   <div
-                    className="inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full mb-2 font-display font-bold text-white text-lg sm:text-xl shadow-sm"
-                    style={{ background: g.accentColor }}
-                  >
-                    {g.label}
-                  </div>
-                  <div className="text-base sm:text-lg font-display font-bold">{g.title}</div>
-                  <div className="text-xs text-slate/50 mt-0.5 font-body">{g.description}</div>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
+                    style={{ background: `radial-gradient(circle at 50% 0%, ${g.accentColor}20 0%, transparent 70%)` }}
+                  />
 
-        {/* Footer */}
-        <div className={`mt-8 text-center transition-all duration-700 delay-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-          <p className="text-slate/40 text-sm font-body font-semibold">
-            Tap a card to begin your adventure
-          </p>
+                  {/* Top accent line */}
+                  <div
+                    className="absolute top-0 left-[10%] right-[10%] h-[3px] rounded-b-full opacity-60 group-hover:opacity-100 group-hover:left-[5%] group-hover:right-[5%] transition-all duration-500"
+                    style={{ background: g.accentColor }}
+                  />
+
+                  {/* Shimmer on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <div className="text-4xl sm:text-5xl text-center group-hover:animate-wiggle group-hover:scale-110 transition-transform duration-300">
+                      {g.emoji}
+                    </div>
+                    <div className="mt-3 text-center">
+                      <div
+                        className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full mb-2 font-display font-bold text-white text-base sm:text-lg shadow-lg group-hover:scale-110 transition-transform duration-300"
+                        style={{ background: g.accentColor, boxShadow: `0 4px 14px ${g.accentColor}40` }}
+                      >
+                        {g.label}
+                      </div>
+                      <div className="text-base sm:text-lg font-display font-bold">{g.title}</div>
+                      <div className="text-xs text-slate/50 mt-0.5 font-body">{g.description}</div>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Footer */}
+          <div className={`mt-8 text-center transition-all duration-1000 delay-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
+            <p className="text-slate/40 text-sm font-body font-semibold">
+              Tap a card to begin your adventure
+            </p>
+          </div>
         </div>
       </div>
     </div>
