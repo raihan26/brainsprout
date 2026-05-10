@@ -388,8 +388,8 @@ export const KINDERGARTEN_ACTIVITY_MAP: Record<string, ActivityConfig> = {
   // Trucks & Cars Garage
   'trucks/name': {
     activityId: 'trucks.name',
-    title: 'Name the Truck',
-    emoji: '🛻',
+    title: 'Name the Vehicle',
+    emoji: '🚗',
     worldId: 'trucks',
     backPath: 'trucks',
     questions: truckNamesQuestions,

@@ -35,7 +35,7 @@ export default function NameTheTruck() {
   const [correct, setCorrect] = useState(0);
   const [done, setDone] = useState(false);
 
-  useEffect(() => { speak('What truck is this?'); }, [q.truck, speak]);
+  useEffect(() => { speak('What vehicle is this?'); }, [q.truck, speak]);
 
   const handle = (t: TruckId) => {
     if (picked) return;
@@ -57,13 +57,13 @@ export default function NameTheTruck() {
   const reset = () => { setI(0); setQ(build()); setPicked(null); setCorrect(0); setDone(false); };
 
   return (
-    <SectionLayout title="Name the Truck" emoji="🛻" backTo={`/${grade}/trucks`} speakText="What truck is this?">
+    <SectionLayout title="Name the Vehicle" emoji="🚗" backTo={`/${grade}/trucks`} speakText="What vehicle is this?">
       <div className="flex items-center justify-between mb-3">
         <div className="text-lg font-bold text-gray-700">Question {i + 1} of {TOTAL}</div>
         <ProgressStars value={Math.min(3, Math.round((correct / TOTAL) * 3))} size="sm" />
       </div>
       <div className="kid-card text-center">
-        <div className="text-xl font-bold mb-2">What truck is this?</div>
+        <div className="text-xl font-bold mb-2">What vehicle is this?</div>
         <div className="flex items-center justify-center animate-pop">
           <TruckSvg id={q.truck} size={280} />
         </div>
