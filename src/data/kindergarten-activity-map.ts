@@ -1,5 +1,12 @@
 import type { Question } from '../types';
 import {
+  computerQuestions,
+  robotQuestions,
+  buildQuestions,
+  spaceQuestions,
+  energyQuestions,
+} from './stem-questions';
+import {
   countingObjectsQuestions,
   numberRecognitionQuestions,
   moreLessQuestions,
@@ -444,6 +451,58 @@ export const KINDERGARTEN_ACTIVITY_MAP: Record<string, ActivityConfig> = {
     backPath: 'trucks',
     questions: truckMathQuestions,
     skillIds: ['addition-within-5', 'vehicle-counting'],
+    numQuestions: 6,
+  },
+
+  // STEM Lab
+  'stem/computers': {
+    activityId: 'stem.computers',
+    title: 'What is a Computer?',
+    emoji: '💻',
+    worldId: 'stem',
+    backPath: 'stem',
+    questions: computerQuestions,
+    skillIds: ['computers', 'technology'],
+    numQuestions: 6,
+  },
+  'stem/robots': {
+    activityId: 'stem.robots',
+    title: 'Robots & Helpers',
+    emoji: '🤖',
+    worldId: 'stem',
+    backPath: 'stem',
+    questions: robotQuestions,
+    skillIds: ['robotics', 'technology'],
+    numQuestions: 6,
+  },
+  'stem/build': {
+    activityId: 'stem.build',
+    title: 'Build & Create',
+    emoji: '🔧',
+    worldId: 'stem',
+    backPath: 'stem',
+    questions: buildQuestions,
+    skillIds: ['engineering', 'building'],
+    numQuestions: 6,
+  },
+  'stem/space': {
+    activityId: 'stem.space',
+    title: 'Space Explorer',
+    emoji: '🚀',
+    worldId: 'stem',
+    backPath: 'stem',
+    questions: spaceQuestions,
+    skillIds: ['space', 'science'],
+    numQuestions: 6,
+  },
+  'stem/electricity': {
+    activityId: 'stem.electricity',
+    title: 'Power & Energy',
+    emoji: '⚡',
+    worldId: 'stem',
+    backPath: 'stem',
+    questions: energyQuestions,
+    skillIds: ['energy', 'technology'],
     numQuestions: 6,
   },
 };

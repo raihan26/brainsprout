@@ -48,7 +48,7 @@ export default function App() {
       <Route path="/:grade" element={<Home />} />
       <Route path="/:grade/:sectionId" element={<SectionPage />} />
 
-      {/* Kindergarten new data-driven activities */}
+      {/* Kindergarten data-driven activities */}
       <Route path="/k/:worldId/:activitySlug" element={<KindergartenActivity />} />
 
       {/* Legacy routes for grades 1-3 (and backward compat for K) */}
@@ -90,6 +90,9 @@ export default function App() {
       <Route path="/:grade/trucks/sounds" element={<TruckSounds />} />
       <Route path="/:grade/trucks/build" element={<BuildCybertruck />} />
       <Route path="/:grade/trucks/race" element={<TruckRace />} />
+
+      {/* Catch-all for data-driven activities (STEM, etc.) */}
+      <Route path="/:grade/:worldId/:activitySlug" element={<KindergartenActivity />} />
     </Routes>
   );
 }
