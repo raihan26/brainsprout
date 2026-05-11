@@ -1,9 +1,7 @@
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from 'motion/react';
 import StarField from './StarField';
-import MarsTerrain from './MarsTerrain';
-import MarsBase from './MarsBase';
+import MarsSurface from './MarsSurface';
 import RocketLaunch from './RocketLaunch';
-import RoverScene from './RoverScene';
 import LearningHotspot from './LearningHotspot';
 import type { GradeId } from '../../types';
 
@@ -36,7 +34,7 @@ export default function MarsLandingScene({ grade, unlockedCount }: Props) {
 
   return (
     <div
-      className="relative w-full h-[440px] sm:h-[520px] lg:h-[580px] overflow-hidden"
+      className="relative w-full h-[520px] sm:h-[620px] lg:h-[700px] overflow-hidden"
       onMouseMove={handleMove}
     >
       {/* Deep space gradient */}
@@ -75,18 +73,16 @@ export default function MarsLandingScene({ grade, unlockedCount }: Props) {
       {/* Rockets */}
       <RocketLaunch />
 
-      {/* Mars surface */}
-      <div className="absolute bottom-0 left-0 right-0 h-[110px] sm:h-[130px]">
-        <MarsTerrain />
-        <MarsBase x={baseX} unlockedCount={unlockedCount} />
-        <RoverScene />
+      {/* Mars surface — now a lively construction site with astronauts, trucks, and a humanoid helper */}
+      <div className="absolute bottom-0 left-0 right-0 h-[220px] sm:h-[260px]">
+        <MarsSurface baseX={baseX} unlockedCount={unlockedCount} />
       </div>
 
-      {/* Learning hotspots — 4 corners of the scene, around the centered hero */}
-      <LearningHotspot worldId="math" grade={grade} top="24%" left="4%" delay={0.5} />
-      <LearningHotspot worldId="reading" grade={grade} top="24%" right="4%" delay={0.65} />
-      <LearningHotspot worldId="stem" grade={grade} top="60%" left="4%" delay={0.8} />
-      <LearningHotspot worldId="science" grade={grade} top="60%" right="4%" delay={0.95} />
+      {/* Learning hotspots — top-left, top-right; bottom ones would conflict with surface scene */}
+      <LearningHotspot worldId="math" grade={grade} top="18%" left="4%" delay={0.5} />
+      <LearningHotspot worldId="reading" grade={grade} top="18%" right="4%" delay={0.65} />
+      <LearningHotspot worldId="stem" grade={grade} top="36%" left="4%" delay={0.8} />
+      <LearningHotspot worldId="science" grade={grade} top="36%" right="4%" delay={0.95} />
     </div>
   );
 }
