@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import AnswerButton from './AnswerButton';
 import Celebration from './Celebration';
 import ProgressStars from './ProgressStars';
@@ -11,7 +12,8 @@ import { useSpeech } from '../hooks/useSpeech';
 import { calcStars, generateId } from '../utils/progress';
 import { playCorrect, playWrong } from '../utils/sound';
 import { shuffle } from '../utils/shuffle';
-import type { ActivityAttemptEvent, Question, QuestionAttemptEvent } from '../types';
+import { getWorldDisplay } from '../data/worldDisplay';
+import type { ActivityAttemptEvent, Question, QuestionAttemptEvent, SectionId } from '../types';
 
 type Props = {
   activityId: string;
@@ -41,7 +43,8 @@ export default function ActivityShell({
   const nav = useNavigate();
   const grade = useGrade();
   const { progress, recordActivity, recordQuestion } = useProgressV2(grade);
-  const { speak, enabled: speechEnabled } = useSpeech();
+  const { speak, stop: stopSpeech, enabled: speechEnabled } = useSpeech();
+  const reduceMotion = useReducedMotion();
 
   const startedAtRef = useRef<string>(new Date().toISOString());
   const recordedRef = useRef(false);
@@ -59,6 +62,14 @@ export default function ActivityShell({
   const [started, setStarted] = useState(false);
 
   const q = set[index];
+  const world = (() => {
+    try {
+      return getWorldDisplay(worldId as SectionId);
+    } catch {
+      return null;
+    }
+  })();
+
   const shuffledChoices = useMemo(
     () => shuffle(q?.choices ?? []),
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -75,6 +86,13 @@ export default function ActivityShell({
     }
   }, [q?.id, speak, started]);
 
+  // Stop speech on unmount
+  useEffect(() => {
+    return () => {
+      stopSpeech();
+    };
+  }, [stopSpeech]);
+
   const handleStart = () => {
     startedAtRef.current = new Date().toISOString();
     recordedRef.current = false;
@@ -86,7 +104,6 @@ export default function ActivityShell({
     setPicked(choice);
     const isRight = choice === q.answer;
 
-    // Record question attempt
     const qEvent: QuestionAttemptEvent = {
       id: generateId(),
       grade,
@@ -105,13 +122,13 @@ export default function ActivityShell({
     if (isRight) {
       playCorrect();
       setCorrect((c) => c + 1);
-      speak('Correct!');
+      speak('Great job, explorer!');
     } else {
       playWrong();
       if (q.explanation) {
         speak(q.explanation);
       } else {
-        speak(`The answer is ${q.answer}.`);
+        speak(`The answer is ${q.answer}. You're still learning!`);
       }
     }
 
@@ -152,6 +169,8 @@ export default function ActivityShell({
 
   const stars = calcStars(correct, set.length);
   const bestStars = progress.activityBestStars[activityId] ?? 0;
+  const accent = world?.accent ?? '#219ebc';
+  const progressPct = ((index + (picked ? 1 : 0)) / set.length) * 100;
 
   const handlePlayAgain = () => {
     recordedRef.current = false;
@@ -163,28 +182,54 @@ export default function ActivityShell({
     setDone(false);
   };
 
-  // Intro screen
+  // Intro screen — mission briefing
   if (!started) {
     return (
       <SectionLayout title={title} emoji={emoji} backTo={`/${grade}/${backPath}`}>
-        <div className="kid-card text-center max-w-md mx-auto">
-          <div className="text-7xl sm:text-8xl mb-4 animate-floaty" aria-hidden="true">{emoji}</div>
-          <h2 className="text-2xl font-display font-bold mb-2 text-slate">{title}</h2>
-          <p className="text-lg text-slate/60 font-body mb-1">{set.length} questions</p>
+        <motion.div
+          className="mission-card text-center max-w-md mx-auto"
+          initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ type: 'spring', stiffness: 180, damping: 20 }}
+          style={{ borderTop: `6px solid ${accent}` }}
+        >
+          <div className="text-xs font-display font-bold uppercase tracking-wider mb-2" style={{ color: accent }}>
+            {world?.label ?? 'Mission'} · Briefing
+          </div>
+          <motion.div
+            className="text-7xl sm:text-8xl mb-3"
+            animate={reduceMotion ? undefined : { y: [0, -8, 0] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+            aria-hidden="true"
+          >
+            {emoji}
+          </motion.div>
+          <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate">{title}</h2>
+          {world?.missionCopy && (
+            <p className="text-sm sm:text-base text-slate/70 font-body mt-2">{world.missionCopy}</p>
+          )}
+          <p className="text-sm text-slate/60 font-body mt-3">
+            {set.length} questions · Take your time, explorer.
+          </p>
           {bestStars > 0 && (
-            <div className="mb-3">
-              <span className="text-sm text-slate/50 font-body">Your best: </span>
+            <div className="mt-3">
+              <span className="text-xs text-slate/50 font-body">Your best: </span>
               <ProgressStars value={bestStars} size="sm" />
             </div>
           )}
           <button
             type="button"
             onClick={handleStart}
-            className="kid-btn-green text-2xl w-full mt-4"
+            className="mission-cta w-full mt-5"
           >
-            Let's Go!
+            <span aria-hidden="true">🚀</span>
+            <span>Let's Go!</span>
           </button>
-        </div>
+          <div className="mt-4 inline-flex items-center gap-2 bg-slate/5 rounded-2xl px-3 py-2 text-xs sm:text-sm font-body text-slate/70">
+            <span className="text-base" aria-hidden="true">🤖</span>
+            <span>You've got this. I'll cheer you on!</span>
+          </div>
+        </motion.div>
       </SectionLayout>
     );
   }
@@ -198,37 +243,55 @@ export default function ActivityShell({
       backTo={`/${grade}/${backPath}`}
       speakText={q.speakText ?? q.prompt}
     >
-      <div className="flex items-center justify-between mb-3">
-        <div className="text-base font-display font-semibold text-slate/70">
-          {index + 1} of {set.length}
+      {/* Progress */}
+      <div className="flex items-center justify-between mb-2">
+        <div className="text-sm font-display font-semibold text-slate/70">
+          Question {index + 1} of {set.length}
         </div>
         <ProgressStars value={Math.min(3, Math.round((correct / set.length) * 3))} size="sm" />
       </div>
 
-      {/* Progress bar */}
-      <div className="h-2.5 rounded-full bg-slate/10 mb-5 overflow-hidden">
-        <div
-          className="h-full bg-grass rounded-full transition-all duration-500"
-          style={{ width: `${((index + (picked ? 1 : 0)) / set.length) * 100}%` }}
+      <div className="h-3 rounded-full bg-slate/10 mb-5 overflow-hidden" aria-label="Mission progress">
+        <motion.div
+          className="h-full rounded-full"
+          style={{ background: `linear-gradient(90deg, ${accent}, #fdcb6e)` }}
+          initial={{ width: 0 }}
+          animate={{ width: `${progressPct}%` }}
+          transition={reduceMotion ? { duration: 0 } : { duration: 0.5 }}
         />
       </div>
 
-      <div className="kid-card text-center">
-        {q.visual && (
-          <div className="text-5xl sm:text-6xl mb-3 tracking-wider animate-pop" aria-label={q.visual}>
-            {q.visual}
+      {/* Question card */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={q.id}
+          className="mission-card text-center"
+          initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -10 }}
+          transition={{ duration: 0.3 }}
+        >
+          {q.visual && (
+            <div className="text-5xl sm:text-7xl mb-3 tracking-wider" aria-label={q.visual}>
+              {q.visual}
+            </div>
+          )}
+          {q.emoji && !q.visual && (
+            <motion.div
+              className="text-7xl sm:text-8xl mb-3"
+              animate={reduceMotion ? undefined : { y: [0, -6, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+              aria-hidden="true"
+            >
+              {q.emoji}
+            </motion.div>
+          )}
+          <div className="text-2xl sm:text-3xl font-display font-bold text-slate">{q.prompt}</div>
+          <div className="mt-3">
+            <SpeakButton text={q.speakText ?? q.prompt} label="Read to me" />
           </div>
-        )}
-        {q.emoji && !q.visual && (
-          <div className="text-6xl sm:text-7xl mb-3 animate-floaty" aria-hidden="true">
-            {q.emoji}
-          </div>
-        )}
-        <div className="text-2xl sm:text-3xl font-display font-bold text-slate">{q.prompt}</div>
-        <div className="mt-2">
-          <SpeakButton text={q.speakText ?? q.prompt} label="Read to me" />
-        </div>
-      </div>
+        </motion.div>
+      </AnimatePresence>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5">
         {shuffledChoices.map((c, i) => {
@@ -258,23 +321,36 @@ export default function ActivityShell({
         })}
       </div>
 
-      {/* Feedback text */}
-      {picked && (
-        <div className="mt-4 text-center animate-pop">
-          {picked === q.answer ? (
-            <p className="text-xl font-bold text-green-600">✓ Correct!</p>
-          ) : (
-            <p className="text-xl font-bold text-orange-600">
-              The answer is: {q.answer}
-              {q.explanation && <span className="block text-base text-gray-700 mt-1">{q.explanation}</span>}
-            </p>
-          )}
-        </div>
-      )}
+      {/* Feedback */}
+      <AnimatePresence>
+        {picked && (
+          <motion.div
+            className="mt-4 text-center"
+            initial={reduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 18 }}
+          >
+            {picked === q.answer ? (
+              <p className="text-xl font-display font-bold text-emerald-600">
+                ✓ Great job, explorer!
+              </p>
+            ) : (
+              <p className="text-lg font-display font-bold text-orange-600">
+                The answer is: {q.answer}
+                {q.explanation && (
+                  <span className="block text-sm font-body text-slate/70 mt-1">{q.explanation}</span>
+                )}
+              </p>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <Celebration
         show={done}
         stars={stars}
+        message={stars === 3 ? 'Mission complete! 🎉' : stars === 2 ? 'Great mission!' : 'Mission complete!'}
         onPlayAgain={handlePlayAgain}
         onHome={() => nav(`/${grade}/${backPath}`)}
       />
