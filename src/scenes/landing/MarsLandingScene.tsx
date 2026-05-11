@@ -36,7 +36,7 @@ export default function MarsLandingScene({ grade, unlockedCount }: Props) {
 
   return (
     <div
-      className="relative w-full h-[360px] sm:h-[420px] lg:h-[480px] overflow-hidden"
+      className="relative w-full h-[440px] sm:h-[520px] lg:h-[580px] overflow-hidden"
       onMouseMove={handleMove}
     >
       {/* Deep space gradient */}
@@ -82,11 +82,11 @@ export default function MarsLandingScene({ grade, unlockedCount }: Props) {
         <RoverScene />
       </div>
 
-      {/* Learning hotspots */}
-      <LearningHotspot worldId="math" grade={grade} top="22%" right="8%" delay={0.5} />
-      <LearningHotspot worldId="science" grade={grade} top="52%" right="32%" delay={0.65} />
-      <LearningHotspot worldId="stem" grade={grade} top="32%" left="38%" delay={0.8} />
-      <LearningHotspot worldId="reading" grade={grade} top="18%" left="8%" delay={0.95} />
+      {/* Learning hotspots — 4 corners of the scene, around the centered hero */}
+      <LearningHotspot worldId="math" grade={grade} top="24%" left="4%" delay={0.5} />
+      <LearningHotspot worldId="reading" grade={grade} top="24%" right="4%" delay={0.65} />
+      <LearningHotspot worldId="stem" grade={grade} top="60%" left="4%" delay={0.8} />
+      <LearningHotspot worldId="science" grade={grade} top="60%" right="4%" delay={0.95} />
     </div>
   );
 }

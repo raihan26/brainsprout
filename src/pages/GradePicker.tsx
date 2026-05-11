@@ -35,8 +35,8 @@ export default function GradePicker() {
       <div className="relative w-full">
         <LandingTopBar totalStars={totalStars} />
         <MarsLandingScene grade="k" unlockedCount={unlockedCount} />
-        <div className="absolute inset-0 flex flex-col justify-end pb-2 pointer-events-none">
-          <div className="pointer-events-auto">
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 pointer-events-none" style={{ paddingTop: '52px' }}>
+          <div className="pointer-events-auto w-full">
             <LandingHero onStart={handleStart} />
           </div>
         </div>
