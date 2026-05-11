@@ -82,11 +82,11 @@ export default function MarsLandingScene({ grade, unlockedCount }: Props) {
         <RoverScene />
       </div>
 
-      {/* Learning hotspots */}
-      <LearningHotspot worldId="math" grade={grade} top="22%" right="8%" delay={0.5} />
-      <LearningHotspot worldId="science" grade={grade} top="52%" right="32%" delay={0.65} />
-      <LearningHotspot worldId="stem" grade={grade} top="32%" left="38%" delay={0.8} />
-      <LearningHotspot worldId="reading" grade={grade} top="18%" left="8%" delay={0.95} />
+      {/* Learning hotspots — kept low to avoid overlap with hero title */}
+      <LearningHotspot worldId="math" grade={grade} top="52%" left="3%" delay={0.5} />
+      <LearningHotspot worldId="reading" grade={grade} top="58%" right="3%" delay={0.65} />
+      <LearningHotspot worldId="science" grade={grade} top="72%" left="42%" delay={0.8} />
+      <LearningHotspot worldId="stem" grade={grade} top="52%" right="22%" delay={0.95} />
     </div>
   );
 }

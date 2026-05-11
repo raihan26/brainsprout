@@ -48,23 +48,23 @@ export default function Home() {
             </motion.span>
           </Link>
           <div>
-            <div className="text-xs font-display font-bold uppercase tracking-wider" style={{ color: gradeMeta.accentColor }}>
+            <div className="text-sm font-display font-bold uppercase tracking-wider" style={{ color: gradeMeta.accentColor }}>
               {mission?.name ?? 'Mission Control'}
             </div>
-            <div className="text-2xl sm:text-3xl font-display font-bold text-slate leading-tight">Mission Control</div>
-            <div className="text-xs sm:text-sm text-slate/60 font-body">
+            <div className="text-3xl sm:text-4xl font-display font-bold text-slate leading-tight">Mission Control</div>
+            <div className="text-sm sm:text-base text-slate/70 font-body mt-0.5">
               {gradeMeta.title} · Welcome back, explorer!
             </div>
           </div>
         </div>
         <div className="flex items-center gap-2 flex-wrap">
-          <div className="kid-card !p-2.5 inline-flex items-center gap-1.5">
-            <span aria-hidden="true">⭐</span>
-            <span className="font-display font-bold text-lg text-slate">{progress.totalStars}</span>
+          <div className="kid-card !p-3 inline-flex items-center gap-2">
+            <span className="text-xl" aria-hidden="true">⭐</span>
+            <span className="font-display font-bold text-xl text-slate">{progress.totalStars}</span>
           </div>
-          <div className="kid-card !p-2.5 inline-flex items-center gap-1.5">
-            <span aria-hidden="true">🚀</span>
-            <span className="font-display font-bold text-lg text-slate">
+          <div className="kid-card !p-3 inline-flex items-center gap-2">
+            <span className="text-xl" aria-hidden="true">🚀</span>
+            <span className="font-display font-bold text-xl text-slate">
               {activitiesDone}/{gradeActivityCount}
             </span>
           </div>
@@ -87,18 +87,18 @@ export default function Home() {
               <Link
                 to={`/${grade}${lastActivity.path}`}
                 className="mission-card block no-underline text-slate"
-                style={{ borderLeft: `6px solid ${gradeMeta.accentColor}` }}
+                style={{ borderLeft: `8px solid ${gradeMeta.accentColor}` }}
               >
-                <div className="flex items-center gap-4">
-                  <div className="text-5xl sm:text-6xl">{lastActivity.emoji}</div>
-                  <div className="flex-1">
-                    <div className="text-xs font-display font-bold uppercase tracking-wider text-slate/50">
+                <div className="flex items-center gap-5">
+                  <div className="text-6xl sm:text-7xl">{lastActivity.emoji}</div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-sm font-display font-bold uppercase tracking-wider text-slate/60">
                       Continue your mission
                     </div>
-                    <div className="text-xl sm:text-2xl font-display font-bold">{lastActivity.title}</div>
-                    <div className="text-sm text-slate/60 font-body">{lastActivity.description}</div>
+                    <div className="text-2xl sm:text-3xl font-display font-bold leading-tight mt-0.5">{lastActivity.title}</div>
+                    <div className="text-base sm:text-lg text-slate/70 font-body mt-1">{lastActivity.description}</div>
                   </div>
-                  <div className="mission-cta shrink-0 !text-base !px-5 !py-2.5">
+                  <div className="mission-cta shrink-0 !text-lg sm:!text-xl !px-5 sm:!px-6 !py-3">
                     <span aria-hidden="true">▶</span>
                     <span>Go</span>
                   </div>
@@ -108,20 +108,20 @@ export default function Home() {
               <Link
                 to={`/${grade}${recActivity.path}`}
                 className="mission-card block no-underline text-slate"
-                style={{ borderLeft: `6px solid #2a9d8f` }}
+                style={{ borderLeft: `8px solid #2a9d8f` }}
               >
-                <div className="flex items-center gap-4">
-                  <div className="text-5xl sm:text-6xl">{recActivity.emoji}</div>
-                  <div className="flex-1">
-                    <div className="text-xs font-display font-bold uppercase tracking-wider text-slate/50">
+                <div className="flex items-center gap-5">
+                  <div className="text-6xl sm:text-7xl">{recActivity.emoji}</div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-sm font-display font-bold uppercase tracking-wider text-slate/60">
                       Next mission for you
                     </div>
-                    <div className="text-xl sm:text-2xl font-display font-bold">{recActivity.title}</div>
-                    <div className="text-sm text-slate/60 font-body">
+                    <div className="text-2xl sm:text-3xl font-display font-bold leading-tight mt-0.5">{recActivity.title}</div>
+                    <div className="text-base sm:text-lg text-slate/70 font-body mt-1">
                       {topRec?.reason ?? 'Ready when you are!'}
                     </div>
                   </div>
-                  <div className="mission-cta shrink-0 !text-base !px-5 !py-2.5">
+                  <div className="mission-cta shrink-0 !text-lg sm:!text-xl !px-5 sm:!px-6 !py-3">
                     <span aria-hidden="true">🚀</span>
                     <span>Start</span>
                   </div>
@@ -142,7 +142,7 @@ export default function Home() {
 
         {/* Worlds */}
         <section>
-          <h2 className="text-xs font-display font-bold uppercase tracking-wider text-slate/60 mb-3">
+          <h2 className="text-base font-display font-bold uppercase tracking-wider text-slate/70 mb-3">
             Choose a world
           </h2>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
@@ -161,26 +161,26 @@ export default function Home() {
                     className="mission-card group block no-underline text-slate h-full"
                   >
                     <div
-                      className="absolute top-0 left-[8%] right-[8%] h-[3px] rounded-b-full"
+                      className="absolute top-0 left-[8%] right-[8%] h-[4px] rounded-b-full"
                       style={{ background: display.accent }}
                     />
                     <div className="flex flex-col items-center text-center gap-2">
                       <div
-                        className="text-5xl sm:text-6xl"
+                        className="text-6xl sm:text-7xl transition-transform group-hover:scale-110"
                         style={{ filter: sectionStars > 0 ? 'none' : 'grayscale(0.15)' }}
                       >
                         {display.hotspotIcon}
                       </div>
                       <div>
-                        <div className="text-xs font-display font-bold uppercase tracking-wider" style={{ color: display.accent }}>
+                        <div className="text-sm sm:text-base font-display font-bold uppercase tracking-wider" style={{ color: display.accent }}>
                           {display.label}
                         </div>
-                        <div className="text-sm sm:text-base font-body text-slate/70 mt-0.5 leading-tight">
+                        <div className="text-sm sm:text-base font-body text-slate/70 mt-1 leading-tight">
                           {display.tagline}
                         </div>
                       </div>
                       {sectionStars > 0 ? (
-                        <div className="text-xs text-slate/60 font-body flex items-center gap-1">
+                        <div className="text-sm text-slate font-body font-semibold flex items-center gap-1">
                           <span aria-hidden="true">⭐</span>
                           <span>{sectionStars} earned</span>
                         </div>
