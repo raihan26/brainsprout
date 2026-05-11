@@ -14,7 +14,7 @@ import {
   clearProgress,
   formatDuration,
 } from './progress';
-import type { ActivityAttemptEvent, ActivityMeta, BrainSproutProgress, QuestionAttemptEvent } from '../types';
+import type { ActivityAttemptEvent, ActivityMeta, QuestionAttemptEvent } from '../types';
 
 function makeActivityAttempt(overrides: Partial<ActivityAttemptEvent> = {}): ActivityAttemptEvent {
   return {
